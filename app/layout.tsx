@@ -131,7 +131,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-black text-[#F3F4F5] font-sans antialiased selection:bg-[#08D8E5] selection:text-black">
+      <body className="bg-[#F0FAF9] text-[#171717] font-sans antialiased selection:bg-[#08D8E5] selection:text-black">
         {/* Skip to Content Link for WCAG 2.2 AA Keyboard Accessibility */}
         <a href="#main-content" className="skip-to-content">
           Skip to main content

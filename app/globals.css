@@ -2,13 +2,16 @@
 
 @layer base {
   :root {
+    --brand-bg: #F0FAF9;
+    --brand-bg-alt: #E6F6F7;
+    --brand-card: #FFFFFF;
+    --brand-border: #D2EEF1;
     --brand-black: #000000;
     --brand-turquoise: #08D8E5;
+    --brand-turquoise-dark: #058A92;
     --brand-yellow: #FFC43D;
-    --brand-grey: #F3F4F5;
     --brand-dark: #171717;
-    --brand-card: #111111;
-    --brand-border: #222222;
+    --brand-muted: #52606D;
   }
 
   html {
@@ -16,8 +19,8 @@
   }
 
   body {
-    background-color: #000000;
-    color: #F3F4F5;
+    background-color: #F0FAF9;
+    color: #171717;
     font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     overflow-x: hidden;
   }
@@ -29,23 +32,22 @@
   }
 }
 
-/* Custom utility classes */
+/* Light Theme Color Utility Classes */
+.bg-brand-bg { background-color: #F0FAF9; }
+.bg-brand-bg-alt { background-color: #E6F6F7; }
+.bg-brand-card { background-color: #FFFFFF; }
 .bg-brand-black { background-color: #000000; }
 .bg-brand-turquoise { background-color: #08D8E5; }
 .bg-brand-yellow { background-color: #FFC43D; }
-.bg-brand-grey { background-color: #F3F4F5; }
-.bg-brand-dark { background-color: #171717; }
-.bg-brand-card { background-color: #111111; }
-.bg-brand-card-hover { background-color: #191919; }
 
-.text-brand-turquoise { color: #08D8E5; }
-.text-brand-yellow { color: #FFC43D; }
-.text-brand-grey { color: #F3F4F5; }
 .text-brand-dark { color: #171717; }
+.text-brand-muted { color: #52606D; }
+.text-brand-turquoise { color: #08D8E5; }
+.text-brand-turquoise-dark { color: #058A92; }
+.text-brand-yellow { color: #D97706; }
 
+.border-brand-border { border-color: #D2EEF1; }
 .border-brand-turquoise { border-color: #08D8E5; }
-.border-brand-border { border-color: #242424; }
-.border-brand-yellow { border-color: #FFC43D; }
 
 /* Skip Link for Accessibility */
 .skip-to-content {
@@ -58,22 +60,23 @@
   padding: 0.75rem 1.5rem;
   font-weight: 700;
   border-radius: 0.375rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: top 0.2s ease-in-out;
 }
 .skip-to-content:focus {
   top: 1rem;
 }
 
-/* Scrollbar Styling */
+/* Scrollbar Styling for Light Theme */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #E8F6F7;
 }
 ::-webkit-scrollbar-thumb {
-  background: #262626;
+  background: #B4E2E6;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {

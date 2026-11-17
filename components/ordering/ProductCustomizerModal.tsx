@@ -108,16 +108,16 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
     >
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/85 backdrop-blur-sm"
+        className="fixed inset-0 bg-black/60 backdrop-blur-sm"
         onClick={onClose}
         aria-hidden="true"
       />
 
       {/* Modal Dialog Card */}
-      <div className="relative w-full max-w-lg bg-[#111111] border border-[#282828] rounded-2xl shadow-2xl overflow-hidden z-10 text-white my-8 max-h-[90vh] flex flex-col">
+      <div className="relative w-full max-w-lg bg-white border border-[#D2EEF1] rounded-2xl shadow-2xl overflow-hidden z-10 text-[#171717] my-8 max-h-[90vh] flex flex-col">
         {/* Product Image Header */}
         {item.image && (
-          <div className="relative h-48 w-full shrink-0 bg-neutral-900 border-b border-[#222222]">
+          <div className="relative h-48 w-full shrink-0 bg-slate-100 border-b border-[#D2EEF1]">
             <Image
               src={item.image}
               alt={item.name}
@@ -125,19 +125,19 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
               sizes="(max-width: 640px) 100vw, 512px"
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-black/60" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 p-2 rounded-full bg-black/70 hover:bg-black text-gray-300 hover:text-white transition-colors"
+              className="absolute top-4 right-4 p-2 rounded-full bg-black/60 hover:bg-black text-white transition-colors"
               aria-label="Close dialog"
             >
               <X className="w-5 h-5" />
             </button>
             <div className="absolute bottom-4 left-6 right-6">
-              <span className="bg-[#08D8E5] text-black text-xs font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full inline-block mb-1">
+              <span className="bg-[#08D8E5] text-black text-xs font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full inline-block mb-1 shadow">
                 {item.categoryName}
               </span>
-              <h2 id="modal-product-title" className="text-2xl font-bold font-heading">
+              <h2 id="modal-product-title" className="text-2xl font-bold font-heading text-white">
                 {item.name}
               </h2>
             </div>
@@ -149,16 +149,16 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
           {!item.image && (
             <div className="flex justify-between items-start">
               <div>
-                <span className="text-xs uppercase text-[#08D8E5] font-bold tracking-wider">
+                <span className="text-xs uppercase text-[#058A92] font-bold tracking-wider">
                   {item.categoryName}
                 </span>
-                <h2 id="modal-product-title" className="text-2xl font-bold font-heading">
+                <h2 id="modal-product-title" className="text-2xl font-bold font-heading text-[#171717]">
                   {item.name}
                 </h2>
               </div>
               <button
                 onClick={onClose}
-                className="p-2 rounded-full bg-[#1c1c1c] text-gray-400 hover:text-white"
+                className="p-2 rounded-full bg-slate-100 text-gray-500 hover:text-black"
                 aria-label="Close dialog"
               >
                 <X className="w-5 h-5" />
@@ -168,19 +168,19 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
 
           {/* Description */}
           {item.description && (
-            <p className="text-sm text-gray-300 leading-relaxed">{item.description}</p>
+            <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
           )}
 
           {item.servedWith && (
-            <div className="bg-[#181818] border border-[#2a2a2a] p-3 rounded-lg text-xs text-gray-300">
-              <strong className="text-[#08D8E5]">Included: </strong>
+            <div className="bg-[#F0FAF9] border border-[#D2EEF1] p-3.5 rounded-xl text-xs text-gray-700">
+              <strong className="text-[#058A92]">Included: </strong>
               {item.servedWith}
             </div>
           )}
 
           {item.toppingsInfo && (
-            <div className="bg-[#181818] border border-[#2a2a2a] p-3 rounded-lg text-xs text-gray-300">
-              <strong className="text-[#FFC43D]">Chef&apos;s Toppings: </strong>
+            <div className="bg-[#FEF3C7] border border-[#FDE68A] p-3.5 rounded-xl text-xs text-gray-800">
+              <strong className="text-[#92400E]">Chef&apos;s Toppings: </strong>
               {item.toppingsInfo}
             </div>
           )}
@@ -188,7 +188,7 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
           {/* Portion/Size Options (e.g. 3, 5, 7 Pieces or Regular, Large) */}
           {item.options && item.options.length > 0 && (
             <div className="space-y-3">
-              <label className="block text-xs font-bold uppercase tracking-wider text-gray-300">
+              <label className="block text-xs font-bold uppercase tracking-wider text-gray-700">
                 Select Option / Size
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
@@ -201,12 +201,12 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
                       onClick={() => setSelectedOption(opt.name)}
                       className={`p-3 rounded-xl border text-left transition-all ${
                         isSel
-                          ? "bg-[#08D8E5]/15 border-[#08D8E5] text-white"
-                          : "bg-[#181818] border-[#292929] text-gray-400 hover:border-gray-500"
+                          ? "bg-[#E6F7F8] border-[#08D8E5] text-[#171717] shadow-sm font-semibold"
+                          : "bg-white border-[#CBD5E1] text-gray-700 hover:border-gray-400"
                       }`}
                     >
-                      <div className="font-bold text-sm text-white">{opt.name}</div>
-                      <div className="text-xs text-[#08D8E5] font-semibold mt-1">
+                      <div className="font-bold text-sm text-[#171717]">{opt.name}</div>
+                      <div className="text-xs text-[#058A92] font-semibold mt-1">
                         {formatPrice(opt.price)}
                       </div>
                     </button>
@@ -220,7 +220,7 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
           {item.selectionChoices &&
             item.selectionChoices.map((choice, idx) => (
               <div key={idx} className="space-y-3">
-                <label className="block text-xs font-bold uppercase tracking-wider text-gray-300">
+                <label className="block text-xs font-bold uppercase tracking-wider text-gray-700">
                   {choice.title}
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -242,7 +242,7 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
                         className={`p-2.5 rounded-lg border text-left text-xs font-medium flex items-center justify-between transition-colors ${
                           isSelected
                             ? "bg-[#08D8E5] text-black border-[#08D8E5] font-bold"
-                            : "bg-[#181818] text-gray-300 border-[#2a2a2a] hover:border-gray-500"
+                            : "bg-white text-gray-700 border-[#CBD5E1] hover:border-gray-400"
                         }`}
                       >
                         <span>{opt}</span>
@@ -259,8 +259,8 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
             <>
               {/* Extra Protein */}
               <div className="space-y-3">
-                <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 flex items-center gap-1.5">
-                  <Flame className="w-3.5 h-3.5 text-[#FFC43D]" />
+                <label className="block text-xs font-bold uppercase tracking-wider text-gray-700 flex items-center gap-1.5">
+                  <Flame className="w-3.5 h-3.5 text-[#D97706]" />
                   <span>Add Extra Protein</span>
                 </label>
                 <div className="grid grid-cols-2 gap-2">
@@ -273,17 +273,17 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
                         onClick={() => toggleProtein(prot.name)}
                         className={`p-2.5 rounded-xl border text-left text-xs transition-colors flex items-center justify-between ${
                           isSelected
-                            ? "bg-[#08D8E5]/20 border-[#08D8E5] text-white"
-                            : "bg-[#181818] border-[#292929] text-gray-300 hover:border-gray-500"
+                            ? "bg-[#E6F7F8] border-[#08D8E5] text-black font-semibold"
+                            : "bg-white border-[#CBD5E1] text-gray-700 hover:border-gray-400"
                         }`}
                       >
                         <div>
-                          <div className="font-bold text-white">{prot.name}</div>
-                          <div className="text-[#08D8E5] text-xs font-semibold">
+                          <div className="font-bold text-[#171717]">{prot.name}</div>
+                          <div className="text-[#058A92] text-xs font-semibold">
                             +{formatPrice(prot.price)}
                           </div>
                         </div>
-                        {isSelected && <Check className="w-4 h-4 text-[#08D8E5]" />}
+                        {isSelected && <Check className="w-4 h-4 text-[#058A92]" />}
                       </button>
                     );
                   })}
@@ -292,8 +292,8 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
 
               {/* Extra Toppings */}
               <div className="space-y-3">
-                <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-[#08D8E5]" />
+                <label className="block text-xs font-bold uppercase tracking-wider text-gray-700 flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-[#058A92]" />
                   <span>Extra Toppings</span>
                 </label>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -306,12 +306,12 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
                         onClick={() => toggleTopping(top.name)}
                         className={`p-2 rounded-lg border text-left text-xs transition-colors ${
                           isSelected
-                            ? "bg-[#08D8E5]/20 border-[#08D8E5] text-white"
-                            : "bg-[#181818] border-[#282828] text-gray-300 hover:border-gray-500"
+                            ? "bg-[#E6F7F8] border-[#08D8E5] text-black font-semibold"
+                            : "bg-white border-[#CBD5E1] text-gray-700 hover:border-gray-400"
                         }`}
                       >
-                        <div className="font-semibold truncate">{top.name}</div>
-                        <div className="text-[#08D8E5] font-bold text-[11px] mt-0.5">
+                        <div className="font-semibold truncate text-[#171717]">{top.name}</div>
+                        <div className="text-[#058A92] font-bold text-[11px] mt-0.5">
                           +{formatPrice(top.price)}
                         </div>
                       </button>
@@ -321,16 +321,16 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
               </div>
 
               {/* Upgrade Your Meal Promotion */}
-              <div className="bg-gradient-to-r from-[#181818] to-[#141414] border border-[#2b2b2b] rounded-2xl p-4 space-y-3">
+              <div className="bg-[#F0FAF9] border-2 border-[#D2EEF1] rounded-2xl p-4 space-y-3">
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="text-[#FFC43D] text-[11px] font-extrabold uppercase tracking-widest">
+                    <span className="text-[#D97706] text-[11px] font-extrabold uppercase tracking-widest">
                       Special Upgrade
                     </span>
-                    <h4 className="text-sm font-bold text-white font-heading">
+                    <h4 className="text-sm font-bold text-[#171717] font-heading">
                       Upgrade Your Meal (+£3.99)
                     </h4>
-                    <p className="text-xs text-gray-400">
+                    <p className="text-xs text-gray-600">
                       Add 1 Side (Chips, Fries or Tots) + 1 Drink (Jarritos or Can)
                     </p>
                   </div>
@@ -343,13 +343,13 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
                 </div>
 
                 {upgradeActive && (
-                  <div className="pt-3 border-t border-[#262626] grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                  <div className="pt-3 border-t border-[#D2EEF1] grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                     <div>
-                      <label className="block text-gray-400 font-semibold mb-1">Choose Side:</label>
+                      <label className="block text-gray-700 font-semibold mb-1">Choose Side:</label>
                       <select
                         value={upgradeSide}
                         onChange={(e) => setUpgradeSide(e.target.value)}
-                        className="w-full bg-[#202020] border border-[#333333] rounded-lg px-2.5 py-1.5 text-white text-xs focus:outline-none focus:border-[#08D8E5]"
+                        className="w-full bg-white border border-[#CBD5E1] rounded-lg px-2.5 py-1.5 text-gray-800 text-xs focus:outline-none focus:border-[#08D8E5]"
                       >
                         {UPGRADE_MEAL.sides.map((s) => (
                           <option key={s} value={s}>
@@ -360,11 +360,11 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
                     </div>
 
                     <div>
-                      <label className="block text-gray-400 font-semibold mb-1">Choose Drink:</label>
+                      <label className="block text-gray-700 font-semibold mb-1">Choose Drink:</label>
                       <select
                         value={upgradeDrink}
                         onChange={(e) => setUpgradeDrink(e.target.value)}
-                        className="w-full bg-[#202020] border border-[#333333] rounded-lg px-2.5 py-1.5 text-white text-xs focus:outline-none focus:border-[#08D8E5]"
+                        className="w-full bg-white border border-[#CBD5E1] rounded-lg px-2.5 py-1.5 text-gray-800 text-xs focus:outline-none focus:border-[#08D8E5]"
                       >
                         {UPGRADE_MEAL.drinks.map((d) => (
                           <option key={d} value={d}>
@@ -381,19 +381,19 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
         </div>
 
         {/* Modal Bottom Footer Actions */}
-        <div className="p-5 border-t border-[#222222] bg-black flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2 bg-[#1c1c1c] border border-[#2b2b2b] rounded-xl p-1.5">
+        <div className="p-5 border-t border-[#D2EEF1] bg-[#F8FCFD] flex items-center justify-between gap-4">
+          <div className="flex items-center gap-2 bg-white border border-[#CBD5E1] rounded-xl p-1.5 shadow-sm">
             <button
               onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-              className="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-[#2c2c2c] text-gray-300 hover:text-white"
+              className="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 text-gray-600 hover:text-black"
               aria-label="Decrease quantity"
             >
               <Minus className="w-4 h-4" />
             </button>
-            <span className="w-8 text-center font-bold text-white text-sm">{quantity}</span>
+            <span className="w-8 text-center font-bold text-[#171717] text-sm">{quantity}</span>
             <button
               onClick={() => setQuantity((q) => q + 1)}
-              className="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-[#2c2c2c] text-gray-300 hover:text-white"
+              className="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 text-gray-600 hover:text-black"
               aria-label="Increase quantity"
             >
               <Plus className="w-4 h-4" />
@@ -402,7 +402,7 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
 
           <button
             onClick={handleAddToCart}
-            className="flex-1 bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase py-3.5 px-6 rounded-xl flex items-center justify-between tracking-wider shadow-lg shadow-[#08D8E5]/20 transition-transform active:scale-[0.98]"
+            className="flex-1 bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase py-3.5 px-6 rounded-xl flex items-center justify-between tracking-wider shadow-md shadow-[#08D8E5]/20 transition-transform active:scale-[0.98]"
           >
             <span>ADD TO BASKET</span>
             <span className="font-heading text-base">{formatPrice(totalPrice)}</span>

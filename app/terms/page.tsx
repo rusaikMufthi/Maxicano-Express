@@ -3,21 +3,21 @@ import { RESTAURANT_INFO } from "@/data/restaurant";
 
 export default function TermsPage() {
   return (
-    <div className="bg-black text-white min-h-screen py-16 sm:py-24">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="border-b border-[#242424] pb-6">
-          <span className="text-[#08D8E5] text-xs font-bold uppercase tracking-widest">
+    <div className="bg-[#F0FAF9] text-[#171717] min-h-screen py-16 sm:py-24">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 bg-white border border-[#D2EEF1] p-8 sm:p-12 rounded-3xl shadow-sm">
+        <div className="border-b border-[#D2EEF1] pb-6">
+          <span className="text-[#058A92] text-xs font-bold uppercase tracking-widest">
             Terms of Service
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-heading uppercase text-white mt-1">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-heading uppercase text-[#171717] mt-1">
             Terms & Conditions
           </h1>
-          <p className="text-xs text-gray-400 mt-2">Last updated: November 2026</p>
+          <p className="text-xs text-gray-500 mt-2">Last updated: November 2026</p>
         </div>
 
-        <div className="space-y-6 text-sm text-gray-300 leading-relaxed">
+        <div className="space-y-6 text-sm text-gray-700 leading-relaxed">
           <section className="space-y-3">
-            <h2 className="text-xl font-bold font-heading text-white uppercase">
+            <h2 className="text-xl font-bold font-heading text-[#171717] uppercase">
               1. Acceptance of Terms
             </h2>
             <p>
@@ -28,7 +28,7 @@ export default function TermsPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-bold font-heading text-white uppercase">
+            <h2 className="text-xl font-bold font-heading text-[#171717] uppercase">
               2. Restaurant Information & Menu Pricing
             </h2>
             <p>
@@ -41,7 +41,7 @@ export default function TermsPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-bold font-heading text-white uppercase">
+            <h2 className="text-xl font-bold font-heading text-[#171717] uppercase">
               3. Online Ordering Status
             </h2>
             <p>
@@ -53,7 +53,7 @@ export default function TermsPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-bold font-heading text-white uppercase">
+            <h2 className="text-xl font-bold font-heading text-[#171717] uppercase">
               4. Food Allergies & Dietary Disclaimers
             </h2>
             <p>
@@ -65,7 +65,7 @@ export default function TermsPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-bold font-heading text-white uppercase">
+            <h2 className="text-xl font-bold font-heading text-[#171717] uppercase">
               5. Intellectual Property
             </h2>
             <p>
@@ -76,7 +76,7 @@ export default function TermsPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-bold font-heading text-white uppercase">6. Governing Law</h2>
+            <h2 className="text-xl font-bold font-heading text-[#171717] uppercase">6. Governing Law</h2>
             <p>
               These Terms and Conditions shall be governed by and construed in accordance with the laws
               of England and Wales.

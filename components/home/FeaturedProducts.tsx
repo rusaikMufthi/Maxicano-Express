@@ -25,26 +25,26 @@ export function FeaturedProducts() {
   );
 
   return (
-    <section className="py-20 bg-black text-white border-b border-[#222222]">
+    <section className="py-20 bg-[#F0FAF9] text-[#171717] border-b border-[#D2EEF1]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-1.5 text-[#FFC43D] text-xs font-bold uppercase tracking-widest">
-              <Flame className="w-4 h-4 fill-[#FFC43D]" />
+            <div className="inline-flex items-center gap-1.5 text-[#D97706] text-xs font-bold uppercase tracking-widest bg-[#FFC43D]/20 px-3 py-1 rounded-full w-fit">
+              <Flame className="w-4 h-4 fill-[#D97706]" />
               <span>Customer Favourites</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-heading uppercase">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-heading uppercase text-[#171717]">
               Featured Signatures
             </h2>
-            <p className="text-gray-400 text-sm max-w-xl">
+            <p className="text-gray-600 text-sm max-w-xl">
               Explore our most popular burritos, slow-braised birria tacos, crispy bites and sharing feasts.
             </p>
           </div>
 
           <Link
             href="/menu"
-            className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-[#08D8E5] hover:text-[#07c2ce] transition-colors shrink-0"
+            className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-[#058A92] hover:text-black transition-colors shrink-0"
           >
             <span>View Full Menu</span>
             <ArrowRight className="w-4 h-4" />
