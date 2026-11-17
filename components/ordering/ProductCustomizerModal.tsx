@@ -5,7 +5,7 @@ import Image from "next/image";
 import { MenuItem, UPGRADE_MEAL, EXTRA_TOPPINGS, EXTRA_PROTEINS } from "@/data/menu";
 import { useCart } from "@/context/CartContext";
 import { formatPrice } from "@/lib/utils";
-import { X, Plus, Minus, Check, Flame, Sparkles } from "lucide-react";
+import { X, Plus, Minus, Check, Flame } from "lucide-react";
 
 interface ProductCustomizerModalProps {
   item: MenuItem | null;
@@ -292,8 +292,7 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
 
               {/* Extra Toppings */}
               <div className="space-y-3">
-                <label className="block text-xs font-bold uppercase tracking-wider text-gray-700 flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-[#058A92]" />
+                <label className="block text-xs font-bold uppercase tracking-wider text-gray-700">
                   <span>Extra Toppings</span>
                 </label>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">

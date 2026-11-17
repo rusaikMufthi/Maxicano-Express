@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { MenuItem } from "@/data/menu";
 import { formatPrice } from "@/lib/utils";
-import { Plus, Sparkles, Flame } from "lucide-react";
+import { Plus, Flame } from "lucide-react";
 
 interface ProductCardProps {
   item: MenuItem;
@@ -94,9 +94,8 @@ export function ProductCard({ item, onSelect }: ProductCardProps) {
 
         {/* Card CTA */}
         <div className="pt-3 border-t border-[#EDF6F7] flex items-center justify-between">
-          <span className="text-[11px] text-[#058A92] font-bold flex items-center gap-1 group-hover:underline">
-            <Sparkles className="w-3.5 h-3.5 text-[#08D8E5]" />
-            <span>Customize & Add</span>
+          <span className="text-[11px] text-[#058A92] font-bold group-hover:underline">
+            Customize & Add
           </span>
           <button
             type="button"

@@ -8,7 +8,6 @@ import {
   Navigation,
   Copy,
   Check,
-  Sparkles,
 } from "lucide-react";
 
 export default function LocationPage() {
@@ -149,7 +148,6 @@ export default function LocationPage() {
             {/* Local Context Notice */}
             <div className="p-4 rounded-2xl bg-white border border-[#D2EEF1] flex items-center justify-between text-xs text-gray-600 shadow-sm">
               <div className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-[#058A92]" />
                 <span>Convenient central Peterborough location on Bridge Street</span>
               </div>
               <a

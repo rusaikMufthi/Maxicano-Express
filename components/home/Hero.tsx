@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, MapPin, Sparkles, Flame, Clock } from "lucide-react";
+import { ArrowRight, MapPin, Flame, Clock } from "lucide-react";
 import { RESTAURANT_INFO } from "@/data/restaurant";
 
 export function Hero() {
@@ -16,7 +16,6 @@ export function Hero() {
           {/* Left Column: Copy & Actions */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#BCE7EC] text-xs font-bold uppercase tracking-wider text-[#058A92] shadow-sm">
-              <Sparkles className="w-3.5 h-3.5 text-[#058A92]" />
               <span>Peterborough&apos;s New Mexican Destination</span>
             </div>
 

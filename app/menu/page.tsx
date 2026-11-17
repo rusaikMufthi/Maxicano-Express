@@ -14,7 +14,7 @@ import {
 import { ProductCard } from "@/components/menu/ProductCard";
 import { ProductCustomizerModal } from "@/components/ordering/ProductCustomizerModal";
 import { formatPrice } from "@/lib/utils";
-import { Search, Sparkles } from "lucide-react";
+import { Search } from "lucide-react";
 
 export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
@@ -118,7 +118,6 @@ export default function MenuPage() {
         <div className="bg-white border-2 border-[#08D8E5]/50 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
           <div className="space-y-2 text-center md:text-left">
             <div className="inline-flex items-center gap-2 text-[#D97706] text-xs font-bold uppercase tracking-wider bg-[#FFC43D]/20 px-3 py-1 rounded-full w-fit">
-              <Sparkles className="w-4 h-4" />
               <span>Special Menu Value</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold font-heading uppercase text-[#171717]">

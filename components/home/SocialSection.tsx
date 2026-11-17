@@ -1,6 +1,6 @@
 import React from "react";
 import { RESTAURANT_INFO } from "@/data/restaurant";
-import { ExternalLink, Sparkles } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 export function SocialSection() {
   const socials = [
@@ -32,7 +32,6 @@ export function SocialSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
           <div className="inline-flex items-center gap-1.5 text-[#058A92] text-xs font-bold uppercase tracking-widest bg-white border border-[#BDE8EC] px-3.5 py-1.5 rounded-full shadow-sm">
-            <Sparkles className="w-3.5 h-3.5" />
             <span>Connect Online</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-heading uppercase leading-tight text-[#171717]">

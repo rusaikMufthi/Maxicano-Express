@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, MapPin, Sparkles, Utensils, Clock } from "lucide-react";
+import { ArrowRight, MapPin, Flame, Utensils, Clock } from "lucide-react";
 
 export default function AboutPage() {
   return (
@@ -106,7 +106,7 @@ export default function AboutPage() {
 
           <div className="p-8 rounded-3xl bg-white border border-[#D2EEF1] space-y-3 shadow-sm">
             <div className="w-12 h-12 rounded-2xl bg-[#FEF3C7] text-[#D97706] flex items-center justify-center font-heading font-bold text-xl">
-              <Sparkles className="w-6 h-6" />
+              <Flame className="w-6 h-6" />
             </div>
             <h3 className="text-xl font-bold font-heading uppercase text-[#171717]">
               Generous Portions
