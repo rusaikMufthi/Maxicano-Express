@@ -126,7 +126,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-GB"
-      className={`${inter.variable} ${oswald.variable} scroll-smooth`}
+      className={`${inter.variable} ${oswald.variable} scroll-smooth overflow-x-hidden`}
       suppressHydrationWarning
     >
       <head>
@@ -136,7 +136,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className="bg-[#F0FAF9] text-[#171717] font-sans antialiased selection:bg-[#08D8E5] selection:text-black"
+        className="bg-[#F0FAF9] text-[#171717] font-sans antialiased selection:bg-[#08D8E5] selection:text-black w-full max-w-full overflow-x-hidden relative"
         suppressHydrationWarning
       >
         {/* Skip to Content Link for WCAG 2.2 AA Keyboard Accessibility */}

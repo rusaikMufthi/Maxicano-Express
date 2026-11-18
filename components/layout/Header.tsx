@@ -51,26 +51,26 @@ export function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 z-40 transition-all duration-300 ${
+        className={`sticky top-0 z-40 transition-all duration-300 w-full max-w-full overflow-x-clip ${
           scrolled
-            ? "bg-black/95 backdrop-blur-md border-b border-[#222222] shadow-xl py-3"
-            : "bg-black border-b border-[#1b1b1b] py-4"
+            ? "bg-black/95 backdrop-blur-md border-b border-[#222222] shadow-xl py-2.5 sm:py-3"
+            : "bg-black border-b border-[#1b1b1b] py-3 sm:py-4"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2">
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#08D8E5] rounded-lg"
+            className="flex items-center gap-2 sm:gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#08D8E5] rounded-lg shrink-0"
             aria-label="Mexi Cano Express Home"
           >
-            <div className="relative w-44 h-12 sm:w-56 sm:h-14">
+            <div className="relative w-32 h-9 sm:w-44 sm:h-12 md:w-56 md:h-14">
               <Image
                 src="/images/logo.png"
                 alt="Mexi Cano Express Logo"
                 fill
                 priority
-                sizes="(max-width: 640px) 176px, 224px"
+                sizes="(max-width: 640px) 128px, (max-width: 768px) 176px, 224px"
                 className="object-contain object-left group-hover:opacity-95 transition-opacity"
               />
             </div>
@@ -97,11 +97,11 @@ export function Header() {
           </nav>
 
           {/* Action CTAs */}
-          <div className="flex items-center gap-2.5 sm:gap-3">
-            {/* CLICK & COLLECT Button */}
+          <div className="flex items-center gap-1.5 sm:gap-2.5 md:gap-3 shrink-0">
+            {/* CLICK & COLLECT Button - Shown on tablet/desktop header (>= sm: 640px), in mobile drawer for mobile */}
             <Link
               href={RESTAURANT_INFO.ordering.clickAndCollectUrl}
-              className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full border-2 border-[#08D8E5] text-[#08D8E5] hover:bg-[#08D8E5] hover:text-black font-extrabold uppercase text-[11px] sm:text-xs tracking-wider transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-white shrink-0 shadow-sm"
+              className="hidden sm:inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full border-2 border-[#08D8E5] text-[#08D8E5] hover:bg-[#08D8E5] hover:text-black font-extrabold uppercase text-xs tracking-wider transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-white shrink-0 shadow-sm"
               aria-label="Click and Collect Takeaway"
             >
               <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#08D8E5] group-hover:text-black shrink-0" />
@@ -112,7 +112,7 @@ export function Header() {
             <button
               onClick={openCart}
               type="button"
-              className="relative p-2 sm:px-3.5 sm:py-2.5 rounded-full bg-[#181818] hover:bg-[#252525] border border-[#2a2a2a] text-white flex items-center gap-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#08D8E5]"
+              className="relative p-2 sm:px-3.5 sm:py-2.5 rounded-full bg-[#181818] hover:bg-[#252525] border border-[#2a2a2a] text-white flex items-center gap-1.5 sm:gap-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#08D8E5] shrink-0"
               aria-label={`View your order basket with ${totalItems} items`}
             >
               <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 text-[#08D8E5]" />
@@ -127,17 +127,17 @@ export function Header() {
             {/* ORDER NOW Turquoise Button */}
             <Link
               href={RESTAURANT_INFO.ordering.menuUrl}
-              className="bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase text-xs sm:text-sm tracking-wider px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-[#08D8E5]/20 flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white shrink-0"
+              className="bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase text-[11px] sm:text-xs md:text-sm tracking-wider px-2.5 sm:px-4 md:px-5 py-2 sm:py-2.5 rounded-full transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-[#08D8E5]/20 flex items-center gap-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-white shrink-0"
             >
               <span>ORDER NOW</span>
-              <ArrowRight className="w-4 h-4 hidden sm:inline" />
+              <ArrowRight className="w-3.5 h-3.5 hidden sm:inline" />
             </Link>
 
             {/* Mobile Hamburger Trigger */}
             <button
               onClick={() => setMobileMenuOpen(true)}
               type="button"
-              className="xl:hidden p-2 rounded-lg bg-[#181818] border border-[#2a2a2a] text-white hover:text-[#08D8E5] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#08D8E5]"
+              className="xl:hidden p-2 rounded-lg bg-[#181818] border border-[#2a2a2a] text-white hover:text-[#08D8E5] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#08D8E5] shrink-0"
               aria-label="Open mobile navigation menu"
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-navigation-drawer"

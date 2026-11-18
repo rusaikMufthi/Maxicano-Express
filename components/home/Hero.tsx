@@ -48,24 +48,24 @@ export function Hero() {
             </div>
 
             {/* Trust highlights */}
-            <div className="pt-6 border-t border-[#D2EEF1] grid grid-cols-3 gap-4 text-center lg:text-left">
+            <div className="pt-6 border-t border-[#D2EEF1] grid grid-cols-3 gap-2 sm:gap-4 text-center lg:text-left">
               <div>
-                <span className="block font-heading text-xl sm:text-2xl font-bold text-[#D97706]">
+                <span className="block font-heading text-lg sm:text-2xl font-bold text-[#D97706]">
                   11 AM – 11 PM
                 </span>
-                <span className="text-xs text-gray-600 font-medium">Open 7 Days A Week</span>
+                <span className="text-[11px] sm:text-xs text-gray-600 font-medium">Open 7 Days</span>
               </div>
               <div>
-                <span className="block font-heading text-xl sm:text-2xl font-bold text-[#171717]">
+                <span className="block font-heading text-lg sm:text-2xl font-bold text-[#171717]">
                   41 BRIDGE ST
                 </span>
-                <span className="text-xs text-gray-600 font-medium">Peterborough City Centre</span>
+                <span className="text-[11px] sm:text-xs text-gray-600 font-medium">Peterborough</span>
               </div>
               <div>
-                <span className="block font-heading text-xl sm:text-2xl font-bold text-[#058A92]">
+                <span className="block font-heading text-lg sm:text-2xl font-bold text-[#058A92]">
                   FRESH DAILY
                 </span>
-                <span className="text-xs text-gray-600 font-medium">Dine-In & Takeaway</span>
+                <span className="text-[11px] sm:text-xs text-gray-600 font-medium">Dine-In &amp; Takeaway</span>
               </div>
             </div>
           </div>

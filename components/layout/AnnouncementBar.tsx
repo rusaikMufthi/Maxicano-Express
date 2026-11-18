@@ -4,7 +4,7 @@ import { MapPin, Clock } from "lucide-react";
 
 export function AnnouncementBar() {
   return (
-    <div className="bg-[#08D8E5] text-black font-semibold text-xs sm:text-sm py-2 px-4 shadow-sm select-none">
+    <div className="bg-[#08D8E5] text-black font-semibold text-xs sm:text-sm py-2 px-3 sm:px-4 shadow-sm select-none w-full max-w-full overflow-x-hidden">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1 text-center sm:text-left">
         <div className="flex items-center gap-2 tracking-wider uppercase font-bold">
           <span>{RESTAURANT_INFO.announcement}</span>
