@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "MEXICANO EXPRESS | Big Mexican Flavours. Expressly Made.",
+    title: "MEXICANO EXPRESS | True Mexican Flavours. Expressly Made.",
     description:
       "Freshly prepared burritos, tacos, quesadillas, loaded fries, and sweet churros in Peterborough. Open every day 11 AM – 11 PM.",
     url: "https://mexicanoexpress.co.uk",
@@ -124,14 +124,21 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en-GB" className={`${inter.variable} ${oswald.variable} scroll-smooth`}>
+    <html
+      lang="en-GB"
+      className={`${inter.variable} ${oswald.variable} scroll-smooth`}
+      suppressHydrationWarning
+    >
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-[#F0FAF9] text-[#171717] font-sans antialiased selection:bg-[#08D8E5] selection:text-black">
+      <body
+        className="bg-[#F0FAF9] text-[#171717] font-sans antialiased selection:bg-[#08D8E5] selection:text-black"
+        suppressHydrationWarning
+      >
         {/* Skip to Content Link for WCAG 2.2 AA Keyboard Accessibility */}
         <a href="#main-content" className="skip-to-content">
           Skip to main content

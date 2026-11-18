@@ -20,7 +20,7 @@ export function Hero() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight font-heading leading-tight uppercase text-[#171717]">
-              BIG MEXICAN FLAVOURS.{" "}
+              TRUE MEXICAN FLAVOURS.{" "}
               <span className="text-[#058A92] block sm:inline">EXPRESSLY MADE.</span>
             </h1>
 

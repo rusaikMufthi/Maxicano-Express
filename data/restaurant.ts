@@ -24,6 +24,10 @@ export interface RestaurantInfo {
     embedUrl: string;
     directionsUrl: string;
   };
+  ordering: {
+    clickAndCollectUrl: string;
+    menuUrl: string;
+  };
   announcement: string;
   disclaimer: {
     orderingDemo: string;
@@ -33,7 +37,7 @@ export interface RestaurantInfo {
 
 export const RESTAURANT_INFO: RestaurantInfo = {
   name: "MEXI CANO EXPRESS",
-  tagline: "BIG MEXICAN FLAVOURS. EXPRESSLY MADE.",
+  tagline: "TRUE MEXICAN FLAVOURS. EXPRESSLY MADE.",
   type: "Fast-Casual Mexican Restaurant / Takeaway / Dine-In",
   address: {
     street: "41 Bridge St",
@@ -64,6 +68,10 @@ export const RESTAURANT_INFO: RestaurantInfo = {
   maps: {
     embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2426.685324545589!2d-0.24584742337770853!3d52.5714083720743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4877f0f6244ca3cb%3A0xa193bc28eaef2ec8!2s41%20Bridge%20St%2C%20Peterborough%20PE1%201HA%2C%20UK!5e0!3m2!1sen!2suk!4v1700000000000!5m2!1sen!2suk",
     directionsUrl: "https://www.google.com/maps/search/?api=1&query=41+Bridge+St%2C+Peterborough+PE1+1HA%2C+United+Kingdom",
+  },
+  ordering: {
+    clickAndCollectUrl: "/menu",
+    menuUrl: "/menu",
   },
   announcement: "FRESH MEXICAN FLAVOURS • MADE FOR YOU • PETERBOROUGH",
   disclaimer: {
