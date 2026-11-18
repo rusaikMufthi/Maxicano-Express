@@ -13,7 +13,7 @@ export const BASE_MEAL_TYPES: BaseMealType[] = [
     name: "Classic Burrito",
     basePrice: 8.99,
     description: "Rolled in a large warm flour tortilla with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/cat-burritos.jpg",
+    image: "/images/food/real/main-attractions-burrito-png.png",
     includedBase: "Mexican rice, pico de gallo, queso and melted cheese",
   },
   {
@@ -21,7 +21,7 @@ export const BASE_MEAL_TYPES: BaseMealType[] = [
     name: "Naked Burrito Bowl",
     basePrice: 8.99,
     description: "Fresh Mexican bowl packed with seasoned rice, pico de gallo, queso and melted cheese.",
-    image: "/images/food/cat-naked-burritos.jpg",
+    image: "/images/food/real/main-attractions-loaded-rice-bowl-jpg.jpg",
     includedBase: "Mexican rice, pico de gallo, queso and melted cheese",
   },
   {
@@ -29,7 +29,7 @@ export const BASE_MEAL_TYPES: BaseMealType[] = [
     name: "2 Street Tacos",
     basePrice: 8.99,
     description: "2 soft tortillas filled with your protein, fresh garnishes and signature crema.",
-    image: "/images/food/tacos-street.jpg",
+    image: "/images/food/real/main-attractions-tres-tacos-png.png",
     includedBase: "2 soft corn/flour tortillas with fresh Mexican garnishes",
   },
   {
@@ -37,7 +37,7 @@ export const BASE_MEAL_TYPES: BaseMealType[] = [
     name: "Crispy Quesadilla",
     basePrice: 8.99,
     description: "Toasted and folded flour tortilla with rich melted cheese and savoury fillings.",
-    image: "/images/food/quesadilla-plate.jpg",
+    image: "/images/food/real/main-attractions-quesadilla-2-png.png",
     includedBase: "Toasted flour tortilla with cheddar and mozzarella blend",
   },
 ];

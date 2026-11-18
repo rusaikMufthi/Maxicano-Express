@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/food/hero-burrito.jpg",
+        url: "/images/food/real/main-attractions-burrito-png.png",
         width: 1200,
         height: 630,
         alt: "Mexi Cano Express Peterborough",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     title: "MEXICANO EXPRESS | Mexican Restaurant in Peterborough",
     description:
       "Explore burritos, tacos, quesadillas, and sharing feasts at 41 Bridge Street, Peterborough.",
-    images: ["/images/food/hero-burrito.jpg"],
+    images: ["/images/food/real/main-attractions-burrito-png.png"],
   },
   robots: {
     index: true,
@@ -81,7 +81,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "FastFoodRestaurant",
     name: RESTAURANT_INFO.name,
-    image: "https://mexicanoexpress.co.uk/images/food/hero-burrito.jpg",
+    image: "https://mexicanoexpress.co.uk/images/food/real/main-attractions-burrito-png.png",
     description:
       "Fast-casual Mexican restaurant and takeaway in Peterborough serving burritos, tacos, quesadillas, loaded sides and churros.",
     address: {

@@ -73,7 +73,7 @@ export default function MealDealsPage() {
             <div className="lg:col-span-5 relative">
               <div className="relative h-64 sm:h-72 w-full rounded-2xl overflow-hidden border-2 border-[#D2EEF1] bg-slate-100">
                 <Image
-                  src="/images/food/cat-sharing.jpg"
+                  src="/images/food/real/los-ninos-kids-3pcs-chicken-stripc-meal-png.png"
                   alt="Mini Luchadores Kids Meal"
                   fill
                   sizes="(max-width: 1024px) 100vw, 420px"
@@ -118,7 +118,7 @@ export default function MealDealsPage() {
 
                 <div className="relative h-56 w-full rounded-xl overflow-hidden border border-[#D2EEF1] bg-slate-100">
                   <Image
-                    src="/images/food/hero-spread.jpg"
+                    src="/images/food/real/cartel-trays-meaty-cartel-tray-jpg.jpg"
                     alt="TODO Trays Feast"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -175,7 +175,7 @@ export default function MealDealsPage() {
 
                 <div className="relative h-56 w-full rounded-xl overflow-hidden border border-[#D2EEF1] bg-slate-100">
                   <Image
-                    src="/images/food/hero-spread.jpg"
+                    src="/images/food/real/cartel-trays-veggie-cartel-tray-jpg.jpg"
                     alt="Birria TODO Trays"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -263,7 +263,7 @@ export default function MealDealsPage() {
             <div className="lg:col-span-5 relative">
               <div className="relative h-64 sm:h-80 w-full rounded-2xl overflow-hidden border-2 border-[#D2EEF1] bg-slate-100">
                 <Image
-                  src="/images/food/cat-sharing.jpg"
+                  src="/images/food/real/muchos-tacos-muchos-tacos-jpg.jpg"
                   alt="EL GRANDE 12 Tacos Platter"
                   fill
                   sizes="(max-width: 1024px) 100vw, 420px"

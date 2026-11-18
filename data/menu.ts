@@ -57,7 +57,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     badge: "Fan Favourite",
     tagline: "Big Flour Tortilla, Fully Loaded",
     description: "All burritos are rolled fresh with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/cat-burritos.jpg",
+    image: "/images/food/real/main-attractions-burrito-png.png",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
     toppingsGuide: {
       title: "Chef's Recommended Toppings",
@@ -74,7 +74,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     badge: "Signature Bowls",
     tagline: "All The Flavour, In A Bowl",
     description: "Packed with seasoned Mexican rice, pico de gallo, rich queso, melted cheese and your choice of protein or veggies.",
-    image: "/images/food/cat-naked-burritos.jpg",
+    image: "/images/food/real/main-attractions-loaded-rice-bowl-jpg.jpg",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese in a bowl.",
     toppingsGuide: {
       title: "Chef's Recommended Toppings",
@@ -91,7 +91,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     badge: "2 Tacos Per Order",
     tagline: "Authentic Street-Style Flavour",
     description: "All taco orders are served as 2 tacos, filled with fresh Mexican seasonings and fresh garnishes.",
-    image: "/images/food/cat-tacos.jpg",
+    image: "/images/food/real/main-attractions-tres-tacos-png.png",
     toppingsGuide: {
       title: "Chef's Recommended Toppings",
       items: [
@@ -107,7 +107,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     badge: "Toasted & Cheesy",
     tagline: "Golden Crisp Tortilla, Melty Cheese",
     description: "Toasted flour tortilla stuffed with melted cheeses, savoury fillings, and grilled until golden brown.",
-    image: "/images/food/cat-quesadillas.jpg",
+    image: "/images/food/real/main-attractions-quesadilla-2-png.png",
     toppingsGuide: {
       title: "Chef's Recommended Toppings",
       items: [
@@ -123,7 +123,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     badge: "Snack & Share",
     tagline: "Crispy, Crunchy & Delicious",
     description: "Crispy chicken wings, tender chicken strips, spicy jalapeño poppers, creamy mac & cheese bites, and golden halloumi fries.",
-    image: "/images/food/cat-chicken-bites.jpg",
+    image: "/images/food/real/el-cluckin-el-cluckin-box-png.png",
   },
   {
     id: "sides-fries",
@@ -131,7 +131,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     badge: "Perfect Additions",
     tagline: "Loaded, Seasoned & Cheesy",
     description: "Freshly seasoned fries, golden tots, nacho platters, Mexican street elote, and mini quesadillas.",
-    image: "/images/food/cat-sides-fries.jpg",
+    image: "/images/food/real/bites-loaded-fries-png.png",
   },
   {
     id: "kids-sharing",
@@ -139,7 +139,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     badge: "Family & Gatherings",
     tagline: "Mini Luchadores, TODO Trays & EL GRANDE",
     description: "Complete feast boxes for groups, taco boxes for parties, and kid-approved Mini Luchadores meal deals.",
-    image: "/images/food/cat-sharing.jpg",
+    image: "/images/food/real/cartel-trays-meaty-cartel-tray-jpg.jpg",
   },
   {
     id: "churros",
@@ -147,7 +147,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     badge: "Sweet Treats",
     tagline: "Warm, Sugary & Loaded",
     description: "Crispy fried Spanish churros dusted in cinnamon sugar, or loaded with Biscoff and Oreo crumbles.",
-    image: "/images/food/cat-churros.jpg",
+    image: "/images/food/real/churros-sweet-dips-cinnamon-churros-7-png.png",
   },
   {
     id: "drinks",
@@ -155,7 +155,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     badge: "Refreshing",
     tagline: "Mexican Jarritos & Chilled Cans",
     description: "Authentic Mexican Jarritos glass bottles in fruit flavours, chilled sodas, Fruit Shoots and water.",
-    image: "/images/food/cat-drinks-dips.jpg",
+    image: "/images/food/real/soft-drinks-jarritos-png.png",
   },
   {
     id: "dips",
@@ -163,7 +163,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     badge: "Sauce Bar",
     tagline: "House-Made Salsas & Creams",
     description: "From cooling cilantro lime sour cream and creamy guacamole to rich nacho cheese and tangy salsa verde.",
-    image: "/images/food/dips.jpg",
+    image: "/images/food/real/dips-guacamole-png.png",
   },
 ];
 
@@ -208,7 +208,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "Tender chicken tossed in sweet and smoky BBQ sauce with Mexican rice, pico de gallo, queso and cheese.",
     toppingsInfo: "Spring onion, sour cream and BBQ sauce.",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/cat-burritos.jpg",
+    image: "/images/food/real/main-attractions-open-burrito-png.png",
     popular: true,
     customizable: true,
   },
@@ -221,7 +221,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "Shredded chicken slow-cooked in smoky chipotle and tomato tinga with Mexican rice, pico de gallo, queso and cheese.",
     toppingsInfo: "Sour cream, cilantro lime sour cream and jalapeños.",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/hero-burrito.jpg",
+    image: "/images/food/real/main-attractions-burrito-png.png",
     popular: true,
     customizable: true,
   },
@@ -234,7 +234,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "Slow-braised Mexican birria pulled beef packed with rich spices, Mexican rice, pico de gallo, queso and cheese.",
     toppingsInfo: "Sour cream, cilantro lime sour cream and jalapeños.",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/cat-burritos.jpg",
+    image: "/images/food/real/main-attractions-burrito-png.png",
     popular: true,
     customizable: true,
   },
@@ -246,7 +246,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 11.99,
     description: "The ultimate meat lover's burrito combining tender shredded chicken and rich pulled birria beef with all the trimmings.",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/cat-burritos.jpg",
+    image: "/images/food/real/main-attractions-open-burrito-png.png",
     customizable: true,
   },
   {
@@ -258,7 +258,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "Classic hearty spiced chilli, Mexican rice, seasoned pico de gallo, velvety queso and melted cheese.",
     toppingsInfo: "Sour cream.",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/cat-burritos.jpg",
+    image: "/images/food/real/main-attractions-open-burrito-png.png",
     customizable: true,
   },
   {
@@ -270,7 +270,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "Sizzling sauteed bell peppers and onions, seasoned Mexican rice, fresh pico de gallo, velvety queso and cheese.",
     toppingsInfo: "Sour cream.",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/cat-burritos.jpg",
+    image: "/images/food/real/main-attractions-burrito-png.png",
     customizable: true,
   },
   {
@@ -282,7 +282,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "Golden grilled halloumi slices wrapped with Mexican rice, zesty pico de gallo, velvety queso and melted cheese.",
     toppingsInfo: "Sour cream.",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/cat-burritos.jpg",
+    image: "/images/food/real/main-attractions-open-burrito-png.png",
     customizable: true,
   },
 
@@ -296,7 +296,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "Smoky BBQ chicken served over seasoned Mexican rice bowl with fresh pico de gallo, velvety queso and cheese.",
     toppingsInfo: "Spring onion, sour cream and BBQ sauce.",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/cat-naked-burritos.jpg",
+    image: "/images/food/real/main-attractions-loaded-rice-bowl-jpg.jpg",
     customizable: true,
   },
   {
@@ -308,7 +308,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "Smoky shredded chipotle chicken tinga served over Mexican rice, pico de gallo, velvety queso and cheese.",
     toppingsInfo: "Sour cream, cilantro lime sour cream and jalapeños.",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/cat-naked-burritos.jpg",
+    image: "/images/food/real/main-attractions-loaded-rice-bowl-jpg.jpg",
     popular: true,
     customizable: true,
   },
@@ -321,7 +321,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "Slow-braised spiced birria pulled beef served in a rice bowl with pico de gallo, rich queso and cheese.",
     toppingsInfo: "Sour cream, cilantro lime sour cream and jalapeños.",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/cat-naked-burritos.jpg",
+    image: "/images/food/real/main-attractions-loaded-rice-bowl-jpg.jpg",
     popular: true,
     customizable: true,
   },
@@ -333,7 +333,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 11.99,
     description: "Hearty double protein bowl of chicken and birria pulled beef with Mexican rice, pico de gallo, queso and cheese.",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/cat-naked-burritos.jpg",
+    image: "/images/food/real/main-attractions-loaded-rice-bowl-jpg.jpg",
     customizable: true,
   },
   {
@@ -345,7 +345,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "Savory Mexican spiced chilli served over fluffy Mexican rice with zesty pico de gallo, queso and cheese.",
     toppingsInfo: "Sour cream.",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/cat-naked-burritos.jpg",
+    image: "/images/food/real/main-attractions-loaded-rice-bowl-jpg.jpg",
     customizable: true,
   },
   {
@@ -357,7 +357,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "Sauteed fajita peppers and onions with seasoned Mexican rice, pico de gallo, queso and melted cheese in a bowl.",
     toppingsInfo: "Sour cream.",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/cat-naked-burritos.jpg",
+    image: "/images/food/real/main-attractions-loaded-rice-bowl-jpg.jpg",
     customizable: true,
   },
   {
@@ -369,7 +369,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "Grilled squeaky halloumi layered over seasoned Mexican rice with pico de gallo, queso and cheese.",
     toppingsInfo: "Sour cream.",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/cat-naked-burritos.jpg",
+    image: "/images/food/real/main-attractions-loaded-rice-bowl-jpg.jpg",
     customizable: true,
   },
 
@@ -383,7 +383,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "2 tacos filled with BBQ seasoned chicken, fresh spring onion, cool sour cream and drizzle of smoky BBQ sauce.",
     toppingsInfo: "Spring onion, sour cream and BBQ sauce.",
     servedWith: "All taco options are served as 2 tacos.",
-    image: "/images/food/tacos-street.jpg",
+    image: "/images/food/real/main-attractions-tres-tacos-png.png",
     customizable: true,
   },
   {
@@ -395,7 +395,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "2 tacos filled with chipotle shredded chicken, cooling sour cream, fresh cilantro lime sour cream and sliced jalapeños.",
     toppingsInfo: "Sour cream, cilantro lime sour cream and jalapeños.",
     servedWith: "All taco options are served as 2 tacos.",
-    image: "/images/food/cat-tacos.jpg",
+    image: "/images/food/real/main-attractions-tres-tacos-png.png",
     popular: true,
     customizable: true,
   },
@@ -408,7 +408,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "2 tacos packed with tender braised birria beef, sour cream, cilantro lime sour cream and spicy jalapeños.",
     toppingsInfo: "Sour cream, cilantro lime sour cream and jalapeños.",
     servedWith: "All taco options are served as 2 tacos.",
-    image: "/images/food/cat-tacos.jpg",
+    image: "/images/food/real/main-attractions-tres-tacos-png.png",
     popular: true,
     customizable: true,
   },
@@ -421,7 +421,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "2 tacos filled with rich spiced beef chilli topped with cool sour cream and garnishes.",
     toppingsInfo: "Sour cream.",
     servedWith: "All taco options are served as 2 tacos.",
-    image: "/images/food/tacos-street.jpg",
+    image: "/images/food/real/main-attractions-tres-tacos-png.png",
     customizable: true,
   },
   {
@@ -433,7 +433,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "2 tacos stuffed with colourful sauteed peppers and onions, topped with cool sour cream.",
     toppingsInfo: "Sour cream.",
     servedWith: "All taco options are served as 2 tacos.",
-    image: "/images/food/tacos-street.jpg",
+    image: "/images/food/real/main-attractions-tres-tacos-png.png",
     customizable: true,
   },
   {
@@ -445,7 +445,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "2 tacos with grilled halloumi cheese, crisp salad and smooth sour cream.",
     toppingsInfo: "Sour cream.",
     servedWith: "All taco options are served as 2 tacos.",
-    image: "/images/food/tacos-street.jpg",
+    image: "/images/food/real/main-attractions-tres-tacos-png.png",
     customizable: true,
   },
 
@@ -458,7 +458,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 8.99,
     description: "Toasted flour tortilla stuffed with grilled BBQ chicken and melted cheese, finished with spring onion and BBQ drizzle.",
     toppingsInfo: "Spring onion, sour cream and BBQ sauce.",
-    image: "/images/food/cat-quesadillas.jpg",
+    image: "/images/food/real/main-attractions-quesadilla-2-png.png",
     customizable: true,
   },
   {
@@ -469,7 +469,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 8.99,
     description: "Melted cheese quesadilla loaded with chipotle chicken tinga, sour cream, cilantro lime sour cream and jalapeños.",
     toppingsInfo: "Sour cream, cilantro lime sour cream and jalapeños.",
-    image: "/images/food/quesadilla-plate.jpg",
+    image: "/images/food/real/main-attractions-quesadilla-2-png.png",
     popular: true,
     customizable: true,
   },
@@ -481,7 +481,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 9.99,
     description: "Crispy grilled quesadilla with savoury birria pulled beef, melted cheese, cilantro lime sour cream and jalapeños.",
     toppingsInfo: "Sour cream, cilantro lime sour cream and jalapeños.",
-    image: "/images/food/cat-quesadillas.jpg",
+    image: "/images/food/real/main-attractions-quesadilla-2-png.png",
     popular: true,
     customizable: true,
   },
@@ -492,7 +492,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Quesadillas",
     price: 11.99,
     description: "Double the flavour: loaded with both shredded chicken and birria pulled beef with melted cheese.",
-    image: "/images/food/quesadilla-plate.jpg",
+    image: "/images/food/real/main-attractions-quesadilla-2-png.png",
     customizable: true,
   },
   {
@@ -503,7 +503,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 8.99,
     description: "Hearty spiced beef chilli grilled inside a crisp tortilla with melted cheese and sour cream.",
     toppingsInfo: "Sour cream.",
-    image: "/images/food/cat-quesadillas.jpg",
+    image: "/images/food/real/main-attractions-quesadilla-2-png.png",
     customizable: true,
   },
   {
@@ -514,7 +514,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 8.99,
     description: "Sauteed peppers, onions, and gooey melted cheese in a toasted tortilla served with sour cream.",
     toppingsInfo: "Sour cream.",
-    image: "/images/food/cat-quesadillas.jpg",
+    image: "/images/food/real/main-attractions-quesadilla-2-png.png",
     customizable: true,
   },
   {
@@ -525,7 +525,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 8.99,
     description: "Golden grilled halloumi slices with melted cheddar and mozzarella blend in a toasted tortilla.",
     toppingsInfo: "Sour cream.",
-    image: "/images/food/cat-quesadillas.jpg",
+    image: "/images/food/real/main-attractions-quesadilla-2-png.png",
     customizable: true,
   },
 
@@ -537,7 +537,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Chicken & Bites",
     price: 4.49,
     description: "Crispy fried chicken wings tossed in Mexican spices. Available in 3, 5, or 7 pieces.",
-    image: "/images/food/cat-chicken-bites.jpg",
+    image: "/images/food/real/bites-bbq-wings-5-png.png",
     popular: true,
     options: [
       { name: "3 Pieces", price: 4.49 },
@@ -552,7 +552,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Chicken & Bites",
     price: 4.49,
     description: "Golden breaded tender chicken breast strips with a crunchy coating.",
-    image: "/images/food/cat-chicken-bites.jpg",
+    image: "/images/food/real/bites-chicken-strips-5-png.png",
     options: [
       { name: "3 Pieces", price: 4.49 },
       { name: "5 Pieces", price: 6.49 },
@@ -566,7 +566,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Chicken & Bites",
     price: 4.49,
     description: "Crispy breaded spicy jalapeños stuffed with molten cream cheese.",
-    image: "/images/food/cat-chicken-bites.jpg",
+    image: "/images/food/real/cheesy-bites-jalapeno-poppers-png.png",
     popular: true,
     options: [
       { name: "3 Pieces", price: 4.49 },
@@ -581,7 +581,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Chicken & Bites",
     price: 4.49,
     description: "Creamy macaroni and cheddar cheese encased in a crispy golden batter.",
-    image: "/images/food/cat-chicken-bites.jpg",
+    image: "/images/food/real/bites-mac-n-cheese-bites-png.png",
     options: [
       { name: "3 Pieces", price: 4.49 },
       { name: "5 Pieces", price: 6.49 },
@@ -595,7 +595,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Chicken & Bites",
     price: 4.49,
     description: "Chunky strips of salty halloumi fried to golden perfection with a squeaky soft center.",
-    image: "/images/food/cat-chicken-bites.jpg",
+    image: "/images/food/real/cheesy-bites-cheesy-bites-regular-jpg.jpg",
     popular: true,
     options: [
       { name: "3 Pieces", price: 4.49 },
@@ -612,7 +612,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Sides & Fries",
     price: 2.99,
     description: "Crispy skin-on potato fries, tossed in sea salt and Mexican seasoning.",
-    image: "/images/food/cat-sides-fries.jpg",
+    image: "/images/food/real/bites-fries-jpg.jpg",
     options: [
       { name: "Regular", price: 2.99 },
       { name: "Large", price: 3.99 },
@@ -625,7 +625,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Sides & Fries",
     price: 2.99,
     description: "Golden crunchy grated potato bites, seasoned and fried crisp.",
-    image: "/images/food/cat-sides-fries.jpg",
+    image: "/images/food/real/bites-tots-png.png",
     options: [
       { name: "Regular", price: 2.99 },
       { name: "Large", price: 3.99 },
@@ -638,7 +638,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Sides & Fries",
     price: 3.49,
     description: "Crisp corn tortilla chips served warm and seasoned.",
-    image: "/images/food/cat-sides-fries.jpg",
+    image: "/images/food/real/bites-bag-of-tortilla-chips-png.png",
     options: [
       { name: "Regular", price: 3.49 },
       { name: "Large", price: 4.49 },
@@ -651,7 +651,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Sides & Fries",
     price: 4.49,
     description: "Snack-sized toasted flour tortilla filled with melty cheddar and mozzarella.",
-    image: "/images/food/quesadilla-plate.jpg",
+    image: "/images/food/real/bites-mini-cheese-quesadilla-jpg.jpg",
   },
   {
     id: "mexican-elote",
@@ -660,7 +660,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Sides & Fries",
     price: 4.99,
     description: "Sweetcorn, cheese and sour cream.",
-    image: "/images/food/cat-sides-fries.jpg",
+    image: "/images/food/real/bites-mexican-rice-png.png",
     popular: true,
   },
   {
@@ -670,7 +670,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Sides & Fries",
     price: 4.99,
     description: "Crispy fries smothered in melted cheese and house toppings. (Add beef or chicken for £3.49 each).",
-    image: "/images/food/cat-sides-fries.jpg",
+    image: "/images/food/real/bites-loaded-fries-png.png",
     popular: true,
   },
   {
@@ -680,7 +680,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Sides & Fries",
     price: 4.99,
     description: "Crispy tater tots topped with melted cheese and garnishes. (Add beef or chicken for £3.49 each).",
-    image: "/images/food/cat-sides-fries.jpg",
+    image: "/images/food/real/bites-loaded-tots-2-png.png",
   },
   {
     id: "loaded-nachos",
@@ -689,7 +689,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Sides & Fries",
     price: 4.99,
     description: "Warm tortilla chips smothered in melted cheese sauce and jalapeños. (Add beef or chicken for £3.49 each).",
-    image: "/images/food/cat-sides-fries.jpg",
+    image: "/images/food/real/bites-loaded-nachos-jpg.jpg",
   },
   {
     id: "cheese-nachos",
@@ -698,7 +698,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Sides & Fries",
     price: 5.99,
     description: "Topped with nacho cheese, crispy onions, sour cream and jalapeños.",
-    image: "/images/food/cat-sides-fries.jpg",
+    image: "/images/food/real/bites-cheesy-nachos-jpg.jpg",
     popular: true,
   },
 
@@ -710,7 +710,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Kids & Sharing",
     price: 5.99,
     description: "Complete children's meal: 3 Chicken Strips OR 1 Cheese Mini Quesadilla, paired with Mexican Rice OR Fries OR Potato Tots, plus Fruit Shoot OR Water.",
-    image: "/images/food/cat-sharing.jpg",
+    image: "/images/food/real/los-ninos-kids-3pcs-chicken-stripc-meal-png.png",
     includedItems: [
       "3 Chicken Strips OR 1 Cheese Mini Quesadilla",
       "Mexican Rice OR Fries OR Potato Tots",
@@ -729,7 +729,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Kids & Sharing",
     price: 33.49,
     description: "The ultimate Mexican sharing tray packed with tacos, wings, loaded sides, poppers and drinks.",
-    image: "/images/food/hero-spread.jpg",
+    image: "/images/food/real/cartel-trays-meaty-cartel-tray-jpg.jpg",
     popular: true,
     includedItems: [
       "2 × Tacos",
@@ -766,7 +766,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Kids & Sharing",
     price: 36.99,
     description: "The massive TODO Tray upgrade loaded with slow-cooked Birria pulled beef tacos and all feast accompaniments.",
-    image: "/images/food/hero-spread.jpg",
+    image: "/images/food/real/cartel-trays-veggie-cartel-tray-jpg.jpg",
     popular: true,
     includedItems: [
       "2 × Birria Pulled Beef Tacos",
@@ -798,7 +798,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Kids & Sharing",
     price: 33.49,
     description: "A showstopping platter of 12 street tacos! Choose up to 3 flavour fillings for your group feast.",
-    image: "/images/food/cat-sharing.jpg",
+    image: "/images/food/real/muchos-tacos-muchos-tacos-jpg.jpg",
     popular: true,
     options: [
       { name: "3 Flavour Fillings Mix", price: 33.49 },
@@ -821,7 +821,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Churros",
     price: 3.49,
     description: "Golden fried Spanish pastry dusted generously in sweet aromatic cinnamon sugar.",
-    image: "/images/food/cat-churros.jpg",
+    image: "/images/food/real/churros-sweet-dips-cinnamon-churros-7-png.png",
     popular: true,
     options: [
       { name: "3 Pieces", price: 3.49 },
@@ -836,7 +836,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Churros",
     price: 6.49,
     description: "7 crispy churros smothered in warm Lotus Biscoff spread and crunchy caramelized biscuit crumbs.",
-    image: "/images/food/churros-dessert.jpg",
+    image: "/images/food/real/churros-sweet-dips-biscoff-churros-7-png.png",
     popular: true,
   },
   {
@@ -846,7 +846,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Churros",
     price: 6.49,
     description: "7 crispy churros loaded with chocolate sauce and crushed Oreo cookies.",
-    image: "/images/food/churros-dessert.jpg",
+    image: "/images/food/real/churros-sweet-dips-loaded-oreo-churros-jpg.jpg",
   },
 
   // --- I. DRINKS ---
@@ -857,7 +857,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Drinks",
     price: 2.99,
     description: "Iconic authentic Mexican soft drink in traditional glass bottles.",
-    image: "/images/food/cat-drinks-dips.jpg",
+    image: "/images/food/real/soft-drinks-jarritos-png.png",
     popular: true,
     options: [
       { name: "Mango", price: 2.99 },
@@ -876,7 +876,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Drinks",
     price: 1.99,
     description: "Chilled 330ml soda cans.",
-    image: "/images/food/cat-drinks-dips.jpg",
+    image: "/images/food/real/soft-drinks-cacto-jpg.jpg",
     options: [
       { name: "Coke", price: 1.99 },
       { name: "Diet Coke", price: 1.99 },
@@ -893,7 +893,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Drinks",
     price: 1.49,
     description: "Pure still water in an infinitely recyclable resealable can.",
-    image: "/images/food/cat-drinks-dips.jpg",
+    image: "/images/food/real/soft-drinks-mexi-water-jpg.jpg",
   },
   {
     id: "fruit-shoot",
@@ -902,7 +902,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Drinks",
     price: 1.49,
     description: "Refreshing juice drink for kids.",
-    image: "/images/food/cat-drinks-dips.jpg",
+    image: "/images/food/real/soft-drinks-capri-sun-zero-jpg.jpg",
   },
 
   // --- L. DIPS ---
@@ -913,7 +913,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Dips",
     price: 1.49,
     description: "Cool and velvety classic sour cream.",
-    image: "/images/food/dips.jpg",
+    image: "/images/food/real/dips-sour-cream-png.png",
   },
   {
     id: "dip-cilantro-lime",
@@ -922,7 +922,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Dips",
     price: 1.49,
     description: "Zesty fresh lime juice and fresh cilantro whipped into cool sour cream.",
-    image: "/images/food/dips.jpg",
+    image: "/images/food/real/dips-chipotle-sour-cream-png.png",
   },
   {
     id: "dip-bbq",
@@ -931,7 +931,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Dips",
     price: 1.49,
     description: "Sweet, rich and smoky barbecue sauce.",
-    image: "/images/food/dips.jpg",
+    image: "/images/food/real/dips-chipotle-bbq-png.png",
   },
   {
     id: "dip-chipotle-sour-cream",
@@ -940,7 +940,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Dips",
     price: 1.49,
     description: "Smoky chipotle chillies infused into rich sour cream with a mild kick.",
-    image: "/images/food/dips.jpg",
+    image: "/images/food/real/dips-chipotle-sour-cream-png.png",
   },
   {
     id: "dip-guacamole",
@@ -949,7 +949,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Dips",
     price: 2.49,
     description: "Ripe avocados mashed with fresh lime, chopped coriander and seasoning.",
-    image: "/images/food/dips.jpg",
+    image: "/images/food/real/dips-guacamole-png.png",
     popular: true,
   },
   {
@@ -959,7 +959,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Dips",
     price: 1.49,
     description: "Fresh red tomato salsa with onions, chillies and Mexican spices.",
-    image: "/images/food/dips.jpg",
+    image: "/images/food/real/dips-salsa-png.png",
   },
   {
     id: "dip-salsa-verde",
@@ -968,7 +968,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Dips",
     price: 1.49,
     description: "Tangy and bright tomatillo salsa with jalapeños and herbs.",
-    image: "/images/food/dips.jpg",
+    image: "/images/food/real/dips-pico-png.png",
   },
   {
     id: "dip-nacho-cheese",
@@ -977,7 +977,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Dips",
     price: 1.49,
     description: "Warm, creamy, velvety melted cheese dip.",
-    image: "/images/food/dips.jpg",
+    image: "/images/food/real/dips-cheese-sauce-png.png",
     popular: true,
   },
 ];

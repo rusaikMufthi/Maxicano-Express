@@ -28,7 +28,7 @@ export function MealDealsPromo() {
           <div className="bg-white border border-[#D2EEF1] hover:border-[#08D8E5] rounded-3xl overflow-hidden shadow-sm hover:shadow-xl flex flex-col group transition-all duration-300">
             <div className="relative h-64 sm:h-72 w-full bg-slate-100 overflow-hidden">
               <Image
-                src="/images/food/hero-spread.jpg"
+                src="/images/food/real/cartel-trays-meaty-cartel-tray-jpg.jpg"
                 alt="TODO Trays Mexican Sharing Feast"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -74,7 +74,7 @@ export function MealDealsPromo() {
           <div className="bg-white border border-[#D2EEF1] hover:border-[#08D8E5] rounded-3xl overflow-hidden shadow-sm hover:shadow-xl flex flex-col group transition-all duration-300">
             <div className="relative h-64 sm:h-72 w-full bg-slate-100 overflow-hidden">
               <Image
-                src="/images/food/cat-sharing.jpg"
+                src="/images/food/real/muchos-tacos-muchos-tacos-jpg.jpg"
                 alt="EL GRANDE 12 Tacos Platter"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"

@@ -77,7 +77,7 @@ export function Hero() {
               <div className="relative rounded-3xl overflow-hidden border-4 border-white shadow-2xl bg-white group">
                 <div className="relative h-80 sm:h-96 w-full bg-slate-100">
                   <Image
-                    src="/images/food/hero-burrito.jpg"
+                    src="/images/food/real/main-attractions-burrito-png.png"
                     alt="Loaded Burrito with seasoned fillings, Mexican rice, cheese and pico de gallo"
                     fill
                     priority
