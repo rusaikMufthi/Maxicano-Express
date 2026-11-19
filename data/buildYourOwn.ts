@@ -13,7 +13,7 @@ export const BASE_MEAL_TYPES: BaseMealType[] = [
     name: "Classic Burrito",
     basePrice: 8.99,
     description: "Rolled in a large warm flour tortilla with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/real/main-attractions-burrito-png.png",
+    image: "/images/food/real/main-attractions-burrito-hd.jpg",
     includedBase: "Mexican rice, pico de gallo, queso and melted cheese",
   },
   {
