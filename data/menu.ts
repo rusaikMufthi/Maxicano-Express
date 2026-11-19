@@ -552,7 +552,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Chicken & Bites",
     price: 4.49,
     description: "Golden breaded tender chicken breast strips with a crunchy coating.",
-    image: "/images/food/real/bites-chicken-strips-5-png.png",
+    image: "/images/food/real/bites-chicken-strips-hd.jpg",
     options: [
       { name: "3 Pieces", price: 4.49 },
       { name: "5 Pieces", price: 6.49 },
