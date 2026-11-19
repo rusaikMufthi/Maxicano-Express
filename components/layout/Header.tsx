@@ -85,21 +85,34 @@ export function Header() {
               </Link>
             </div>
 
-            {/* Center Column: Perfectly Centered Logo */}
+            {/* Center Column: Perfectly Centered Combined Brand Lockup */}
             <div className="flex items-center justify-center">
               <Link
                 href="/"
-                className="flex items-center justify-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#08D8E5] rounded-lg"
+                className="flex items-center justify-center gap-2 sm:gap-2.5 md:gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#08D8E5] rounded-lg"
                 aria-label="Mexi Cano Express Home"
               >
-                <div className="relative w-32 h-12 sm:w-40 sm:h-13 md:w-48 md:h-14 lg:w-56 lg:h-16">
+                {/* Mascot Badge */}
+                <div className="relative w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-13 lg:h-13 shrink-0">
+                  <Image
+                    src="/images/logo-icon.png"
+                    alt="Mexi Cano Mascot"
+                    fill
+                    priority
+                    sizes="(max-width: 640px) 36px, (max-width: 768px) 44px, 52px"
+                    className="object-contain group-hover:scale-105 transition-transform"
+                  />
+                </div>
+
+                {/* Text-Only Wordmark */}
+                <div className="relative w-28 h-10 sm:w-36 sm:h-12 md:w-44 md:h-13 lg:w-48 lg:h-14 shrink-0">
                   <Image
                     src="/images/logo.png"
                     alt="Mexi Cano Express Logo"
                     fill
                     priority
-                    sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 224px"
-                    className="object-contain object-center group-hover:opacity-95 transition-opacity"
+                    sizes="(max-width: 640px) 112px, (max-width: 768px) 144px, 192px"
+                    className="object-contain object-left group-hover:opacity-95 transition-opacity"
                   />
                 </div>
               </Link>
@@ -185,14 +198,25 @@ export function Header() {
           <div className="relative ml-auto w-full max-w-sm bg-[#0c0c0c] border-l border-[#222222] h-full shadow-2xl flex flex-col z-10 animate-slide-left">
             {/* Drawer Header */}
             <div className="p-5 border-b border-[#222222] flex items-center justify-between">
-              <div className="relative w-36 h-12">
-                <Image
-                  src="/images/logo.png"
-                  alt="Mexi Cano Express"
-                  fill
-                  sizes="144px"
-                  className="object-contain object-left"
-                />
+              <div className="flex items-center gap-2.5">
+                <div className="relative w-9 h-9 shrink-0">
+                  <Image
+                    src="/images/logo-icon.png"
+                    alt="Mexi Cano Mascot"
+                    fill
+                    sizes="36px"
+                    className="object-contain"
+                  />
+                </div>
+                <div className="relative w-32 h-10 shrink-0">
+                  <Image
+                    src="/images/logo.png"
+                    alt="Mexi Cano Express"
+                    fill
+                    sizes="128px"
+                    className="object-contain object-left"
+                  />
+                </div>
               </div>
               <button
                 onClick={() => setMobileMenuOpen(false)}
