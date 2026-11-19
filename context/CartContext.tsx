@@ -2,11 +2,17 @@
 
 import React, { createContext, useContext, useState, useEffect } from "react";
 
+export interface BundleSelection {
+  title: string;
+  choice: string;
+}
+
 export interface CartCustomization {
   selectedOption?: string;
   fillings?: string[];
   toppings?: string[];
   extraProteins?: string[];
+  bundleSelections?: BundleSelection[];
   upgradeMeal?: {
     side: string;
     drink: string;

@@ -141,13 +141,25 @@ export function CartDrawer() {
                               {item.customization.selectedOption}
                             </p>
                           )}
-                          {item.customization.fillings &&
+                          {item.customization.bundleSelections &&
+                          item.customization.bundleSelections.length > 0 ? (
+                            <div className="space-y-0.5">
+                              {item.customization.bundleSelections.map((b, bIdx) => (
+                                <p key={bIdx}>
+                                  <span className="font-semibold text-gray-700">{b.title}:</span>{" "}
+                                  {b.choice}
+                                </p>
+                              ))}
+                            </div>
+                          ) : (
+                            item.customization.fillings &&
                             item.customization.fillings.length > 0 && (
                               <p>
-                                <span className="font-semibold text-gray-700">Fillings:</span>{" "}
+                                <span className="font-semibold text-gray-700">Selections:</span>{" "}
                                 {item.customization.fillings.join(", ")}
                               </p>
-                            )}
+                            )
+                          )}
                           {item.customization.toppings &&
                             item.customization.toppings.length > 0 && (
                               <p>

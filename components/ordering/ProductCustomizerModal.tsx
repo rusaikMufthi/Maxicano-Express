@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { MenuItem, UPGRADE_MEAL, EXTRA_TOPPINGS, EXTRA_PROTEINS } from "@/data/menu";
 import { useCart } from "@/context/CartContext";
@@ -20,6 +20,21 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
     item?.options && item.options.length > 0 ? item.options[0].name : ""
   );
 
+  // Group selections for bundle items / selectionChoices: mapping choice group index to array of selected options
+  const [groupSelections, setGroupSelections] = useState<Record<number, string[]>>(() => {
+    const initial: Record<number, string[]> = {};
+    if (item?.selectionChoices) {
+      item.selectionChoices.forEach((choice, idx) => {
+        if (choice.requiredCount === 1 && choice.options.length > 0) {
+          initial[idx] = [choice.options[0]];
+        } else {
+          initial[idx] = [];
+        }
+      });
+    }
+    return initial;
+  });
+
   const [selectedFillings, setSelectedFillings] = useState<string[]>([]);
   const [selectedToppings, setSelectedToppings] = useState<string[]>([]);
   const [selectedProteins, setSelectedProteins] = useState<string[]>([]);
@@ -29,6 +44,35 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
   const [upgradeDrink, setUpgradeDrink] = useState<string>(UPGRADE_MEAL.drinks[0]);
 
   const [quantity, setQuantity] = useState<number>(1);
+
+  // Re-sync when modal opens with a different item
+  useEffect(() => {
+    if (item?.selectionChoices) {
+      const initial: Record<number, string[]> = {};
+      item.selectionChoices.forEach((choice, idx) => {
+        if (choice.requiredCount === 1 && choice.options.length > 0) {
+          initial[idx] = [choice.options[0]];
+        } else {
+          initial[idx] = [];
+        }
+      });
+      setGroupSelections(initial);
+    } else {
+      setGroupSelections({});
+    }
+
+    if (item?.options && item.options.length > 0) {
+      setSelectedOption(item.options[0].name);
+    } else {
+      setSelectedOption("");
+    }
+
+    setSelectedFillings([]);
+    setSelectedToppings([]);
+    setSelectedProteins([]);
+    setUpgradeActive(false);
+    setQuantity(1);
+  }, [item]);
 
   if (!item) return null;
 
@@ -62,6 +106,29 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
 
   const totalPrice = currentUnitPrice * quantity;
 
+  // Handle choice selection for multi-choice bundle items
+  const handleToggleGroupChoice = (groupIndex: number, option: string, requiredCount: number = 1) => {
+    setGroupSelections((prev) => {
+      const current = prev[groupIndex] || [];
+      if (requiredCount === 1) {
+        // Single choice: select this option
+        return { ...prev, [groupIndex]: [option] };
+      } else {
+        // Multi-choice: toggle up to requiredCount
+        if (current.includes(option)) {
+          return { ...prev, [groupIndex]: current.filter((o) => o !== option) };
+        } else {
+          if (current.length < requiredCount) {
+            return { ...prev, [groupIndex]: [...current, option] };
+          } else {
+            // Replace oldest selection
+            return { ...prev, [groupIndex]: [...current.slice(1), option] };
+          }
+        }
+      }
+    });
+  };
+
   const toggleTopping = (name: string) => {
     setSelectedToppings((prev) =>
       prev.includes(name) ? prev.filter((n) => n !== name) : [...prev, name]
@@ -74,7 +141,32 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
     );
   };
 
+  // Check if all required choices across all groups are selected
+  const isBundleComplete =
+    !item.selectionChoices ||
+    item.selectionChoices.every((choice, idx) => {
+      const selected = groupSelections[idx] || [];
+      const needed = choice.requiredCount || 1;
+      return selected.length >= needed;
+    });
+
   const handleAddToCart = () => {
+    if (!isBundleComplete) return;
+
+    // Collect bundle selections for each choice group
+    const bundleSelections: { title: string; choice: string }[] = [];
+    const flatFillings: string[] = [];
+
+    if (item.selectionChoices) {
+      item.selectionChoices.forEach((choice, idx) => {
+        const selected = groupSelections[idx] || [];
+        selected.forEach((val) => {
+          bundleSelections.push({ title: choice.title, choice: val });
+          flatFillings.push(`${choice.title}: ${val}`);
+        });
+      });
+    }
+
     addItem({
       menuItemId: item.id,
       name: item.name,
@@ -84,7 +176,13 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
       categoryName: item.categoryName,
       customization: {
         selectedOption: selectedOption || undefined,
-        fillings: selectedFillings.length > 0 ? selectedFillings : undefined,
+        bundleSelections: bundleSelections.length > 0 ? bundleSelections : undefined,
+        fillings:
+          flatFillings.length > 0
+            ? flatFillings
+            : selectedFillings.length > 0
+            ? selectedFillings
+            : undefined,
         toppings: selectedToppings.length > 0 ? selectedToppings : undefined,
         extraProteins: selectedProteins.length > 0 ? selectedProteins : undefined,
         upgradeMeal: upgradeActive
@@ -216,43 +314,66 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
             </div>
           )}
 
-          {/* Selection Choices (e.g. TODO trays, Kids meal) */}
-          {item.selectionChoices &&
-            item.selectionChoices.map((choice, idx) => (
-              <div key={idx} className="space-y-3">
-                <label className="block text-xs font-bold uppercase tracking-wider text-gray-700">
-                  {choice.title}
-                </label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {choice.options.map((opt) => {
-                    const isSelected = selectedFillings.includes(opt);
-                    return (
-                      <button
-                        key={opt}
-                        type="button"
-                        onClick={() => {
-                          if (choice.requiredCount === 1) {
-                            setSelectedFillings([opt]);
-                          } else {
-                            setSelectedFillings((prev) =>
-                              prev.includes(opt) ? prev.filter((p) => p !== opt) : [...prev, opt]
-                            );
-                          }
-                        }}
-                        className={`p-2.5 rounded-lg border text-left text-xs font-medium flex items-center justify-between transition-colors ${
-                          isSelected
-                            ? "bg-[#08D8E5] text-black border-[#08D8E5] font-bold"
-                            : "bg-white text-gray-700 border-[#CBD5E1] hover:border-gray-400"
-                        }`}
-                      >
-                        <span>{opt}</span>
-                        {isSelected && <Check className="w-4 h-4" />}
-                      </button>
-                    );
-                  })}
+          {/* Selection Choices (e.g. Kids meal, TODO trays, Platters) */}
+          {item.selectionChoices && (
+            <div className="space-y-4">
+              <div className="bg-[#E6F7F8] border border-[#08D8E5]/40 rounded-2xl p-4 flex items-center justify-between gap-3 shadow-sm">
+                <div className="space-y-0.5">
+                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#058A92]">
+                    Meal Bundle • All Included
+                  </span>
+                  <p className="text-xs font-bold text-[#171717]">
+                    {item.id === "kids-mini-luchadores"
+                      ? "Choose 1 Main Choice + 1 Side Choice + 1 Drink Choice — all for £5.99"
+                      : "Choose your bundle options below — included in bundle price"}
+                  </p>
                 </div>
+                <span className="shrink-0 bg-[#08D8E5] text-black font-extrabold text-xs px-2.5 py-1 rounded-full shadow-sm">
+                  Included
+                </span>
               </div>
-            ))}
+
+              {item.selectionChoices.map((choice, idx) => {
+                const groupSelected = groupSelections[idx] || [];
+                const reqCount = choice.requiredCount || 1;
+                const isSingle = reqCount === 1;
+
+                return (
+                  <div key={idx} className="space-y-3 bg-[#F8FCFD] p-4 rounded-2xl border border-[#D2EEF1]">
+                    <div className="flex items-center justify-between">
+                      <label className="block text-xs font-bold uppercase tracking-wider text-[#171717]">
+                        {choice.title}
+                      </label>
+                      <span className="text-[11px] font-semibold text-[#058A92] bg-white border border-[#D2EEF1] px-2.5 py-0.5 rounded-full">
+                        {isSingle ? "Choose 1 (Included)" : `Choose ${reqCount} (Included)`}
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      {choice.options.map((opt) => {
+                        const isSelected = groupSelected.includes(opt);
+                        return (
+                          <button
+                            key={opt}
+                            type="button"
+                            onClick={() => handleToggleGroupChoice(idx, opt, reqCount)}
+                            className={`p-3 rounded-xl border text-left text-xs font-medium flex items-center justify-between transition-all ${
+                              isSelected
+                                ? "bg-[#08D8E5] text-black border-[#08D8E5] font-bold shadow-sm ring-2 ring-[#08D8E5]/40"
+                                : "bg-white text-gray-700 border-[#CBD5E1] hover:border-gray-400 hover:bg-slate-50"
+                            }`}
+                          >
+                            <span className="leading-snug">{opt}</span>
+                            {isSelected && <Check className="w-4 h-4 stroke-[3] shrink-0 ml-2" />}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
 
           {/* Customisable extras for Burritos, Tacos, Quesadillas */}
           {item.customizable && (
@@ -401,9 +522,14 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
 
           <button
             onClick={handleAddToCart}
-            className="flex-1 bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase py-3.5 px-6 rounded-xl flex items-center justify-between tracking-wider shadow-md shadow-[#08D8E5]/20 transition-transform active:scale-[0.98]"
+            disabled={!isBundleComplete}
+            className={`flex-1 font-extrabold uppercase py-3.5 px-6 rounded-xl flex items-center justify-between tracking-wider shadow-md transition-transform active:scale-[0.98] ${
+              isBundleComplete
+                ? "bg-[#08D8E5] hover:bg-[#07c2ce] text-black shadow-[#08D8E5]/20 cursor-pointer"
+                : "bg-gray-200 text-gray-500 cursor-not-allowed shadow-none"
+            }`}
           >
-            <span>ADD TO BASKET</span>
+            <span>{isBundleComplete ? "ADD TO BASKET" : "SELECT CHOICES TO ADD"}</span>
             <span className="font-heading text-base">{formatPrice(totalPrice)}</span>
           </button>
         </div>

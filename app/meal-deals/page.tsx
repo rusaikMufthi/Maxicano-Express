@@ -49,7 +49,7 @@ export default function MealDealsPage() {
                 <ul className="space-y-1.5 list-disc list-inside">
                   <li>3 Chicken Strips OR 1 Cheese Mini Quesadilla</li>
                   <li>Mexican Rice OR Fries OR Potato Tots</li>
-                  <li>Fruit Shoot OR Cano Water</li>
+                  <li>Fruit Shoot OR Water</li>
                 </ul>
               </div>
 

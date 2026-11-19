@@ -709,17 +709,29 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     category: "kids-sharing",
     categoryName: "Kids & Sharing",
     price: 5.99,
-    description: "Complete children's meal: 3 Chicken Strips OR 1 Cheese Mini Quesadilla, paired with Mexican Rice OR Fries OR Potato Tots, plus Fruit Shoot OR Water.",
+    description: "Complete children's meal bundle for £5.99: 1 Main Choice (3 Chicken Strips OR 1 Cheese Mini Quesadilla), 1 Side Choice (Mexican Rice OR Fries OR Potato Tots), and 1 Drink Choice (Fruit Shoot OR Water).",
     image: "/images/food/real/los-ninos-kids-3pcs-chicken-stripc-meal-png.png",
     includedItems: [
-      "3 Chicken Strips OR 1 Cheese Mini Quesadilla",
-      "Mexican Rice OR Fries OR Potato Tots",
-      "Fruit Shoot OR Cano Water",
+      "Main: 3 Chicken Strips OR 1 Cheese Mini Quesadilla",
+      "Side: Mexican Rice OR Fries OR Potato Tots",
+      "Drink: Fruit Shoot OR Water",
     ],
     selectionChoices: [
-      { title: "Main Choice", options: ["3 Chicken Strips", "1 Cheese Mini Quesadilla"], requiredCount: 1 },
-      { title: "Side Choice", options: ["Fries", "Potato Tots", "Mexican Rice"], requiredCount: 1 },
-      { title: "Drink Choice", options: ["Fruit Shoot", "Cano Water"], requiredCount: 1 },
+      {
+        title: "Main Choice",
+        options: ["3 Chicken Strips", "1 Cheese Mini Quesadilla"],
+        requiredCount: 1,
+      },
+      {
+        title: "Side Choice",
+        options: ["Mexican Rice", "Fries", "Potato Tots"],
+        requiredCount: 1,
+      },
+      {
+        title: "Drink Choice",
+        options: ["Fruit Shoot", "Water"],
+        requiredCount: 1,
+      },
     ],
   },
   {

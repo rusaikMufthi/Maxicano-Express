@@ -242,8 +242,16 @@ export function CheckoutClient() {
                           {item.customization.selectedOption && (
                             <p>Option: {item.customization.selectedOption}</p>
                           )}
-                          {item.customization.fillings && item.customization.fillings.length > 0 && (
-                            <p>Fillings: {item.customization.fillings.join(", ")}</p>
+                          {item.customization.bundleSelections && item.customization.bundleSelections.length > 0 ? (
+                            item.customization.bundleSelections.map((b: any, bIdx: number) => (
+                              <p key={bIdx}>
+                                <span className="font-semibold text-gray-700">{b.title}:</span> {b.choice}
+                              </p>
+                            ))
+                          ) : (
+                            item.customization.fillings && item.customization.fillings.length > 0 && (
+                              <p>Selections: {item.customization.fillings.join(", ")}</p>
+                            )
                           )}
                           {item.customization.toppings && item.customization.toppings.length > 0 && (
                             <p>Toppings: {item.customization.toppings.join(", ")}</p>
@@ -806,10 +814,18 @@ export function CheckoutClient() {
                                 <span className="font-semibold">Option:</span> {item.customization.selectedOption}
                               </p>
                             )}
-                            {item.customization.fillings && item.customization.fillings.length > 0 && (
-                              <p>
-                                <span className="font-semibold">Fillings:</span> {item.customization.fillings.join(", ")}
-                              </p>
+                            {item.customization.bundleSelections && item.customization.bundleSelections.length > 0 ? (
+                              item.customization.bundleSelections.map((b: any, bIdx: number) => (
+                                <p key={bIdx}>
+                                  <span className="font-semibold">{b.title}:</span> {b.choice}
+                                </p>
+                              ))
+                            ) : (
+                              item.customization.fillings && item.customization.fillings.length > 0 && (
+                                <p>
+                                  <span className="font-semibold">Selections:</span> {item.customization.fillings.join(", ")}
+                                </p>
+                              )
                             )}
                             {item.customization.toppings && item.customization.toppings.length > 0 && (
                               <p>
