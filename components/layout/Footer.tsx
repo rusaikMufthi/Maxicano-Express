@@ -37,22 +37,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-14 border-b border-[#222222]">
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-5">
-            <Link href="/" className="inline-flex items-center gap-3 group" aria-label="Mexi Cano Express Home">
-              <div className="relative w-11 h-11 shrink-0">
-                <Image
-                  src="/images/logo-icon.png"
-                  alt="Mexi Cano Mascot"
-                  fill
-                  sizes="44px"
-                  className="object-contain group-hover:scale-105 transition-transform"
-                />
-              </div>
-              <div className="relative w-44 h-12 shrink-0">
+            <Link href="/" className="inline-block" aria-label="Mexi Cano Express Home">
+              <div className="relative w-52 h-14">
                 <Image
                   src="/images/logo.png"
                   alt="Mexi Cano Express"
                   fill
-                  sizes="176px"
+                  sizes="208px"
                   className="object-contain object-left"
                 />
               </div>
