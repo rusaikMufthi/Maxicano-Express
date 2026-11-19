@@ -63,7 +63,7 @@ export default function MealDealsPage() {
                       ALL_MENU_ITEMS.find((i) => i.id === "kids-mini-luchadores") || null
                     )
                   }
-                  className="bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase text-xs tracking-wider px-6 py-3 rounded-full transition-transform transform active:scale-95 shadow-md shadow-[#08D8E5]/20"
+                  className="bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase text-xs tracking-wider px-5 sm:px-6 py-3 rounded-full transition-transform transform active:scale-95 shadow-md shadow-[#08D8E5]/20 whitespace-nowrap shrink-0"
                 >
                   Configure & Add
                 </button>
@@ -150,7 +150,7 @@ export default function MealDealsPage() {
                     ALL_MENU_ITEMS.find((i) => i.id === "todo-trays") || null
                   )
                 }
-                className="w-full bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase py-3.5 px-4 rounded-xl text-xs tracking-wider transition-all shadow-md shadow-[#08D8E5]/20"
+                className="w-full bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase py-3.5 px-4 rounded-xl text-xs sm:text-sm tracking-wider transition-all shadow-md shadow-[#08D8E5]/20 whitespace-nowrap text-center flex items-center justify-center"
               >
                 Configure & Add TODO Tray
               </button>
@@ -207,7 +207,7 @@ export default function MealDealsPage() {
                     ALL_MENU_ITEMS.find((i) => i.id === "birria-todo-trays") || null
                   )
                 }
-                className="w-full bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase py-3.5 px-4 rounded-xl text-xs tracking-wider transition-all shadow-md shadow-[#08D8E5]/20"
+                className="w-full bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase py-3.5 px-4 rounded-xl text-xs sm:text-sm tracking-wider transition-all shadow-md shadow-[#08D8E5]/20 whitespace-nowrap text-center flex items-center justify-center"
               >
                 Configure & Add Birria Tray
               </button>
@@ -253,7 +253,7 @@ export default function MealDealsPage() {
                       ALL_MENU_ITEMS.find((i) => i.id === "el-grande-12-tacos") || null
                     )
                   }
-                  className="bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase text-xs sm:text-sm tracking-wider px-8 py-3.5 rounded-full transition-transform transform active:scale-95 shadow-lg shadow-[#08D8E5]/20"
+                  className="bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase text-xs sm:text-sm tracking-wider px-6 sm:px-8 py-3.5 rounded-full transition-transform transform active:scale-95 shadow-lg shadow-[#08D8E5]/20 whitespace-nowrap text-center inline-flex items-center justify-center"
                 >
                   Configure & Add EL GRANDE
                 </button>

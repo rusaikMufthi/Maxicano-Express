@@ -50,17 +50,17 @@ export default function AboutPage() {
             <div className="pt-4 flex flex-wrap gap-4">
               <Link
                 href="/menu"
-                className="bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase text-xs sm:text-sm tracking-wider px-8 py-3.5 rounded-full transition-transform transform active:scale-95 shadow-md shadow-[#08D8E5]/20 flex items-center gap-2"
+                className="bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase text-xs sm:text-sm tracking-wider px-6 sm:px-8 py-3.5 rounded-full transition-transform transform active:scale-95 shadow-md shadow-[#08D8E5]/20 flex items-center gap-2 whitespace-nowrap shrink-0"
               >
-                <span>Explore The Menu</span>
-                <ArrowRight className="w-4 h-4" />
+                <span className="whitespace-nowrap">Explore The Menu</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
               </Link>
               <Link
                 href="/location"
-                className="bg-white hover:bg-slate-50 border border-[#CBD5E1] text-[#171717] font-bold uppercase text-xs sm:text-sm tracking-wider px-8 py-3.5 rounded-full transition-colors flex items-center gap-2 shadow-sm"
+                className="bg-white hover:bg-slate-50 border border-[#CBD5E1] text-[#171717] font-bold uppercase text-xs sm:text-sm tracking-wider px-6 sm:px-8 py-3.5 rounded-full transition-colors flex items-center gap-2 shadow-sm whitespace-nowrap shrink-0"
               >
-                <MapPin className="w-4 h-4 text-[#058A92]" />
-                <span>Visit Our Restaurant</span>
+                <MapPin className="w-4 h-4 text-[#058A92] shrink-0" />
+                <span className="whitespace-nowrap">Visit Our Restaurant</span>
               </Link>
             </div>
           </div>

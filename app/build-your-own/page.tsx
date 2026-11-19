@@ -446,10 +446,10 @@ export default function BuildYourOwnPage() {
               {/* Add to basket CTA */}
               <button
                 onClick={handleAddConfiguredItem}
-                className="w-full bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase py-4 px-6 rounded-2xl flex items-center justify-center gap-2 tracking-wider shadow-lg shadow-[#08D8E5]/20 transition-all transform active:scale-[0.98]"
+                className="w-full bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase py-4 px-4 sm:px-6 rounded-2xl flex items-center justify-center gap-2 tracking-wider shadow-lg shadow-[#08D8E5]/20 transition-all transform active:scale-[0.98] text-xs sm:text-sm whitespace-nowrap"
               >
-                <Plus className="w-5 h-5" />
-                <span>ADD CUSTOM ITEM TO BASKET</span>
+                <Plus className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+                <span className="whitespace-nowrap">ADD CUSTOM ITEM TO BASKET</span>
               </button>
 
               {addedNotice && (

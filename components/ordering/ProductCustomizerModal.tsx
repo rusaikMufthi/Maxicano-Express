@@ -501,36 +501,40 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
         </div>
 
         {/* Modal Bottom Footer Actions */}
-        <div className="p-5 border-t border-[#D2EEF1] bg-[#F8FCFD] flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2 bg-white border border-[#CBD5E1] rounded-xl p-1.5 shadow-sm">
+        <div className="p-3.5 sm:p-5 border-t border-[#D2EEF1] bg-[#F8FCFD] flex items-center justify-between gap-2.5 sm:gap-4">
+          <div className="flex items-center gap-1 sm:gap-2 bg-white border border-[#CBD5E1] rounded-xl p-1 sm:p-1.5 shadow-sm shrink-0">
             <button
               onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-              className="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 text-gray-600 hover:text-black"
+              className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 text-gray-600 hover:text-black transition-colors"
               aria-label="Decrease quantity"
             >
-              <Minus className="w-4 h-4" />
+              <Minus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </button>
-            <span className="w-8 text-center font-bold text-[#171717] text-sm">{quantity}</span>
+            <span className="w-6 sm:w-8 text-center font-bold text-[#171717] text-xs sm:text-sm">{quantity}</span>
             <button
               onClick={() => setQuantity((q) => q + 1)}
-              className="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 text-gray-600 hover:text-black"
+              className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 text-gray-600 hover:text-black transition-colors"
               aria-label="Increase quantity"
             >
-              <Plus className="w-4 h-4" />
+              <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </button>
           </div>
 
           <button
             onClick={handleAddToCart}
             disabled={!isBundleComplete}
-            className={`flex-1 font-extrabold uppercase py-3.5 px-6 rounded-xl flex items-center justify-between tracking-wider shadow-md transition-transform active:scale-[0.98] ${
+            className={`flex-1 font-extrabold uppercase py-3 sm:py-3.5 px-3.5 sm:px-5 rounded-xl flex items-center justify-between tracking-wide shadow-md transition-all active:scale-[0.98] min-w-0 ${
               isBundleComplete
                 ? "bg-[#08D8E5] hover:bg-[#07c2ce] text-black shadow-[#08D8E5]/20 cursor-pointer"
                 : "bg-gray-200 text-gray-500 cursor-not-allowed shadow-none"
             }`}
           >
-            <span>{isBundleComplete ? "ADD TO BASKET" : "SELECT CHOICES TO ADD"}</span>
-            <span className="font-heading text-base">{formatPrice(totalPrice)}</span>
+            <span className="whitespace-nowrap text-xs sm:text-sm font-black tracking-wide">
+              {isBundleComplete ? "ADD TO BASKET" : "CHOOSE OPTIONS"}
+            </span>
+            <span className="font-heading font-black text-xs sm:text-base shrink-0 whitespace-nowrap ml-2">
+              {formatPrice(totalPrice)}
+            </span>
           </button>
         </div>
       </div>

@@ -61,10 +61,10 @@ export function MealDealsPromo() {
               <div className="pt-2">
                 <Link
                   href="/meal-deals"
-                  className="w-full bg-[#F0FAF9] hover:bg-[#08D8E5] border border-[#D2EEF1] hover:border-[#08D8E5] text-gray-800 hover:text-black font-extrabold uppercase py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 text-xs tracking-wider transition-all shadow-sm"
+                  className="w-full bg-[#F0FAF9] hover:bg-[#08D8E5] border border-[#D2EEF1] hover:border-[#08D8E5] text-gray-800 hover:text-black font-extrabold uppercase py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 text-xs tracking-wider transition-all shadow-sm whitespace-nowrap"
                 >
-                  <span>View Details & Options</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <span className="whitespace-nowrap">View Details & Options</span>
+                  <ArrowRight className="w-4 h-4 shrink-0" />
                 </Link>
               </div>
             </div>
@@ -106,10 +106,10 @@ export function MealDealsPromo() {
               <div className="pt-2">
                 <Link
                   href="/meal-deals"
-                  className="w-full bg-[#F0FAF9] hover:bg-[#08D8E5] border border-[#D2EEF1] hover:border-[#08D8E5] text-gray-800 hover:text-black font-extrabold uppercase py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 text-xs tracking-wider transition-all shadow-sm"
+                  className="w-full bg-[#F0FAF9] hover:bg-[#08D8E5] border border-[#D2EEF1] hover:border-[#08D8E5] text-gray-800 hover:text-black font-extrabold uppercase py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 text-xs tracking-wider transition-all shadow-sm whitespace-nowrap"
                 >
-                  <span>View Details & Options</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <span className="whitespace-nowrap">View Details & Options</span>
+                  <ArrowRight className="w-4 h-4 shrink-0" />
                 </Link>
               </div>
             </div>
@@ -120,10 +120,10 @@ export function MealDealsPromo() {
         <div className="text-center">
           <Link
             href="/meal-deals"
-            className="inline-flex items-center gap-2 bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase text-sm tracking-wider px-8 py-4 rounded-full transition-all duration-200 shadow-lg shadow-[#08D8E5]/20 transform hover:scale-[1.02] active:scale-[0.98]"
+            className="inline-flex items-center gap-2 bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase text-xs sm:text-sm tracking-wider px-6 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all duration-200 shadow-lg shadow-[#08D8E5]/20 transform hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap"
           >
-            <span>EXPLORE SHARING OPTIONS</span>
-            <ArrowRight className="w-4 h-4" />
+            <span className="whitespace-nowrap">EXPLORE SHARING OPTIONS</span>
+            <ArrowRight className="w-4 h-4 shrink-0" />
           </Link>
         </div>
       </div>

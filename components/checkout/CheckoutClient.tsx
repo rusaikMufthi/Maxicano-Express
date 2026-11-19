@@ -916,17 +916,17 @@ export function CheckoutClient() {
                 type="submit"
                 form="checkout-form"
                 disabled={isSubmitting || items.length === 0}
-                className="w-full bg-[#08D8E5] hover:bg-[#07c2ce] disabled:bg-gray-300 disabled:cursor-not-allowed text-black font-extrabold uppercase py-4 px-6 rounded-2xl flex items-center justify-center gap-2.5 tracking-wider shadow-xl shadow-[#08D8E5]/25 transition-all transform hover:scale-[1.01] active:scale-[0.99] text-sm sm:text-base"
+                className="w-full bg-[#08D8E5] hover:bg-[#07c2ce] disabled:bg-gray-300 disabled:cursor-not-allowed text-black font-extrabold uppercase py-4 px-4 sm:px-6 rounded-2xl flex items-center justify-center gap-2.5 tracking-wider shadow-xl shadow-[#08D8E5]/25 transition-all transform hover:scale-[1.01] active:scale-[0.99] text-xs sm:text-base whitespace-nowrap"
               >
                 {isSubmitting ? (
-                  <span className="flex items-center gap-2">
-                    <span className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin" />
+                  <span className="flex items-center gap-2 whitespace-nowrap">
+                    <span className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin shrink-0" />
                     <span>Processing Order...</span>
                   </span>
                 ) : (
                   <>
-                    <span>PLACE YOUR ORDER</span>
-                    <ArrowRight className="w-5 h-5" />
+                    <span className="whitespace-nowrap">PLACE YOUR ORDER</span>
+                    <ArrowRight className="w-5 h-5 shrink-0" />
                   </>
                 )}
               </button>

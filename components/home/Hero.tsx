@@ -33,17 +33,17 @@ export function Hero() {
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <Link
                 href="/menu"
-                className="w-full sm:w-auto bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase text-sm tracking-wider px-8 py-4 rounded-full transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-[#08D8E5]/25 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase text-xs sm:text-sm tracking-wider px-6 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-[#08D8E5]/25 flex items-center justify-center gap-2 whitespace-nowrap shrink-0"
               >
-                <span>EXPLORE OUR MENU</span>
-                <ArrowRight className="w-4 h-4" />
+                <span className="whitespace-nowrap">EXPLORE OUR MENU</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
               </Link>
               <Link
                 href="/location"
-                className="w-full sm:w-auto bg-white hover:bg-slate-50 border border-[#CBD5E1] text-[#171717] font-bold uppercase text-sm tracking-wider px-8 py-4 rounded-full transition-all duration-200 shadow-sm flex items-center justify-center gap-2"
+                className="w-full sm:w-auto bg-white hover:bg-slate-50 border border-[#CBD5E1] text-[#171717] font-bold uppercase text-xs sm:text-sm tracking-wider px-6 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all duration-200 shadow-sm flex items-center justify-center gap-2 whitespace-nowrap shrink-0"
               >
-                <MapPin className="w-4 h-4 text-[#058A92]" />
-                <span>FIND OUR RESTAURANT</span>
+                <MapPin className="w-4 h-4 text-[#058A92] shrink-0" />
+                <span className="whitespace-nowrap">FIND OUR RESTAURANT</span>
               </Link>
             </div>
 

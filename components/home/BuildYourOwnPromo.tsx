@@ -55,10 +55,10 @@ export function BuildYourOwnPromo() {
               <div className="pt-4">
                 <Link
                   href="/build-your-own"
-                  className="inline-flex items-center justify-center gap-2 bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase text-sm tracking-wider px-8 py-4 rounded-full transition-all duration-200 shadow-lg shadow-[#08D8E5]/20 transform hover:scale-[1.02] active:scale-[0.98]"
+                  className="inline-flex items-center justify-center gap-2 bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase text-xs sm:text-sm tracking-wider px-6 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all duration-200 shadow-lg shadow-[#08D8E5]/20 transform hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap"
                 >
-                  <span>EXPLORE YOUR OPTIONS</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <span className="whitespace-nowrap">EXPLORE YOUR OPTIONS</span>
+                  <ArrowRight className="w-4 h-4 shrink-0" />
                 </Link>
               </div>
             </div>

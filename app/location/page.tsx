@@ -121,10 +121,10 @@ export default function LocationPage() {
                 href={RESTAURANT_INFO.maps.directionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase py-4 px-6 rounded-2xl flex items-center justify-center gap-2 tracking-wider shadow-md shadow-[#08D8E5]/20 transition-transform active:scale-[0.98]"
+                className="w-full bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase py-3.5 sm:py-4 px-4 sm:px-6 rounded-2xl flex items-center justify-center gap-2 tracking-wider shadow-md shadow-[#08D8E5]/20 transition-transform active:scale-[0.98] text-xs sm:text-sm whitespace-nowrap"
               >
-                <Navigation className="w-5 h-5" />
-                <span>OPEN DIRECTIONS IN GOOGLE MAPS</span>
+                <Navigation className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+                <span className="whitespace-nowrap">OPEN DIRECTIONS IN GOOGLE MAPS</span>
               </a>
             </div>
           </div>

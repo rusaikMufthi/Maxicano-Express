@@ -105,7 +105,7 @@ export function Header() {
               aria-label="Click and Collect Takeaway"
             >
               <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#08D8E5] group-hover:text-black shrink-0" />
-              <span>CLICK &amp; COLLECT</span>
+              <span className="whitespace-nowrap">CLICK &amp; COLLECT</span>
             </Link>
 
             {/* Cart Trigger */}
@@ -116,7 +116,7 @@ export function Header() {
               aria-label={`View your order basket with ${totalItems} items`}
             >
               <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 text-[#08D8E5]" />
-              <span className="hidden md:inline text-xs font-bold uppercase tracking-wider">Basket</span>
+              <span className="hidden md:inline text-xs font-bold uppercase tracking-wider whitespace-nowrap">Basket</span>
               {totalItems > 0 && (
                 <span className="bg-[#08D8E5] text-black font-extrabold text-xs w-5 h-5 rounded-full flex items-center justify-center animate-scale-in">
                   {totalItems}
@@ -127,10 +127,10 @@ export function Header() {
             {/* ORDER NOW Turquoise Button */}
             <Link
               href={RESTAURANT_INFO.ordering.menuUrl}
-              className="bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase text-[11px] sm:text-xs md:text-sm tracking-wider px-2.5 sm:px-4 md:px-5 py-2 sm:py-2.5 rounded-full transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-[#08D8E5]/20 flex items-center gap-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-white shrink-0"
+              className="bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase text-[11px] sm:text-xs md:text-sm tracking-wider px-2.5 sm:px-4 md:px-5 py-2 sm:py-2.5 rounded-full transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-[#08D8E5]/20 flex items-center gap-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-white shrink-0 whitespace-nowrap"
             >
-              <span>ORDER NOW</span>
-              <ArrowRight className="w-3.5 h-3.5 hidden sm:inline" />
+              <span className="whitespace-nowrap">ORDER NOW</span>
+              <ArrowRight className="w-3.5 h-3.5 hidden sm:inline shrink-0" />
             </Link>
 
             {/* Mobile Hamburger Trigger */}
@@ -218,10 +218,10 @@ export function Header() {
                 <Link
                   href={RESTAURANT_INFO.ordering.menuUrl}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 tracking-wider shadow-lg shadow-[#08D8E5]/20 transition-colors"
+                  className="w-full bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 tracking-wider shadow-lg shadow-[#08D8E5]/20 transition-colors whitespace-nowrap text-sm"
                 >
-                  <ArrowRight className="w-5 h-5" />
-                  <span>START YOUR ORDER</span>
+                  <ArrowRight className="w-5 h-5 shrink-0" />
+                  <span className="whitespace-nowrap">START YOUR ORDER</span>
                 </Link>
 
                 <button
@@ -230,10 +230,10 @@ export function Header() {
                     setMobileMenuOpen(false);
                     openCart();
                   }}
-                  className="w-full bg-[#1c1c1c] hover:bg-[#252525] text-white font-bold uppercase py-3 px-4 rounded-xl flex items-center justify-center gap-2 border border-[#2a2a2a] tracking-wider text-sm"
+                  className="w-full bg-[#1c1c1c] hover:bg-[#252525] text-white font-bold uppercase py-3 px-4 rounded-xl flex items-center justify-center gap-2 border border-[#2a2a2a] tracking-wider text-sm whitespace-nowrap"
                 >
-                  <ShoppingBag className="w-4 h-4 text-[#08D8E5]" />
-                  <span>VIEW BASKET ({totalItems})</span>
+                  <ShoppingBag className="w-4 h-4 text-[#08D8E5] shrink-0" />
+                  <span className="whitespace-nowrap">VIEW BASKET ({totalItems})</span>
                 </button>
               </div>
             </nav>

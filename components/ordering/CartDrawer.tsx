@@ -248,10 +248,10 @@ export function CartDrawer() {
               <Link
                 href="/checkout"
                 onClick={closeCart}
-                className="w-full bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 tracking-wider shadow-md shadow-[#08D8E5]/25 transition-all transform active:scale-[0.98]"
+                className="w-full bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 tracking-wider shadow-md shadow-[#08D8E5]/25 transition-all transform active:scale-[0.98] whitespace-nowrap text-xs sm:text-sm"
               >
-                <span>PROCEED TO CHECKOUT</span>
-                <ArrowRight className="w-4 h-4" />
+                <span className="whitespace-nowrap">PROCEED TO CHECKOUT</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
               </Link>
 
               <div className="flex items-center justify-between text-xs text-gray-500">
