@@ -91,7 +91,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     badge: "2 Tacos Per Order",
     tagline: "Authentic Street-Style Flavour",
     description: "All taco orders are served as 2 tacos, filled with fresh Mexican seasonings and fresh garnishes.",
-    image: "/images/food/real/main-attractions-tres-tacos-png.png",
+    image: "/images/food/real/main-attractions-tacos-hd.jpg",
     toppingsGuide: {
       title: "Chef's Recommended Toppings",
       items: [
@@ -383,7 +383,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "2 tacos filled with BBQ seasoned chicken, fresh spring onion, cool sour cream and drizzle of smoky BBQ sauce.",
     toppingsInfo: "Spring onion, sour cream and BBQ sauce.",
     servedWith: "All taco options are served as 2 tacos.",
-    image: "/images/food/real/main-attractions-tres-tacos-png.png",
+    image: "/images/food/real/main-attractions-tacos-hd.jpg",
     customizable: true,
   },
   {
@@ -395,7 +395,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "2 tacos filled with chipotle shredded chicken, cooling sour cream, fresh cilantro lime sour cream and sliced jalapeños.",
     toppingsInfo: "Sour cream, cilantro lime sour cream and jalapeños.",
     servedWith: "All taco options are served as 2 tacos.",
-    image: "/images/food/real/main-attractions-tres-tacos-png.png",
+    image: "/images/food/real/main-attractions-tacos-hd.jpg",
     popular: true,
     customizable: true,
   },
@@ -408,7 +408,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "2 tacos packed with tender braised birria beef, sour cream, cilantro lime sour cream and spicy jalapeños.",
     toppingsInfo: "Sour cream, cilantro lime sour cream and jalapeños.",
     servedWith: "All taco options are served as 2 tacos.",
-    image: "/images/food/real/main-attractions-tres-tacos-png.png",
+    image: "/images/food/real/main-attractions-tacos-hd.jpg",
     popular: true,
     customizable: true,
   },
@@ -421,7 +421,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "2 tacos filled with rich spiced beef chilli topped with cool sour cream and garnishes.",
     toppingsInfo: "Sour cream.",
     servedWith: "All taco options are served as 2 tacos.",
-    image: "/images/food/real/main-attractions-tres-tacos-png.png",
+    image: "/images/food/real/main-attractions-tacos-hd.jpg",
     customizable: true,
   },
   {
@@ -433,7 +433,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "2 tacos stuffed with colourful sauteed peppers and onions, topped with cool sour cream.",
     toppingsInfo: "Sour cream.",
     servedWith: "All taco options are served as 2 tacos.",
-    image: "/images/food/real/main-attractions-tres-tacos-png.png",
+    image: "/images/food/real/main-attractions-tacos-hd.jpg",
     customizable: true,
   },
   {
@@ -445,7 +445,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "2 tacos with grilled halloumi cheese, crisp salad and smooth sour cream.",
     toppingsInfo: "Sour cream.",
     servedWith: "All taco options are served as 2 tacos.",
-    image: "/images/food/real/main-attractions-tres-tacos-png.png",
+    image: "/images/food/real/main-attractions-tacos-hd.jpg",
     customizable: true,
   },
 

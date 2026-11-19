@@ -29,7 +29,7 @@ export const BASE_MEAL_TYPES: BaseMealType[] = [
     name: "2 Street Tacos",
     basePrice: 8.99,
     description: "2 soft tortillas filled with your protein, fresh garnishes and signature crema.",
-    image: "/images/food/real/main-attractions-tres-tacos-png.png",
+    image: "/images/food/real/main-attractions-tacos-hd.jpg",
     includedBase: "2 soft corn/flour tortillas with fresh Mexican garnishes",
   },
   {

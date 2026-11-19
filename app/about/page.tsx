@@ -69,7 +69,7 @@ export default function AboutPage() {
             <div className="relative rounded-3xl overflow-hidden border-4 border-white shadow-xl bg-white">
               <div className="relative h-96 sm:h-[450px] w-full bg-slate-100">
                 <Image
-                  src="/images/food/real/main-attractions-tres-tacos-png.png"
+                  src="/images/food/real/main-attractions-tacos-hd.jpg"
                   alt="Street tacos with cilantro, onions, and limes"
                   fill
                   sizes="(max-width: 1024px) 100vw, 480px"

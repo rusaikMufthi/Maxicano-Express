@@ -85,7 +85,7 @@ export function ConceptSection() {
             <div className="relative rounded-3xl overflow-hidden border-4 border-white shadow-2xl bg-white">
               <div className="relative h-[480px] w-full bg-slate-100">
                 <Image
-                  src="/images/food/real/main-attractions-tres-tacos-png.png"
+                  src="/images/food/real/main-attractions-tacos-hd.jpg"
                   alt="Street tacos loaded with fresh garnishes and spices"
                   fill
                   sizes="(max-width: 1024px) 100vw, 540px"
