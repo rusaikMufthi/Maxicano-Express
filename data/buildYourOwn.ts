@@ -37,7 +37,7 @@ export const BASE_MEAL_TYPES: BaseMealType[] = [
     name: "Crispy Quesadilla",
     basePrice: 8.99,
     description: "Toasted and folded flour tortilla with rich melted cheese and savoury fillings.",
-    image: "/images/food/real/main-attractions-quesadilla-2-png.png",
+    image: "/images/food/real/main-attractions-quesadillas-hd.jpg",
     includedBase: "Toasted flour tortilla with cheddar and mozzarella blend",
   },
 ];

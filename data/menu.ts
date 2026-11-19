@@ -107,7 +107,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     badge: "Toasted & Cheesy",
     tagline: "Golden Crisp Tortilla, Melty Cheese",
     description: "Toasted flour tortilla stuffed with melted cheeses, savoury fillings, and grilled until golden brown.",
-    image: "/images/food/real/main-attractions-quesadilla-2-png.png",
+    image: "/images/food/real/main-attractions-quesadillas-hd.jpg",
     toppingsGuide: {
       title: "Chef's Recommended Toppings",
       items: [
@@ -458,7 +458,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 8.99,
     description: "Toasted flour tortilla stuffed with grilled BBQ chicken and melted cheese, finished with spring onion and BBQ drizzle.",
     toppingsInfo: "Spring onion, sour cream and BBQ sauce.",
-    image: "/images/food/real/main-attractions-quesadilla-2-png.png",
+    image: "/images/food/real/main-attractions-quesadillas-hd.jpg",
     customizable: true,
   },
   {
@@ -469,7 +469,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 8.99,
     description: "Melted cheese quesadilla loaded with chipotle chicken tinga, sour cream, cilantro lime sour cream and jalapeños.",
     toppingsInfo: "Sour cream, cilantro lime sour cream and jalapeños.",
-    image: "/images/food/real/main-attractions-quesadilla-2-png.png",
+    image: "/images/food/real/main-attractions-quesadillas-hd.jpg",
     popular: true,
     customizable: true,
   },
@@ -481,7 +481,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 9.99,
     description: "Crispy grilled quesadilla with savoury birria pulled beef, melted cheese, cilantro lime sour cream and jalapeños.",
     toppingsInfo: "Sour cream, cilantro lime sour cream and jalapeños.",
-    image: "/images/food/real/main-attractions-quesadilla-2-png.png",
+    image: "/images/food/real/main-attractions-quesadillas-hd.jpg",
     popular: true,
     customizable: true,
   },
@@ -492,7 +492,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Quesadillas",
     price: 11.99,
     description: "Double the flavour: loaded with both shredded chicken and birria pulled beef with melted cheese.",
-    image: "/images/food/real/main-attractions-quesadilla-2-png.png",
+    image: "/images/food/real/main-attractions-quesadillas-hd.jpg",
     customizable: true,
   },
   {
@@ -503,7 +503,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 8.99,
     description: "Hearty spiced beef chilli grilled inside a crisp tortilla with melted cheese and sour cream.",
     toppingsInfo: "Sour cream.",
-    image: "/images/food/real/main-attractions-quesadilla-2-png.png",
+    image: "/images/food/real/main-attractions-quesadillas-hd.jpg",
     customizable: true,
   },
   {
@@ -514,7 +514,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 8.99,
     description: "Sauteed peppers, onions, and gooey melted cheese in a toasted tortilla served with sour cream.",
     toppingsInfo: "Sour cream.",
-    image: "/images/food/real/main-attractions-quesadilla-2-png.png",
+    image: "/images/food/real/main-attractions-quesadillas-hd.jpg",
     customizable: true,
   },
   {
@@ -525,7 +525,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 8.99,
     description: "Golden grilled halloumi slices with melted cheddar and mozzarella blend in a toasted tortilla.",
     toppingsInfo: "Sour cream.",
-    image: "/images/food/real/main-attractions-quesadilla-2-png.png",
+    image: "/images/food/real/main-attractions-quesadillas-hd.jpg",
     customizable: true,
   },
 
