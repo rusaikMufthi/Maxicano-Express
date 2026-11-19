@@ -92,13 +92,13 @@ export function Header() {
                 className="flex items-center justify-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#08D8E5] rounded-lg"
                 aria-label="Mexi Cano Express Home"
               >
-                <div className="relative w-36 h-10 sm:w-48 sm:h-12 md:w-56 md:h-14 lg:w-64 lg:h-15">
+                <div className="relative w-28 h-11 sm:w-36 sm:h-13 md:w-44 md:h-15 lg:w-48 lg:h-16">
                   <Image
                     src="/images/logo.png"
                     alt="Mexi Cano Express Logo"
                     fill
                     priority
-                    sizes="(max-width: 640px) 144px, (max-width: 768px) 192px, 256px"
+                    sizes="(max-width: 640px) 112px, (max-width: 768px) 144px, 192px"
                     className="object-contain object-center group-hover:opacity-95 transition-opacity"
                   />
                 </div>
@@ -111,27 +111,27 @@ export function Header() {
               <button
                 onClick={openCart}
                 type="button"
-                className="relative p-2 sm:px-3.5 sm:py-2.5 rounded-full bg-[#181818] hover:bg-[#252525] border border-[#2a2a2a] text-white flex items-center gap-1.5 sm:gap-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#08D8E5] shrink-0"
+                className="relative p-2 lg:px-3.5 lg:py-2.5 rounded-lg lg:rounded-full bg-[#181818] hover:bg-[#252525] border border-[#2a2a2a] text-white flex items-center gap-1.5 lg:gap-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#08D8E5] shrink-0"
                 aria-label={`View your order basket with ${totalItems} items`}
               >
-                <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 text-[#08D8E5]" />
-                <span className="hidden sm:inline text-xs font-bold uppercase tracking-wider whitespace-nowrap">
+                <ShoppingBag className="w-5 h-5 lg:w-4 lg:h-4 text-[#08D8E5]" />
+                <span className="hidden lg:inline text-xs font-bold uppercase tracking-wider whitespace-nowrap">
                   Basket
                 </span>
                 {totalItems > 0 && (
-                  <span className="bg-[#08D8E5] text-black font-extrabold text-xs w-5 h-5 rounded-full flex items-center justify-center animate-scale-in">
+                  <span className="absolute -top-1.5 -right-1.5 lg:static bg-[#08D8E5] text-black font-extrabold text-[10px] lg:text-xs w-4 h-4 lg:w-5 lg:h-5 rounded-full flex items-center justify-center animate-scale-in">
                     {totalItems}
                   </span>
                 )}
               </button>
 
-              {/* ORDER NOW Turquoise Button */}
+              {/* ORDER NOW Turquoise Button - Hidden on mobile screens for a clean, uncluttered header */}
               <Link
                 href={RESTAURANT_INFO.ordering.menuUrl}
-                className="bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase text-[11px] sm:text-xs md:text-sm tracking-wider px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 rounded-full transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-[#08D8E5]/20 flex items-center gap-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-white shrink-0 whitespace-nowrap"
+                className="hidden lg:inline-flex bg-[#08D8E5] hover:bg-[#07c2ce] text-black font-extrabold uppercase text-xs md:text-sm tracking-wider px-4 md:px-5 py-2 sm:py-2.5 rounded-full transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-[#08D8E5]/20 items-center gap-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-white shrink-0 whitespace-nowrap"
               >
                 <span className="whitespace-nowrap">ORDER NOW</span>
-                <ArrowRight className="w-3.5 h-3.5 hidden sm:inline shrink-0" />
+                <ArrowRight className="w-3.5 h-3.5 shrink-0" />
               </Link>
             </div>
           </div>
@@ -185,7 +185,7 @@ export function Header() {
           <div className="relative ml-auto w-full max-w-sm bg-[#0c0c0c] border-l border-[#222222] h-full shadow-2xl flex flex-col z-10 animate-slide-left">
             {/* Drawer Header */}
             <div className="p-5 border-b border-[#222222] flex items-center justify-between">
-              <div className="relative w-36 h-10">
+              <div className="relative w-36 h-12">
                 <Image
                   src="/images/logo.png"
                   alt="Mexi Cano Express"

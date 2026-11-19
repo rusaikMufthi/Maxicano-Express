@@ -19,6 +19,20 @@ export function Hero() {
               <span>Peterborough&apos;s New Mexican Destination</span>
             </div>
 
+            {/* Round Sombrero Emblem (90px x 90px) */}
+            <div className="flex justify-center lg:justify-start pt-1">
+              <div className="relative w-[90px] h-[90px] drop-shadow-xl hover:scale-105 transition-transform duration-300">
+                <Image
+                  src="/images/logo-emblem.png"
+                  alt="Mexicano Express Sombrero Emblem"
+                  width={90}
+                  height={90}
+                  priority
+                  className="object-contain w-[90px] h-[90px]"
+                />
+              </div>
+            </div>
+
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight font-heading leading-tight uppercase text-[#171717]">
               TRUE MEXICAN FLAVOURS.{" "}
               <span className="text-[#058A92] block sm:inline">EXPRESSLY MADE.</span>
