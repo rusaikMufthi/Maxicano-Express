@@ -143,17 +143,17 @@ export default function MenuPage() {
             {MENU_CATEGORIES.filter((c) => c.id === activeCategory).map((cat) => (
               <div key={cat.id} className="space-y-6">
                 <div className="border-b border-[#D2EEF1] pb-4">
-                  <div className="flex items-center gap-3">
-                    <h2 className="text-3xl font-extrabold font-heading uppercase text-[#171717]">
+                  <div className="flex flex-row items-center justify-between gap-2 sm:gap-4 w-full">
+                    <h2 className="text-lg sm:text-2xl md:text-3xl font-extrabold font-heading uppercase text-[#171717] tracking-tight whitespace-nowrap">
                       {cat.name}
                     </h2>
                     {cat.badge && (
-                      <span className="bg-[#08D8E5] text-black text-[11px] font-black uppercase px-2.5 py-0.5 rounded-full shadow-sm">
+                      <span className="shrink-0 whitespace-nowrap bg-[#08D8E5] text-black text-[10px] sm:text-xs font-black uppercase px-2.5 py-1 rounded-full shadow-sm">
                         {cat.badge}
                       </span>
                     )}
                   </div>
-                  <p className="text-sm text-gray-600 mt-1 max-w-2xl">{cat.description}</p>
+                  <p className="text-xs sm:text-sm text-gray-600 mt-1.5 max-w-2xl">{cat.description}</p>
                   {cat.servedWith && (
                     <p className="text-xs text-[#058A92] mt-1 font-semibold">{cat.servedWith}</p>
                   )}
@@ -201,23 +201,23 @@ export default function MenuPage() {
                   className="space-y-8 scroll-mt-36"
                 >
                   <div className="border-b border-[#D2EEF1] pb-5">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                      <div className="flex items-center gap-3">
-                        <h2 className="text-2xl sm:text-3xl font-extrabold font-heading uppercase text-[#171717]">
-                          {cat.name}
-                        </h2>
-                        {cat.badge && (
-                          <span className="bg-[#08D8E5] text-black text-[11px] font-black uppercase px-2.5 py-0.5 rounded-full shadow-sm">
-                            {cat.badge}
-                          </span>
-                        )}
-                      </div>
-                      <span className="text-xs text-gray-500 font-medium">
+                    <div className="flex flex-row items-center justify-between gap-2 sm:gap-4 w-full">
+                      <h2 className="text-lg sm:text-2xl md:text-3xl font-extrabold font-heading uppercase text-[#171717] tracking-tight whitespace-nowrap">
+                        {cat.name}
+                      </h2>
+                      {cat.badge && (
+                        <span className="shrink-0 whitespace-nowrap bg-[#08D8E5] text-black text-[10px] sm:text-xs font-black uppercase px-2.5 py-1 rounded-full shadow-sm">
+                          {cat.badge}
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="flex items-center justify-between gap-2 mt-1.5">
+                      <p className="text-xs sm:text-sm text-gray-600 max-w-2xl">{cat.description}</p>
+                      <span className="text-xs text-gray-500 font-medium shrink-0 hidden sm:inline">
                         {categoryItems.length} {categoryItems.length === 1 ? "Option" : "Options"}
                       </span>
                     </div>
-
-                    <p className="text-sm text-gray-600 mt-1 max-w-2xl">{cat.description}</p>
                     {cat.servedWith && (
                       <p className="text-xs text-[#058A92] mt-1 font-semibold">
                         {cat.servedWith}
