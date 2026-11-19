@@ -19,16 +19,16 @@ export function Hero() {
               <span>Peterborough&apos;s New Mexican Destination</span>
             </div>
 
-            {/* Round Sombrero Emblem (90px x 90px) */}
+            {/* Round Sombrero Emblem (100px x 100px, circular crop removing dark corners) */}
             <div className="flex justify-center lg:justify-start pt-1">
-              <div className="relative w-[90px] h-[90px] drop-shadow-xl hover:scale-105 transition-transform duration-300">
+              <div className="relative w-[100px] h-[100px] rounded-full overflow-hidden shadow-md border-2 border-white/70 hover:scale-105 transition-transform duration-300">
                 <Image
                   src="/images/logo-emblem.png"
                   alt="Mexicano Express Sombrero Emblem"
-                  width={90}
-                  height={90}
+                  fill
+                  sizes="100px"
                   priority
-                  className="object-contain w-[90px] h-[90px]"
+                  className="object-cover rounded-full"
                 />
               </div>
             </div>

@@ -92,13 +92,13 @@ export function Header() {
                 className="flex items-center justify-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#08D8E5] rounded-lg"
                 aria-label="Mexi Cano Express Home"
               >
-                <div className="relative w-28 h-11 sm:w-36 sm:h-13 md:w-44 md:h-15 lg:w-48 lg:h-16">
+                <div className="relative w-32 h-12 sm:w-40 sm:h-13 md:w-48 md:h-14 lg:w-56 lg:h-16">
                   <Image
                     src="/images/logo.png"
                     alt="Mexi Cano Express Logo"
                     fill
                     priority
-                    sizes="(max-width: 640px) 112px, (max-width: 768px) 144px, 192px"
+                    sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 224px"
                     className="object-contain object-center group-hover:opacity-95 transition-opacity"
                   />
                 </div>
