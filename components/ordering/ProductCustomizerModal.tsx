@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { MenuItem, UPGRADE_MEAL, EXTRA_TOPPINGS, EXTRA_PROTEINS } from "@/data/menu";
-import { useCart } from "@/context/CartContext";
+import { useCart, CartItem } from "@/context/CartContext";
 import { formatPrice } from "@/lib/utils";
 import { X, Plus, Minus, Check, Flame } from "lucide-react";
 
@@ -13,12 +13,27 @@ interface ProductCustomizerModalProps {
 }
 
 export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModalProps) {
-  const { addItem } = useCart();
+  const { addItem, addItems } = useCart();
+
+  // Multi-flavor drink detection (e.g. Jarritos Mexican Soda, Can Drinks)
+  const isMultiFlavorDrink =
+    Boolean(item?.category === "drinks" && item?.options && item.options.length > 0);
 
   // State
   const [selectedOption, setSelectedOption] = useState<string>(
     item?.options && item.options.length > 0 ? item.options[0].name : ""
   );
+
+  // Multi-flavor quantities for drinks (e.g. Mango: 2, Guava: 1, Mandarin: 3)
+  const [flavorQuantities, setFlavorQuantities] = useState<Record<string, number>>(() => {
+    const initial: Record<string, number> = {};
+    if (item?.options && item?.category === "drinks") {
+      item.options.forEach((opt) => {
+        initial[opt.name] = 0;
+      });
+    }
+    return initial;
+  });
 
   // Group selections for bundle items / selectionChoices: mapping choice group index to array of selected options
   const [groupSelections, setGroupSelections] = useState<Record<number, string[]>>(() => {
@@ -47,6 +62,16 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
 
   // Re-sync when modal opens with a different item
   useEffect(() => {
+    if (item?.category === "drinks" && item?.options) {
+      const initialFlavors: Record<string, number> = {};
+      item.options.forEach((opt) => {
+        initialFlavors[opt.name] = 0;
+      });
+      setFlavorQuantities(initialFlavors);
+    } else {
+      setFlavorQuantities({});
+    }
+
     if (item?.selectionChoices) {
       const initial: Record<number, string[]> = {};
       item.selectionChoices.forEach((choice, idx) => {
@@ -76,7 +101,30 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
 
   if (!item) return null;
 
-  // Calculate dynamic unit price
+  // Flavor stepper controls
+  const updateFlavorQuantity = (flavorName: string, delta: number) => {
+    setFlavorQuantities((prev) => {
+      const current = prev[flavorName] || 0;
+      const next = Math.max(0, current + delta);
+      return { ...prev, [flavorName]: next };
+    });
+  };
+
+  // Calculations for multi-flavor drinks
+  const totalFlavorQty =
+    isMultiFlavorDrink && item.options
+      ? item.options.reduce((sum, opt) => sum + (flavorQuantities[opt.name] || 0), 0)
+      : 0;
+
+  const totalFlavorPrice =
+    isMultiFlavorDrink && item.options
+      ? item.options.reduce(
+          (sum, opt) => sum + (flavorQuantities[opt.name] || 0) * opt.price,
+          0
+        )
+      : 0;
+
+  // Calculate dynamic unit price for standard items
   let currentUnitPrice = item.price;
 
   // If size/option is selected
@@ -151,6 +199,34 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
     });
 
   const handleAddToCart = () => {
+    // Multi-flavor drink submission (e.g. 2 Mango, 1 Guava, 3 Mandarin)
+    if (isMultiFlavorDrink) {
+      if (totalFlavorQty === 0) return;
+
+      const itemsToAdd: Omit<CartItem, "id">[] = [];
+
+      item.options?.forEach((opt) => {
+        const qty = flavorQuantities[opt.name] || 0;
+        if (qty > 0) {
+          itemsToAdd.push({
+            menuItemId: `${item.id}-${opt.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+            name: `${item.name} - ${opt.name}`,
+            price: opt.price,
+            quantity: qty,
+            image: item.image,
+            categoryName: item.categoryName,
+            customization: {
+              selectedOption: opt.name,
+            },
+          });
+        }
+      });
+
+      addItems(itemsToAdd);
+      onClose();
+      return;
+    }
+
     if (!isBundleComplete) return;
 
     // Collect bundle selections for each choice group
@@ -283,35 +359,116 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
             </div>
           )}
 
-          {/* Portion/Size Options (e.g. 3, 5, 7 Pieces or Regular, Large) */}
+          {/* Portion/Size Options or Multi-Flavor Drink Cards */}
           {item.options && item.options.length > 0 && (
-            <div className="space-y-3">
-              <label className="block text-xs font-bold uppercase tracking-wider text-gray-700">
-                Select Option / Size
-              </label>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-                {item.options.map((opt) => {
-                  const isSel = selectedOption === opt.name;
-                  return (
-                    <button
-                      key={opt.name}
-                      type="button"
-                      onClick={() => setSelectedOption(opt.name)}
-                      className={`p-3 rounded-xl border text-left transition-all ${
-                        isSel
-                          ? "bg-[#E6F7F8] border-[#08D8E5] text-[#171717] shadow-sm font-semibold"
-                          : "bg-white border-[#CBD5E1] text-gray-700 hover:border-gray-400"
-                      }`}
-                    >
-                      <div className="font-bold text-sm text-[#171717]">{opt.name}</div>
-                      <div className="text-xs text-[#058A92] font-semibold mt-1">
-                        {formatPrice(opt.price)}
+            isMultiFlavorDrink ? (
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-gray-800">
+                    Select Flavours &amp; Quantities
+                  </label>
+                  <span className="text-[11px] font-semibold text-[#058A92] bg-[#F0FAF9] border border-[#D2EEF1] px-2.5 py-0.5 rounded-full">
+                    Choose Multiple
+                  </span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  {item.options.map((opt) => {
+                    const qty = flavorQuantities[opt.name] || 0;
+                    const isSelected = qty > 0;
+
+                    return (
+                      <div
+                        key={opt.name}
+                        onClick={() => {
+                          if (qty === 0) {
+                            updateFlavorQuantity(opt.name, 1);
+                          }
+                        }}
+                        className={`p-3 rounded-xl border transition-all flex flex-col justify-between cursor-pointer ${
+                          isSelected
+                            ? "bg-[#E6F7F8] border-2 border-[#08D8E5] text-[#171717] shadow-sm ring-1 ring-[#08D8E5]/30"
+                            : "bg-white border-[#CBD5E1] text-gray-700 hover:border-gray-400 hover:bg-slate-50"
+                        }`}
+                      >
+                        <div className="flex items-start justify-between gap-2">
+                          <div className="font-bold text-sm text-[#171717]">{opt.name}</div>
+                          <div className="text-xs text-[#058A92] font-extrabold">
+                            {formatPrice(opt.price)}
+                          </div>
+                        </div>
+
+                        {/* Flavor Quantity Stepper */}
+                        <div className="flex items-center justify-between mt-2.5 pt-2 border-t border-[#D2EEF1]/60">
+                          <span className="text-[11px] text-gray-500 font-medium">
+                            {isSelected ? `${qty} selected` : "Tap to add"}
+                          </span>
+
+                          <div
+                            className="flex items-center gap-1 bg-white border border-[#CBD5E1] rounded-lg p-0.5 shadow-sm"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                updateFlavorQuantity(opt.name, -1);
+                              }}
+                              disabled={qty === 0}
+                              className="w-6 h-6 rounded flex items-center justify-center hover:bg-slate-100 text-gray-700 disabled:opacity-25 disabled:cursor-not-allowed transition-colors"
+                              aria-label={`Decrease ${opt.name} quantity`}
+                            >
+                              <Minus className="w-3 h-3" />
+                            </button>
+                            <span className="w-5 text-center font-bold text-xs text-[#171717]">
+                              {qty}
+                            </span>
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                updateFlavorQuantity(opt.name, 1);
+                              }}
+                              className="w-6 h-6 rounded flex items-center justify-center hover:bg-slate-100 text-gray-700 hover:text-black transition-colors"
+                              aria-label={`Increase ${opt.name} quantity`}
+                            >
+                              <Plus className="w-3 h-3" />
+                            </button>
+                          </div>
+                        </div>
                       </div>
-                    </button>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="space-y-3">
+                <label className="block text-xs font-bold uppercase tracking-wider text-gray-700">
+                  Select Option / Size
+                </label>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                  {item.options.map((opt) => {
+                    const isSel = selectedOption === opt.name;
+                    return (
+                      <button
+                        key={opt.name}
+                        type="button"
+                        onClick={() => setSelectedOption(opt.name)}
+                        className={`p-3 rounded-xl border text-left transition-all ${
+                          isSel
+                            ? "bg-[#E6F7F8] border-[#08D8E5] text-[#171717] shadow-sm font-semibold"
+                            : "bg-white border-[#CBD5E1] text-gray-700 hover:border-gray-400"
+                        }`}
+                      >
+                        <div className="font-bold text-sm text-[#171717]">{opt.name}</div>
+                        <div className="text-xs text-[#058A92] font-semibold mt-1">
+                          {formatPrice(opt.price)}
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )
           )}
 
           {/* Selection Choices (e.g. Kids meal, TODO trays, Platters) */}
@@ -501,41 +658,64 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
         </div>
 
         {/* Modal Bottom Footer Actions */}
-        <div className="p-3.5 sm:p-5 border-t border-[#D2EEF1] bg-[#F8FCFD] flex items-center justify-between gap-2.5 sm:gap-4">
-          <div className="flex items-center gap-1 sm:gap-2 bg-white border border-[#CBD5E1] rounded-xl p-1 sm:p-1.5 shadow-sm shrink-0">
+        <div className="p-3.5 sm:p-5 border-t border-[#D2EEF1] bg-[#F8FCFD]">
+          {isMultiFlavorDrink ? (
             <button
-              onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-              className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 text-gray-600 hover:text-black transition-colors"
-              aria-label="Decrease quantity"
+              onClick={handleAddToCart}
+              disabled={totalFlavorQty === 0}
+              className={`w-full font-extrabold uppercase py-3.5 px-6 rounded-xl flex items-center justify-between tracking-wide shadow-md transition-all active:scale-[0.98] ${
+                totalFlavorQty > 0
+                  ? "bg-[#08D8E5] hover:bg-[#07c2ce] text-black shadow-[#08D8E5]/20 cursor-pointer"
+                  : "bg-gray-200 text-gray-400 cursor-not-allowed shadow-none"
+              }`}
             >
-              <Minus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <span className="whitespace-nowrap text-xs sm:text-sm font-black tracking-wide">
+                {totalFlavorQty > 0
+                  ? `ADD ${totalFlavorQty} TO BASKET`
+                  : "SELECT FLAVOURS TO ADD"}
+              </span>
+              <span className="font-heading font-black text-xs sm:text-base shrink-0 whitespace-nowrap ml-2">
+                {formatPrice(totalFlavorPrice)}
+              </span>
             </button>
-            <span className="w-6 sm:w-8 text-center font-bold text-[#171717] text-xs sm:text-sm">{quantity}</span>
-            <button
-              onClick={() => setQuantity((q) => q + 1)}
-              className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 text-gray-600 hover:text-black transition-colors"
-              aria-label="Increase quantity"
-            >
-              <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-            </button>
-          </div>
+          ) : (
+            <div className="flex items-center justify-between gap-2.5 sm:gap-4">
+              <div className="flex items-center gap-1 sm:gap-2 bg-white border border-[#CBD5E1] rounded-xl p-1 sm:p-1.5 shadow-sm shrink-0">
+                <button
+                  onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 text-gray-600 hover:text-black transition-colors"
+                  aria-label="Decrease quantity"
+                >
+                  <Minus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                </button>
+                <span className="w-6 sm:w-8 text-center font-bold text-[#171717] text-xs sm:text-sm">{quantity}</span>
+                <button
+                  onClick={() => setQuantity((q) => q + 1)}
+                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 text-gray-600 hover:text-black transition-colors"
+                  aria-label="Increase quantity"
+                >
+                  <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                </button>
+              </div>
 
-          <button
-            onClick={handleAddToCart}
-            disabled={!isBundleComplete}
-            className={`flex-1 font-extrabold uppercase py-3 sm:py-3.5 px-3.5 sm:px-5 rounded-xl flex items-center justify-between tracking-wide shadow-md transition-all active:scale-[0.98] min-w-0 ${
-              isBundleComplete
-                ? "bg-[#08D8E5] hover:bg-[#07c2ce] text-black shadow-[#08D8E5]/20 cursor-pointer"
-                : "bg-gray-200 text-gray-500 cursor-not-allowed shadow-none"
-            }`}
-          >
-            <span className="whitespace-nowrap text-xs sm:text-sm font-black tracking-wide">
-              {isBundleComplete ? "ADD TO BASKET" : "CHOOSE OPTIONS"}
-            </span>
-            <span className="font-heading font-black text-xs sm:text-base shrink-0 whitespace-nowrap ml-2">
-              {formatPrice(totalPrice)}
-            </span>
-          </button>
+              <button
+                onClick={handleAddToCart}
+                disabled={!isBundleComplete}
+                className={`flex-1 font-extrabold uppercase py-3 sm:py-3.5 px-3.5 sm:px-5 rounded-xl flex items-center justify-between tracking-wide shadow-md transition-all active:scale-[0.98] min-w-0 ${
+                  isBundleComplete
+                    ? "bg-[#08D8E5] hover:bg-[#07c2ce] text-black shadow-[#08D8E5]/20 cursor-pointer"
+                    : "bg-gray-200 text-gray-500 cursor-not-allowed shadow-none"
+                }`}
+              >
+                <span className="whitespace-nowrap text-xs sm:text-sm font-black tracking-wide">
+                  {isBundleComplete ? "ADD TO BASKET" : "CHOOSE OPTIONS"}
+                </span>
+                <span className="font-heading font-black text-xs sm:text-base shrink-0 whitespace-nowrap ml-2">
+                  {formatPrice(totalPrice)}
+                </span>
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

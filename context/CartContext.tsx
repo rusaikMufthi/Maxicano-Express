@@ -39,6 +39,7 @@ interface CartContextType {
   closeCart: () => void;
   toggleCart: () => void;
   addItem: (item: Omit<CartItem, "id">) => void;
+  addItems: (items: Omit<CartItem, "id">[]) => void;
   removeItem: (id: string) => void;
   updateQuantity: (id: string, delta: number) => void;
   clearCart: () => void;
@@ -80,29 +81,38 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const closeCart = () => setIsOpen(false);
   const toggleCart = () => setIsOpen((prev) => !prev);
 
-  const addItem = (newItem: Omit<CartItem, "id">) => {
+  const addItems = (newItems: Omit<CartItem, "id">[]) => {
+    if (newItems.length === 0) return;
     setItems((prev) => {
-      // Check if identical item already exists
-      const existingIndex = prev.findIndex(
-        (it) =>
-          it.menuItemId === newItem.menuItemId &&
-          it.price === newItem.price &&
-          JSON.stringify(it.customization || {}) === JSON.stringify(newItem.customization || {})
-      );
+      const updated = [...prev];
+      for (const newItem of newItems) {
+        const existingIndex = updated.findIndex(
+          (it) =>
+            it.menuItemId === newItem.menuItemId &&
+            it.name === newItem.name &&
+            it.price === newItem.price &&
+            JSON.stringify(it.customization || {}) === JSON.stringify(newItem.customization || {})
+        );
 
-      if (existingIndex > -1) {
-        const updated = [...prev];
-        updated[existingIndex].quantity += newItem.quantity;
-        return updated;
+        if (existingIndex > -1) {
+          updated[existingIndex] = {
+            ...updated[existingIndex],
+            quantity: updated[existingIndex].quantity + newItem.quantity,
+          };
+        } else {
+          updated.push({
+            ...newItem,
+            id: `${newItem.menuItemId}-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+          });
+        }
       }
-
-      const cartEntry: CartItem = {
-        ...newItem,
-        id: `${newItem.menuItemId}-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
-      };
-      return [...prev, cartEntry];
+      return updated;
     });
     setIsOpen(true);
+  };
+
+  const addItem = (newItem: Omit<CartItem, "id">) => {
+    addItems([newItem]);
   };
 
   const removeItem = (id: string) => {
@@ -139,6 +149,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         closeCart,
         toggleCart,
         addItem,
+        addItems,
         removeItem,
         updateQuantity,
         clearCart,
