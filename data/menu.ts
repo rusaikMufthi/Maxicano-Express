@@ -581,7 +581,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Chicken & Bites",
     price: 4.49,
     description: "Creamy macaroni and cheddar cheese encased in a crispy golden batter.",
-    image: "/images/food/real/bites-mac-n-cheese-bites-png.png",
+    image: "/images/food/real/bites-mac-n-cheese-bites-hd.jpg",
     options: [
       { name: "3 Pieces", price: 4.49 },
       { name: "5 Pieces", price: 6.49 },
