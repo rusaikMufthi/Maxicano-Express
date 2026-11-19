@@ -74,7 +74,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     badge: "Signature Bowls",
     tagline: "All The Flavour, In A Bowl",
     description: "Packed with seasoned Mexican rice, pico de gallo, rich queso, melted cheese and your choice of protein or veggies.",
-    image: "/images/food/real/main-attractions-loaded-rice-bowl-jpg.jpg",
+    image: "/images/food/real/main-attractions-naked-burrito-hd.jpg",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese in a bowl.",
     toppingsGuide: {
       title: "Chef's Recommended Toppings",
@@ -296,7 +296,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "Smoky BBQ chicken served over seasoned Mexican rice bowl with fresh pico de gallo, velvety queso and cheese.",
     toppingsInfo: "Spring onion, sour cream and BBQ sauce.",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/real/main-attractions-loaded-rice-bowl-jpg.jpg",
+    image: "/images/food/real/main-attractions-naked-burrito-hd.jpg",
     customizable: true,
   },
   {
@@ -308,7 +308,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "Smoky shredded chipotle chicken tinga served over Mexican rice, pico de gallo, velvety queso and cheese.",
     toppingsInfo: "Sour cream, cilantro lime sour cream and jalapeños.",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/real/main-attractions-loaded-rice-bowl-jpg.jpg",
+    image: "/images/food/real/main-attractions-naked-burrito-hd.jpg",
     popular: true,
     customizable: true,
   },
@@ -321,7 +321,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "Slow-braised spiced birria pulled beef served in a rice bowl with pico de gallo, rich queso and cheese.",
     toppingsInfo: "Sour cream, cilantro lime sour cream and jalapeños.",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/real/main-attractions-loaded-rice-bowl-jpg.jpg",
+    image: "/images/food/real/main-attractions-naked-burrito-hd.jpg",
     popular: true,
     customizable: true,
   },
@@ -333,7 +333,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 11.99,
     description: "Hearty double protein bowl of chicken and birria pulled beef with Mexican rice, pico de gallo, queso and cheese.",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/real/main-attractions-loaded-rice-bowl-jpg.jpg",
+    image: "/images/food/real/main-attractions-naked-burrito-hd.jpg",
     customizable: true,
   },
   {
@@ -345,7 +345,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "Savory Mexican spiced chilli served over fluffy Mexican rice with zesty pico de gallo, queso and cheese.",
     toppingsInfo: "Sour cream.",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/real/main-attractions-loaded-rice-bowl-jpg.jpg",
+    image: "/images/food/real/main-attractions-naked-burrito-hd.jpg",
     customizable: true,
   },
   {
@@ -357,7 +357,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "Sauteed fajita peppers and onions with seasoned Mexican rice, pico de gallo, queso and melted cheese in a bowl.",
     toppingsInfo: "Sour cream.",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/real/main-attractions-loaded-rice-bowl-jpg.jpg",
+    image: "/images/food/real/main-attractions-naked-burrito-hd.jpg",
     customizable: true,
   },
   {
@@ -369,7 +369,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "Grilled squeaky halloumi layered over seasoned Mexican rice with pico de gallo, queso and cheese.",
     toppingsInfo: "Sour cream.",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
-    image: "/images/food/real/main-attractions-loaded-rice-bowl-jpg.jpg",
+    image: "/images/food/real/main-attractions-naked-burrito-hd.jpg",
     customizable: true,
   },
 

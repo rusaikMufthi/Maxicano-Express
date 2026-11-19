@@ -21,7 +21,7 @@ export const BASE_MEAL_TYPES: BaseMealType[] = [
     name: "Naked Burrito Bowl",
     basePrice: 8.99,
     description: "Fresh Mexican bowl packed with seasoned rice, pico de gallo, queso and melted cheese.",
-    image: "/images/food/real/main-attractions-loaded-rice-bowl-jpg.jpg",
+    image: "/images/food/real/main-attractions-naked-burrito-hd.jpg",
     includedBase: "Mexican rice, pico de gallo, queso and melted cheese",
   },
   {

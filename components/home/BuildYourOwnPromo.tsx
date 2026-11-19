@@ -68,7 +68,7 @@ export function BuildYourOwnPromo() {
               <div className="relative rounded-3xl overflow-hidden border-4 border-white shadow-xl">
                 <div className="relative h-72 sm:h-80 w-full bg-slate-100">
                   <Image
-                    src="/images/food/real/main-attractions-loaded-rice-bowl-jpg.jpg"
+                    src="/images/food/real/main-attractions-naked-burrito-hd.jpg"
                     alt="Customizable Mexican rice bowl with fresh toppings and salsa"
                     fill
                     sizes="(max-width: 1024px) 100vw, 420px"
