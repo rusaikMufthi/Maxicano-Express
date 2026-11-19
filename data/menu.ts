@@ -537,7 +537,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Chicken & Bites",
     price: 4.49,
     description: "Crispy fried chicken wings tossed in Mexican spices. Available in 3, 5, or 7 pieces.",
-    image: "/images/food/real/bites-bbq-wings-5-png.png",
+    image: "/images/food/real/bites-chicken-wings-hd.jpg",
     popular: true,
     options: [
       { name: "3 Pieces", price: 4.49 },
@@ -566,7 +566,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Chicken & Bites",
     price: 4.49,
     description: "Crispy breaded spicy jalapeños stuffed with molten cream cheese.",
-    image: "/images/food/real/cheesy-bites-jalapeno-poppers-png.png",
+    image: "/images/food/real/cheesy-bites-jalapeno-poppers-hd.jpg",
     popular: true,
     options: [
       { name: "3 Pieces", price: 4.49 },
