@@ -59,7 +59,7 @@ export function Header() {
       >
         {/* Tier 1: Main Header Bar with Centered Logo */}
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-[1fr_auto_1fr] items-center py-2 sm:py-2.5 lg:py-3 gap-2">
+          <div className="grid grid-cols-[1fr_auto_1fr] items-center py-2.5 sm:py-3 lg:py-3.5 gap-2">
             {/* Left Column: Hamburger on Mobile/Tablet, Click & Collect on Desktop */}
             <div className="flex items-center justify-start">
               {/* Mobile/Tablet Hamburger Trigger */}
@@ -94,40 +94,40 @@ export function Header() {
               >
                 {/* Left Candidate Logo: Taco & Burrito Mascot (Circular) */}
                 <div
-                  className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-full overflow-hidden border border-[#08D8E5]/50 shadow-sm shrink-0 hover:scale-105 transition-transform"
+                  className="relative w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-13 lg:h-13 rounded-full overflow-hidden border-2 border-[#08D8E5]/70 shadow-md shrink-0 hover:scale-110 transition-transform"
                   title="Candidate 1: Taco & Burrito Mascot"
                 >
                   <Image
                     src="/images/logo-candidate-taco.png"
                     alt="Taco & Burrito Mascot Logo"
                     fill
-                    sizes="44px"
+                    sizes="(max-width: 640px) 40px, (max-width: 768px) 44px, 52px"
                     className="object-cover rounded-full"
                   />
                 </div>
 
                 {/* Center: Brand Wordmark */}
-                <div className="relative w-28 h-10 sm:w-36 sm:h-12 md:w-44 md:h-14 lg:w-48 lg:h-15 shrink-0">
+                <div className="relative w-32 h-11 sm:w-40 sm:h-13 md:w-48 md:h-15 lg:w-52 lg:h-16 shrink-0">
                   <Image
                     src="/images/logo.png"
                     alt="Mexi Cano Express Logo"
                     fill
                     priority
-                    sizes="(max-width: 640px) 112px, (max-width: 768px) 144px, 192px"
+                    sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 208px"
                     className="object-contain object-center group-hover:opacity-95 transition-opacity"
                   />
                 </div>
 
                 {/* Right Candidate Logo: 3D Sombrero Clay Mascot (Circular) */}
                 <div
-                  className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-full overflow-hidden border border-[#08D8E5]/50 shadow-sm shrink-0 hover:scale-105 transition-transform"
+                  className="relative w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-13 lg:h-13 rounded-full overflow-hidden border-2 border-[#08D8E5]/70 shadow-md shrink-0 hover:scale-110 transition-transform"
                   title="Candidate 2: 3D Sombrero Clay Mascot"
                 >
                   <Image
                     src="/images/logo-candidate-clay.png"
                     alt="3D Sombrero Clay Mascot Logo"
                     fill
-                    sizes="44px"
+                    sizes="(max-width: 640px) 40px, (max-width: 768px) 44px, 52px"
                     className="object-cover rounded-full"
                   />
                 </div>
@@ -214,31 +214,31 @@ export function Header() {
           <div className="relative ml-auto w-full max-w-sm bg-[#0c0c0c] border-l border-[#222222] h-full shadow-2xl flex flex-col z-10 animate-slide-left">
             {/* Drawer Header */}
             <div className="p-4 border-b border-[#222222] flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <div className="relative w-8 h-8 rounded-full overflow-hidden border border-[#08D8E5]/50 shrink-0">
+              <div className="flex items-center gap-2.5">
+                <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-[#08D8E5]/70 shadow-md shrink-0">
                   <Image
                     src="/images/logo-candidate-taco.png"
                     alt="Taco Logo"
                     fill
-                    sizes="32px"
+                    sizes="40px"
                     className="object-cover rounded-full"
                   />
                 </div>
-                <div className="relative w-28 h-10">
+                <div className="relative w-32 h-11">
                   <Image
                     src="/images/logo.png"
                     alt="Mexi Cano Express"
                     fill
-                    sizes="112px"
+                    sizes="128px"
                     className="object-contain object-center"
                   />
                 </div>
-                <div className="relative w-8 h-8 rounded-full overflow-hidden border border-[#08D8E5]/50 shrink-0">
+                <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-[#08D8E5]/70 shadow-md shrink-0">
                   <Image
                     src="/images/logo-candidate-clay.png"
                     alt="Clay Logo"
                     fill
-                    sizes="32px"
+                    sizes="40px"
                     className="object-cover rounded-full"
                   />
                 </div>
