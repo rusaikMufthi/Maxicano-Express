@@ -898,12 +898,12 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
       },
       {
         title: "Drink Choice",
-        options: ["Fruit Shoot", "Water"],
+        options: ["Fruit Shoot"],
         requiredCount: 1,
       },
       {
         title: "Dip Choice",
-        options: ["Sour Cream", "Salsa Roja", "Garlic Mayo", "BBQ"],
+        options: ["Sour Cream", "Cilantro Lime", "Honey Jalapeño", "BBQ Chipotle", "Queso", "Salsa Roja", "Salsa Verde"],
         requiredCount: 1,
       },
     ],
@@ -1112,15 +1112,6 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
       { name: "7UP", price: 1.99 },
     ],
   },
-  {
-    id: "fruit-shoot",
-    name: "Fruit Shoot",
-    category: "drinks",
-    categoryName: "Drinks",
-    price: 1.49,
-    description: "Refreshing juice drink for kids.",
-    image: "/images/food/real/soft-drinks-capri-sun-zero-jpg.jpg",
-  },
 
   // ==========================================
   // 9. DRINKS & DIPS: DIPS
@@ -1146,7 +1137,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
   },
   {
     id: "dip-cilantro-lime",
-    name: "Cilantro Lime Sour Cream",
+    name: "Cilantro Lime",
     category: "dips",
     categoryName: "Dips",
     price: 1.49,
@@ -1155,7 +1146,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
   },
   {
     id: "dip-honey-jalapeno",
-    name: "Honey Jalapeños",
+    name: "Honey Jalapeño",
     category: "dips",
     categoryName: "Dips",
     price: 1.49,
@@ -1173,7 +1164,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
   },
   {
     id: "dip-queso",
-    name: "Queso (Nacho Cheese)",
+    name: "Queso",
     category: "dips",
     categoryName: "Dips",
     price: 1.49,

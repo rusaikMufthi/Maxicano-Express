@@ -39,17 +39,17 @@ export default function MealDealsPage() {
                 Mini Luchadores Kids Meal
               </h2>
               <p className="text-gray-600 text-sm leading-relaxed">
-                A complete meal made specially for smaller champions. Choose between crispy chicken
-                strips or a melted cheese mini quesadilla, accompanied by rice, fries or tots, and a
-                refreshing drink.
+                A complete meal made specially for smaller champions: choose between crispy chicken
+                strips or a melted cheese mini quesadilla, accompanied by rice, fries or tots, and
+                Fruit Shoot plus dip.
               </p>
 
               <div className="space-y-2 text-xs text-gray-700 bg-[#F7FCFD] p-4 rounded-2xl border border-[#D2EEF1]">
                 <p className="font-bold text-[#D97706] uppercase tracking-wider">Includes:</p>
                 <ul className="space-y-1.5 list-disc list-inside">
-                  <li>3 Chicken Strips OR 1 Cheese Mini Quesadilla</li>
-                  <li>Mexican Rice OR Fries OR Potato Tots</li>
-                  <li>Fruit Shoot OR Water</li>
+                  <li>3x Chicken Strips OR 1x Mini Cheesy Quesadilla</li>
+                  <li>Mexican Rice OR Fries OR Tots</li>
+                  <li>Fruit Shoot + Dip</li>
                 </ul>
               </div>
 
@@ -132,11 +132,10 @@ export default function MealDealsPage() {
                     <li>• 2 × Street Tacos</li>
                     <li>• 1 × Loaded Fries</li>
                     <li>• 5 × Chicken Wings</li>
-                    <li>• 1 × Sour Cream/Cilantro</li>
+                    <li>• 2 × Dips (Salsa / Sour Cream)</li>
                     <li>• 2 × Jarritos Drinks</li>
                     <li>• 1 × Cheesy Nachos</li>
                     <li>• 5 × Jalapeño Poppers</li>
-                    <li>• 1 × Fresh Salsa</li>
                   </ul>
                   <p className="text-[11px] text-[#D97706] pt-2 font-medium">
                     Choice of Taco Topping: BBQ Chicken, Chicken Tinga, Chilli, Fajita Veg, or Halloumi.
@@ -189,11 +188,10 @@ export default function MealDealsPage() {
                     <li>• 2 × Birria Pulled Beef Tacos</li>
                     <li>• 1 × Loaded Fries</li>
                     <li>• 5 × Chicken Wings</li>
-                    <li>• 1 × Sour Cream/Cilantro</li>
+                    <li>• 2 × Dips (Salsa / Sour Cream)</li>
                     <li>• 2 × Jarritos Drinks</li>
                     <li>• 1 × Cheesy Nachos</li>
                     <li>• 5 × Jalapeño Poppers</li>
-                    <li>• 1 × Fresh Salsa</li>
                   </ul>
                   <p className="text-[11px] text-[#058A92] pt-2 font-semibold">
                     Featuring authentic slow-braised Mexican birria pulled beef tacos.

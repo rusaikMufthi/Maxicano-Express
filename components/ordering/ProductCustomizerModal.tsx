@@ -2,7 +2,13 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { MenuItem, UPGRADE_MEAL, EXTRA_TOPPINGS, EXTRA_PROTEINS, EXTRA_SAUCES_CHEESE } from "@/data/menu";
+import {
+  MenuItem,
+  UPGRADE_MEAL,
+  EXTRA_TOPPINGS,
+  EXTRA_PROTEINS,
+  EXTRA_SAUCES_CHEESE,
+} from "@/data/menu";
 import { useCart, CartItem } from "@/context/CartContext";
 import { formatPrice } from "@/lib/utils";
 import { X, Plus, Minus, Check, Flame } from "lucide-react";
@@ -53,7 +59,7 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
   const [selectedFillings, setSelectedFillings] = useState<string[]>([]);
   const [selectedToppings, setSelectedToppings] = useState<string[]>([]);
   const [selectedProteins, setSelectedProteins] = useState<string[]>([]);
-  const [selectedSauces, setSelectedSauces] = useState<string[]>([]);
+  const [selectedSaucesCheese, setSelectedSaucesCheese] = useState<string[]>([]);
 
   const [upgradeActive, setUpgradeActive] = useState<boolean>(false);
   const [upgradeSide, setUpgradeSide] = useState<string>(UPGRADE_MEAL.sides[0]);
@@ -96,7 +102,7 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
     setSelectedFillings([]);
     setSelectedToppings([]);
     setSelectedProteins([]);
-    setSelectedSauces([]);
+    setSelectedSaucesCheese([]);
     setUpgradeActive(false);
     setQuantity(1);
   }, [item]);
@@ -143,16 +149,16 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
     if (top) currentUnitPrice += top.price;
   });
 
+  // Add sauces & cheese
+  selectedSaucesCheese.forEach((sName) => {
+    const sauce = EXTRA_SAUCES_CHEESE.find((s) => s.name === sName);
+    if (sauce) currentUnitPrice += sauce.price;
+  });
+
   // Add proteins
   selectedProteins.forEach((pName) => {
     const prot = EXTRA_PROTEINS.find((p) => p.name === pName);
     if (prot) currentUnitPrice += prot.price;
-  });
-
-  // Add sauces & cheese
-  selectedSauces.forEach((sName) => {
-    const sauce = EXTRA_SAUCES_CHEESE.find((s) => s.name === sName);
-    if (sauce) currentUnitPrice += sauce.price;
   });
 
   // Add upgrade
@@ -191,14 +197,14 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
     );
   };
 
-  const toggleProtein = (name: string) => {
-    setSelectedProteins((prev) =>
+  const toggleSauceCheese = (name: string) => {
+    setSelectedSaucesCheese((prev) =>
       prev.includes(name) ? prev.filter((n) => n !== name) : [...prev, name]
     );
   };
 
-  const toggleSauce = (name: string) => {
-    setSelectedSauces((prev) =>
+  const toggleProtein = (name: string) => {
+    setSelectedProteins((prev) =>
       prev.includes(name) ? prev.filter((n) => n !== name) : [...prev, name]
     );
   };
@@ -274,8 +280,8 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
             ? selectedFillings
             : undefined,
         toppings: selectedToppings.length > 0 ? selectedToppings : undefined,
+        sauces: selectedSaucesCheese.length > 0 ? selectedSaucesCheese : undefined,
         extraProteins: selectedProteins.length > 0 ? selectedProteins : undefined,
-        sauces: selectedSauces.length > 0 ? selectedSauces : undefined,
         upgradeMeal: upgradeActive
           ? {
               side: upgradeSide,
@@ -586,7 +592,7 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
               {/* Extra Toppings */}
               <div className="space-y-3">
                 <label className="block text-xs font-bold uppercase tracking-wider text-gray-700">
-                  <span>Extra Toppings</span>
+                  <span>Toppings</span>
                 </label>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                   {EXTRA_TOPPINGS.map((top) => {
@@ -612,19 +618,19 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
                 </div>
               </div>
 
-              {/* Extra Sauces & Cheese */}
+              {/* Sauces & Cheese */}
               <div className="space-y-3">
                 <label className="block text-xs font-bold uppercase tracking-wider text-gray-700">
-                  <span>Extra Sauces &amp; Cheese</span>
+                  <span>Sauces & Cheese</span>
                 </label>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                   {EXTRA_SAUCES_CHEESE.map((sauce) => {
-                    const isSelected = selectedSauces.includes(sauce.name);
+                    const isSelected = selectedSaucesCheese.includes(sauce.name);
                     return (
                       <button
                         key={sauce.id}
                         type="button"
-                        onClick={() => toggleSauce(sauce.name)}
+                        onClick={() => toggleSauceCheese(sauce.name)}
                         className={`p-2 rounded-lg border text-left text-xs transition-colors ${
                           isSelected
                             ? "bg-[#E6F7F8] border-[#08D8E5] text-black font-semibold"
@@ -641,8 +647,12 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
                 </div>
               </div>
 
-              {/* Upgrade Your Meal Promotion */}
-              <div className="bg-[#F0FAF9] border-2 border-[#D2EEF1] rounded-2xl p-4 space-y-3">
+              {/* Upgrade Your Meal Promotion (Mains Only) */}
+              {(item.category === "burritos" ||
+                item.category === "naked-burritos" ||
+                item.category === "tacos" ||
+                item.category === "quesadillas") && (
+                <div className="bg-[#F0FAF9] border-2 border-[#D2EEF1] rounded-2xl p-4 space-y-3">
                 <div className="flex items-center justify-between">
                   <div>
                     <span className="text-[#D97706] text-[11px] font-extrabold uppercase tracking-widest">
@@ -697,6 +707,7 @@ export function ProductCustomizerModal({ item, onClose }: ProductCustomizerModal
                   </div>
                 )}
               </div>
+              )}
             </>
           )}
         </div>

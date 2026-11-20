@@ -167,16 +167,17 @@ export function CartDrawer() {
                                 {item.customization.toppings.join(", ")}
                               </p>
                             )}
+                          {item.customization.sauces &&
+                            item.customization.sauces.length > 0 && (
+                              <p>
+                                <span className="font-semibold text-gray-700">Sauces:</span>{" "}
+                                {item.customization.sauces.join(", ")}
+                              </p>
+                            )}
                           {item.customization.extraProteins &&
                             item.customization.extraProteins.length > 0 && (
                               <p className="text-[#D97706] font-medium">
                                 + Extra: {item.customization.extraProteins.join(", ")}
-                              </p>
-                            )}
-                          {item.customization.sauces &&
-                            item.customization.sauces.length > 0 && (
-                              <p className="text-[#058A92] font-medium">
-                                + Sauces: {item.customization.sauces.join(", ")}
                               </p>
                             )}
                           {item.customization.upgradeMeal && (

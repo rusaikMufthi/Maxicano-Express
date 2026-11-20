@@ -140,7 +140,7 @@ export function Footer() {
               Menu Highlights
             </h3>
             <ul className="space-y-2.5 text-sm">
-              {MENU_CATEGORIES.slice(0, 7).map((cat) => (
+              {MENU_CATEGORIES.slice(0, 6).map((cat) => (
                 <li key={cat.id}>
                   <Link
                     href={`/menu#${cat.id}`}
@@ -151,13 +151,18 @@ export function Footer() {
                 </li>
               ))}
               <li>
+                <Link href="/menu#macho-loaded" className="hover:text-[#08D8E5] transition-colors">
+                  Macho Loaded
+                </Link>
+              </li>
+              <li>
                 <Link href="/menu#sharing-trays" className="hover:text-[#08D8E5] transition-colors">
-                  Sharing Trays &amp; Feasts
+                  TODO Trays & Sharing
                 </Link>
               </li>
               <li>
                 <Link href="/menu#churros" className="hover:text-[#08D8E5] transition-colors">
-                  Churros &amp; Desserts
+                  Churros & Desserts
                 </Link>
               </li>
             </ul>
@@ -203,22 +208,15 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Food Allergies / Intolerances Notice */}
-        <div className="my-8 p-4 sm:p-5 rounded-2xl bg-[#141414] border border-[#262626] flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-          <div className="flex items-center gap-3">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#08D8E5] shrink-0" />
-            <p className="text-xs sm:text-sm text-gray-300 font-medium leading-relaxed">
-              <strong className="text-white">Allergen Notice: </strong>
-              Food allergies or intolerances? Please speak to a member of our team before ordering.
-            </p>
-          </div>
-          <span className="text-[11px] font-bold uppercase tracking-wider text-[#08D8E5] bg-[#08D8E5]/10 border border-[#08D8E5]/30 px-3 py-1 rounded-full shrink-0">
-            Ask Our Team
-          </span>
+        {/* Allergy Advisory Note */}
+        <div className="pt-8 border-t border-neutral-800 text-center text-xs text-amber-300 font-medium">
+          <p>
+            Food allergies or intolerances? Please speak to a member of our team before ordering.
+          </p>
         </div>
 
         {/* Bottom Bar with Policies & Copyright */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+        <div className="pt-4 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
           <p>© 2026 MEXICANO EXPRESS. ALL RIGHTS RESERVED.</p>
           <div className="flex flex-wrap items-center gap-6">
             <Link href="/privacy" className="hover:text-gray-300 transition-colors">
