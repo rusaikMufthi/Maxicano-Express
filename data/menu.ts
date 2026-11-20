@@ -248,11 +248,11 @@ export interface MainsTableRow {
   burritoPrice: number;
   nakedPrice: number;
   tacosPrice: number | null; // null for Mixed Chicken & Beef
-  quesadillaPrice: number;
+  quesadillaPrice: number | null; // null for Fajita Vegetable
   burritoId: string;
   nakedId: string;
   tacosId?: string;
-  quesadillaId: string;
+  quesadillaId?: string;
 }
 
 export const MAINS_TABLE_DATA: MainsTableRow[] = [
@@ -317,11 +317,10 @@ export const MAINS_TABLE_DATA: MainsTableRow[] = [
     burritoPrice: 8.99,
     nakedPrice: 8.99,
     tacosPrice: 8.99,
-    quesadillaPrice: 8.99,
+    quesadillaPrice: null, // Not available for Quesadilla on the new menu
     burritoId: "burrito-fajita-veg",
     nakedId: "naked-fajita-veg",
     tacosId: "tacos-fajita-veg",
-    quesadillaId: "quesadilla-fajita-veg",
   },
   {
     filling: "Halloumi",
@@ -655,17 +654,6 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     customizable: true,
   },
   {
-    id: "quesadilla-fajita-veg",
-    name: "Fajita Vegetables Quesadilla",
-    category: "quesadillas",
-    categoryName: "Quesadillas",
-    price: 8.99,
-    description: "Sauteed peppers, onions, and gooey melted cheese in a toasted tortilla served with sour cream.",
-    toppingsInfo: "Sour cream.",
-    image: "/images/food/real/main-attractions-quesadillas-hd.jpg",
-    customizable: true,
-  },
-  {
     id: "quesadilla-halloumi",
     name: "Halloumi Quesadilla",
     category: "quesadillas",
@@ -838,6 +826,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     description: "Crispy fries smothered in melted cheese and house toppings. Add a choice of topping for £3.49 each (Beef, BBQ Chicken, Chicken Tinga, Chilli, Fajita, Halloumi).",
     image: "/images/food/real/bites-loaded-fries-png.png",
     popular: true,
+    customizable: true,
   },
   {
     id: "loaded-tots",
@@ -847,6 +836,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 4.99,
     description: "Crispy tater tots topped with melted cheese and house toppings. Add a choice of topping for £3.49 each.",
     image: "/images/food/real/bites-loaded-tots-2-png.png",
+    customizable: true,
   },
   {
     id: "loaded-nachos",
@@ -856,6 +846,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 4.99,
     description: "Warm tortilla chips smothered in melted cheese sauce and sliced jalapeños. Add a choice of topping for £3.49 each.",
     image: "/images/food/real/bites-loaded-nachos-jpg.jpg",
+    customizable: true,
   },
   {
     id: "cheesy-nachos",
@@ -863,9 +854,10 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     category: "macho-loaded",
     categoryName: "Macho Loaded",
     price: 5.99,
-    description: "Topped with nacho cheese, crispy onions, sour cream and jalapeños.",
+    description: "Topped with nacho cheese, crispy onions, sour cream and jalapeños. Add a choice of topping for £3.49 each.",
     image: "/images/food/real/bites-cheesy-nachos-jpg.jpg",
     popular: true,
+    customizable: true,
   },
 
   // ==========================================
@@ -1111,6 +1103,15 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
       { name: "Trio", price: 1.99 },
       { name: "7UP", price: 1.99 },
     ],
+  },
+  {
+    id: "fruit-shoot",
+    name: "Fruit Shoot",
+    category: "drinks",
+    categoryName: "Drinks",
+    price: 1.49,
+    description: "Refreshing juice drink for kids.",
+    image: "/images/food/real/soft-drinks-capri-sun-zero-jpg.jpg",
   },
 
   // ==========================================
