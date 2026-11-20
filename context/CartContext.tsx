@@ -12,6 +12,7 @@ export interface CartCustomization {
   fillings?: string[];
   toppings?: string[];
   extraProteins?: string[];
+  sauces?: string[];
   bundleSelections?: BundleSelection[];
   upgradeMeal?: {
     side: string;

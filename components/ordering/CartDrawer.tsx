@@ -173,6 +173,12 @@ export function CartDrawer() {
                                 + Extra: {item.customization.extraProteins.join(", ")}
                               </p>
                             )}
+                          {item.customization.sauces &&
+                            item.customization.sauces.length > 0 && (
+                              <p className="text-[#058A92] font-medium">
+                                + Sauces: {item.customization.sauces.join(", ")}
+                              </p>
+                            )}
                           {item.customization.upgradeMeal && (
                             <p className="text-[#058A92] font-medium">
                               Meal Deal: {item.customization.upgradeMeal.side} +{" "}

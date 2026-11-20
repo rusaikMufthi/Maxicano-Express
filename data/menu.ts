@@ -29,12 +29,17 @@ export type MenuCategoryId =
   | "naked-burritos"
   | "tacos"
   | "quesadillas"
-  | "chicken-bites"
+  | "el-crunchito"
   | "sides-fries"
-  | "kids-sharing"
+  | "macho-loaded"
+  | "kids"
+  | "sharing-trays"
   | "churros"
   | "drinks"
-  | "dips";
+  | "dips"
+  // Backwards-compatibility aliases:
+  | "chicken-bites"
+  | "kids-sharing";
 
 export interface MenuCategory {
   id: MenuCategoryId;
@@ -87,11 +92,12 @@ export const MENU_CATEGORIES: MenuCategory[] = [
   },
   {
     id: "tacos",
-    name: "Tacos (2 Tacos)",
+    name: "Tacos (2 pcs)",
     badge: "2 Tacos Per Order",
     tagline: "Authentic Street-Style Flavour",
     description: "All taco orders are served as 2 tacos, filled with fresh Mexican seasonings and fresh garnishes.",
     image: "/images/food/real/main-attractions-tacos-hd.jpg",
+    servedWith: "All taco options are served as 2 tacos.",
     toppingsGuide: {
       title: "Chef's Recommended Toppings",
       items: [
@@ -118,87 +124,223 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     },
   },
   {
-    id: "chicken-bites",
-    name: "Chicken & Bites",
-    badge: "Snack & Share",
-    tagline: "Crispy, Crunchy & Delicious",
-    description: "Crispy chicken wings, tender chicken strips, spicy jalapeño poppers, creamy mac & cheese bites, and golden halloumi fries.",
-    image: "/images/food/real/el-cluckin-el-cluckin-box-png.png",
+    id: "el-crunchito",
+    name: "El Crunchito",
+    badge: "Crispy & Crunchy",
+    tagline: "Chicken Strips, Wings & Cheesy Bites",
+    description: "Crispy chicken strips, flavour-packed chicken wings, spicy jalapeño poppers, creamy mac & cheese bites, and golden halloumi fries.",
+    image: "/images/food/real/bites-chicken-strips-hd.jpg",
   },
   {
     id: "sides-fries",
     name: "Sides & Fries",
-    badge: "Perfect Additions",
-    tagline: "Loaded, Seasoned & Cheesy",
-    description: "Freshly seasoned fries, golden tots, nacho platters, Mexican street elote, and mini quesadillas.",
+    badge: "Sides & Dips",
+    tagline: "Fries, Tots, Tortillas & Esquites",
+    description: "Crispy skin-on fries, golden tater tots, crunchy tortilla chips, fresh guacamole dip, and street-style esquites.",
+    image: "/images/food/real/bites-fries-jpg.jpg",
+  },
+  {
+    id: "macho-loaded",
+    name: "Macho Loaded",
+    badge: "Fully Loaded",
+    tagline: "Smothered in Cheese & Toppings",
+    description: "Loaded fries, loaded tots, and loaded nachos smothered in rich cheese. Add your choice of favourite toppings for £3.49 each.",
     image: "/images/food/real/bites-loaded-fries-png.png",
   },
   {
-    id: "kids-sharing",
-    name: "Kids & Sharing Feasts",
-    badge: "Family & Gatherings",
-    tagline: "Mini Luchadores, TODO Trays & EL GRANDE",
-    description: "Complete feast boxes for groups, taco boxes for parties, and kid-approved Mini Luchadores meal deals.",
+    id: "kids",
+    name: "Kids",
+    badge: "Kids Meal",
+    tagline: "Mini Luchadores Meal Deals",
+    description: "Kid-approved complete meal deals featuring chicken strips or mini quesadillas with side, fruit shoot and dip.",
+    image: "/images/food/real/los-ninos-kids-3pcs-chicken-stripc-meal-png.png",
+  },
+  {
+    id: "sharing-trays",
+    name: "Sharing Trays",
+    badge: "Feasts & Party Boxes",
+    tagline: "TODO Trays & EL GRANDE 12 Tacos",
+    description: "Massive sharing platters, TODO feast trays with wings, poppers, nachos, and party 12-taco boxes.",
     image: "/images/food/real/cartel-trays-meaty-cartel-tray-jpg.jpg",
   },
   {
     id: "churros",
-    name: "Churros & Desserts",
+    name: "Churros",
     badge: "Sweet Treats",
-    tagline: "Warm, Sugary & Loaded",
-    description: "Crispy fried Spanish churros dusted in cinnamon sugar, or loaded with Biscoff and Oreo crumbles.",
+    tagline: "Cinnamon Dusted & Loaded",
+    description: "Crispy fried Spanish churros dusted with sweet cinnamon sugar or loaded with Biscoff and Oreo crumbles.",
     image: "/images/food/real/churros-sweet-dips-cinnamon-churros-7-png.png",
   },
   {
     id: "drinks",
     name: "Drinks",
     badge: "Refreshing",
-    tagline: "Mexican Jarritos & Chilled Cans",
-    description: "Authentic Mexican Jarritos glass bottles in fruit flavours, chilled sodas, Fruit Shoots and water.",
+    tagline: "Jarritos, Chilled Cans & Cano Water",
+    description: "Authentic Mexican Jarritos glass bottles, chilled 330ml soda cans, Cano Water and Fruit Shoots.",
     image: "/images/food/real/soft-drinks-jarritos-png.png",
   },
   {
     id: "dips",
-    name: "Dips & Salsas",
-    badge: "Sauce Bar",
-    tagline: "House-Made Salsas & Creams",
-    description: "From cooling cilantro lime sour cream and creamy guacamole to rich nacho cheese and tangy salsa verde.",
+    name: "Dips",
+    badge: "House Salsas & Dips",
+    tagline: "Guacamole, Creams & Salsas",
+    description: "Fresh guacamole, cool sour cream, cilantro lime, salsa roja, salsa verde, honey jalapeño, queso and BBQ.",
     image: "/images/food/real/dips-guacamole-png.png",
   },
 ];
 
+// Meal Upgrade
 export const UPGRADE_MEAL = {
   price: 3.99,
   title: "Upgrade Your Meal",
-  description: "Upgrade your main meal with any side and drink for just £3.99",
+  description: "Pick 1 Side (Tortilla chips, Skin-on fries, or Tater tots) + Pick 1 Drink (Jarritos or Any can drink).",
   sides: ["Tortilla Chips", "Skin-on Fries", "Tater Tots"],
   drinks: ["Jarritos", "Any Can Drink"],
 };
 
-export const CHICKEN_PROMOTION = {
+// Section Combos and Notes
+export const EL_CRUNCHITO_COMBO = {
   price: 3.49,
-  description: "Add Fries & Any Can Drink for £3.49 with any Chicken & Bites order",
+  description: "Add fries / tots & any can of drink for £3.49",
 };
+export const CHICKEN_PROMOTION = EL_CRUNCHITO_COMBO; // Backwards compatibility
+
+export const MACHO_LOADED_NOTE = {
+  price: 3.49,
+  description: "Just add a choice of your toppings for £3.49 each (Beef, BBQ Chicken, Chicken Tinga, Chilli, Fajita, Halloumi)",
+  toppings: ["Beef", "BBQ Chicken", "Chicken Tinga", "Chilli", "Fajita", "Halloumi"],
+};
+
+export const ALLERGY_NOTICE = "Food allergies or intolerances? Please speak to a member of our team before ordering.";
+
+// Section 2: EXTRA PROTEIN, TOPPINGS & SAUCES
+export const EXTRA_PROTEINS = [
+  { id: "extra-beef", name: "Beef", price: 3.49 },
+  { id: "extra-bbq-chicken", name: "BBQ Chicken", price: 2.99 },
+  { id: "extra-chicken-tinga", name: "Chicken Tinga", price: 2.99 },
+  { id: "extra-chilli", name: "Chilli (V)", price: 3.89 },
+  { id: "extra-fajita-veg", name: "Fajita Vegetables", price: 3.49 },
+  { id: "extra-halloumi", name: "Halloumi", price: 3.89 },
+];
 
 export const EXTRA_TOPPINGS = [
   { id: "guacamole", name: "Guacamole", price: 2.29 },
-  { id: "nacho-cheese", name: "Nacho Cheese", price: 1.29 },
-  { id: "sweetcorn", name: "Sweetcorn", price: 1.29 },
-  { id: "jalapenos", name: "Jalapeños", price: 1.29 },
+  { id: "jalapenos", name: "Jalapeños Red / Green", price: 1.29 },
+  { id: "sweet-corn", name: "Sweet Corn", price: 1.29 },
   { id: "pickled-onion", name: "Pickled Onion", price: 1.00 },
-  { id: "cheese", name: "Cheese", price: 1.00 },
   { id: "pico-de-gallo", name: "Pico de Gallo", price: 1.00 },
-  { id: "sour-cream", name: "Sour Cream", price: 1.00 },
-  { id: "cilantro-lime-sour-cream", name: "Cilantro Lime Sour Cream", price: 1.00 },
+  { id: "queso", name: "Queso (Nacho Cheese)", price: 1.29 },
 ];
 
-export const EXTRA_PROTEINS = [
-  { id: "extra-beef", name: "Extra Beef", price: 3.49 },
-  { id: "extra-chicken", name: "Extra Chicken", price: 2.99 },
+export const EXTRA_SAUCES_CHEESE = [
+  { id: "sour-cream", name: "Sour Cream", price: 1.00 },
+  { id: "cilantro-lime-sour-cream", name: "Cilantro Lime Sour Cream", price: 1.00 },
+  { id: "mixed-cheese", name: "Mixed Cheese", price: 1.00 },
+  { id: "salsa-roja", name: "Salsa Roja", price: 1.49 },
+  { id: "salsa-verde", name: "Salsa Verde", price: 1.49 },
+  { id: "honey-jalapenos", name: "Honey Jalapeños", price: 1.49 },
+];
+
+// 1. MAINS – CHOOSE YOUR FILLING (Responsive Table Model)
+export interface MainsTableRow {
+  filling: string;
+  isVegetarian?: boolean;
+  burritoPrice: number;
+  nakedPrice: number;
+  tacosPrice: number | null; // null for Mixed Chicken & Beef
+  quesadillaPrice: number;
+  burritoId: string;
+  nakedId: string;
+  tacosId?: string;
+  quesadillaId: string;
+}
+
+export const MAINS_TABLE_DATA: MainsTableRow[] = [
+  {
+    filling: "BBQ Chicken",
+    burritoPrice: 8.99,
+    nakedPrice: 8.99,
+    tacosPrice: 8.99,
+    quesadillaPrice: 8.99,
+    burritoId: "burrito-bbq-chicken",
+    nakedId: "naked-bbq-chicken",
+    tacosId: "tacos-bbq-chicken",
+    quesadillaId: "quesadilla-bbq-chicken",
+  },
+  {
+    filling: "Chicken Tinga",
+    burritoPrice: 8.99,
+    nakedPrice: 8.99,
+    tacosPrice: 8.99,
+    quesadillaPrice: 8.99,
+    burritoId: "burrito-chicken-tinga",
+    nakedId: "naked-chicken-tinga",
+    tacosId: "tacos-chicken-tinga",
+    quesadillaId: "quesadilla-chicken-tinga",
+  },
+  {
+    filling: "Pulled Beef (Birria)",
+    burritoPrice: 9.99,
+    nakedPrice: 9.99,
+    tacosPrice: 9.99,
+    quesadillaPrice: 9.99,
+    burritoId: "burrito-pulled-beef",
+    nakedId: "naked-pulled-beef",
+    tacosId: "tacos-pulled-beef",
+    quesadillaId: "quesadilla-pulled-beef",
+  },
+  {
+    filling: "Mixed Chicken & Beef",
+    burritoPrice: 11.99,
+    nakedPrice: 11.99,
+    tacosPrice: null, // Available for Burrito, Naked Burrito, and Quesadilla only — mark Tacos as N/A or —
+    quesadillaPrice: 11.99,
+    burritoId: "burrito-mixed-chicken-beef",
+    nakedId: "naked-mixed-chicken-beef",
+    quesadillaId: "quesadilla-mixed-chicken-beef",
+  },
+  {
+    filling: "Chilli (V)",
+    isVegetarian: true,
+    burritoPrice: 8.99,
+    nakedPrice: 8.99,
+    tacosPrice: 8.99,
+    quesadillaPrice: 8.99,
+    burritoId: "burrito-chilli",
+    nakedId: "naked-chilli",
+    tacosId: "tacos-chilli",
+    quesadillaId: "quesadilla-chilli",
+  },
+  {
+    filling: "Fajita Vegetable",
+    isVegetarian: true,
+    burritoPrice: 8.99,
+    nakedPrice: 8.99,
+    tacosPrice: 8.99,
+    quesadillaPrice: 8.99,
+    burritoId: "burrito-fajita-veg",
+    nakedId: "naked-fajita-veg",
+    tacosId: "tacos-fajita-veg",
+    quesadillaId: "quesadilla-fajita-veg",
+  },
+  {
+    filling: "Halloumi",
+    isVegetarian: true,
+    burritoPrice: 8.99,
+    nakedPrice: 8.99,
+    tacosPrice: 8.99,
+    quesadillaPrice: 8.99,
+    burritoId: "burrito-halloumi",
+    nakedId: "naked-halloumi",
+    tacosId: "tacos-halloumi",
+    quesadillaId: "quesadilla-halloumi",
+  },
 ];
 
 export const ALL_MENU_ITEMS: MenuItem[] = [
-  // --- A. BURRITOS ---
+  // ==========================================
+  // 1. MAINS: A. BURRITOS
+  // ==========================================
   {
     id: "burrito-bbq-chicken",
     name: "BBQ Chicken Burrito",
@@ -244,7 +386,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     category: "burritos",
     categoryName: "Burritos",
     price: 11.99,
-    description: "The ultimate meat lover's burrito combining tender shredded chicken and rich pulled birria beef with all the trimmings.",
+    description: "The ultimate meat lover's burrito combining tender shredded chicken and rich pulled birria beef with Mexican rice, pico de gallo, queso and cheese.",
     servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
     image: "/images/food/real/main-attractions-burrito-hd.jpg",
     customizable: true,
@@ -286,7 +428,9 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     customizable: true,
   },
 
-  // --- B. NAKED BURRITOS ---
+  // ==========================================
+  // 1. MAINS: B. NAKED BURRITOS
+  // ==========================================
   {
     id: "naked-bbq-chicken",
     name: "BBQ Chicken Naked Burrito",
@@ -295,7 +439,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 8.99,
     description: "Smoky BBQ chicken served over seasoned Mexican rice bowl with fresh pico de gallo, velvety queso and cheese.",
     toppingsInfo: "Spring onion, sour cream and BBQ sauce.",
-    servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
+    servedWith: "Served with Mexican rice, pico de gallo, queso and cheese in a bowl.",
     image: "/images/food/real/main-attractions-naked-burrito-hd.jpg",
     customizable: true,
   },
@@ -307,7 +451,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 8.99,
     description: "Smoky shredded chipotle chicken tinga served over Mexican rice, pico de gallo, velvety queso and cheese.",
     toppingsInfo: "Sour cream, cilantro lime sour cream and jalapeños.",
-    servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
+    servedWith: "Served with Mexican rice, pico de gallo, queso and cheese in a bowl.",
     image: "/images/food/real/main-attractions-naked-burrito-hd.jpg",
     popular: true,
     customizable: true,
@@ -320,7 +464,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 9.99,
     description: "Slow-braised spiced birria pulled beef served in a rice bowl with pico de gallo, rich queso and cheese.",
     toppingsInfo: "Sour cream, cilantro lime sour cream and jalapeños.",
-    servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
+    servedWith: "Served with Mexican rice, pico de gallo, queso and cheese in a bowl.",
     image: "/images/food/real/main-attractions-naked-burrito-hd.jpg",
     popular: true,
     customizable: true,
@@ -332,7 +476,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     categoryName: "Naked Burritos",
     price: 11.99,
     description: "Hearty double protein bowl of chicken and birria pulled beef with Mexican rice, pico de gallo, queso and cheese.",
-    servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
+    servedWith: "Served with Mexican rice, pico de gallo, queso and cheese in a bowl.",
     image: "/images/food/real/main-attractions-naked-burrito-hd.jpg",
     customizable: true,
   },
@@ -344,7 +488,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 8.99,
     description: "Savory Mexican spiced chilli served over fluffy Mexican rice with zesty pico de gallo, queso and cheese.",
     toppingsInfo: "Sour cream.",
-    servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
+    servedWith: "Served with Mexican rice, pico de gallo, queso and cheese in a bowl.",
     image: "/images/food/real/main-attractions-naked-burrito-hd.jpg",
     customizable: true,
   },
@@ -356,7 +500,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 8.99,
     description: "Sauteed fajita peppers and onions with seasoned Mexican rice, pico de gallo, queso and melted cheese in a bowl.",
     toppingsInfo: "Sour cream.",
-    servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
+    servedWith: "Served with Mexican rice, pico de gallo, queso and cheese in a bowl.",
     image: "/images/food/real/main-attractions-naked-burrito-hd.jpg",
     customizable: true,
   },
@@ -368,21 +512,23 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 8.99,
     description: "Grilled squeaky halloumi layered over seasoned Mexican rice with pico de gallo, queso and cheese.",
     toppingsInfo: "Sour cream.",
-    servedWith: "Served with Mexican rice, pico de gallo, queso and cheese.",
+    servedWith: "Served with Mexican rice, pico de gallo, queso and cheese in a bowl.",
     image: "/images/food/real/main-attractions-naked-burrito-hd.jpg",
     customizable: true,
   },
 
-  // --- C. TACOS (2 TACOS) ---
+  // ==========================================
+  // 1. MAINS: C. TACOS (2 PCS)
+  // ==========================================
   {
     id: "tacos-bbq-chicken",
     name: "BBQ Chicken Tacos",
     category: "tacos",
-    categoryName: "Tacos (2 Tacos)",
+    categoryName: "Tacos (2 pcs)",
     price: 8.99,
     description: "2 tacos filled with BBQ seasoned chicken, fresh spring onion, cool sour cream and drizzle of smoky BBQ sauce.",
     toppingsInfo: "Spring onion, sour cream and BBQ sauce.",
-    servedWith: "All taco options are served as 2 tacos.",
+    servedWith: "All taco orders are served as 2 tacos.",
     image: "/images/food/real/main-attractions-tacos-hd.jpg",
     customizable: true,
   },
@@ -390,11 +536,11 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     id: "tacos-chicken-tinga",
     name: "Chicken Tinga Tacos",
     category: "tacos",
-    categoryName: "Tacos (2 Tacos)",
+    categoryName: "Tacos (2 pcs)",
     price: 8.99,
     description: "2 tacos filled with chipotle shredded chicken, cooling sour cream, fresh cilantro lime sour cream and sliced jalapeños.",
     toppingsInfo: "Sour cream, cilantro lime sour cream and jalapeños.",
-    servedWith: "All taco options are served as 2 tacos.",
+    servedWith: "All taco orders are served as 2 tacos.",
     image: "/images/food/real/main-attractions-tacos-hd.jpg",
     popular: true,
     customizable: true,
@@ -403,11 +549,11 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     id: "tacos-pulled-beef",
     name: "Pulled Beef (Birria) Tacos",
     category: "tacos",
-    categoryName: "Tacos (2 Tacos)",
+    categoryName: "Tacos (2 pcs)",
     price: 9.99,
     description: "2 tacos packed with tender braised birria beef, sour cream, cilantro lime sour cream and spicy jalapeños.",
     toppingsInfo: "Sour cream, cilantro lime sour cream and jalapeños.",
-    servedWith: "All taco options are served as 2 tacos.",
+    servedWith: "All taco orders are served as 2 tacos.",
     image: "/images/food/real/main-attractions-tacos-hd.jpg",
     popular: true,
     customizable: true,
@@ -416,11 +562,11 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     id: "tacos-chilli",
     name: "Chilli Tacos",
     category: "tacos",
-    categoryName: "Tacos (2 Tacos)",
+    categoryName: "Tacos (2 pcs)",
     price: 8.99,
     description: "2 tacos filled with rich spiced beef chilli topped with cool sour cream and garnishes.",
     toppingsInfo: "Sour cream.",
-    servedWith: "All taco options are served as 2 tacos.",
+    servedWith: "All taco orders are served as 2 tacos.",
     image: "/images/food/real/main-attractions-tacos-hd.jpg",
     customizable: true,
   },
@@ -428,11 +574,11 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     id: "tacos-fajita-veg",
     name: "Fajita Vegetables Tacos",
     category: "tacos",
-    categoryName: "Tacos (2 Tacos)",
+    categoryName: "Tacos (2 pcs)",
     price: 8.99,
     description: "2 tacos stuffed with colourful sauteed peppers and onions, topped with cool sour cream.",
     toppingsInfo: "Sour cream.",
-    servedWith: "All taco options are served as 2 tacos.",
+    servedWith: "All taco orders are served as 2 tacos.",
     image: "/images/food/real/main-attractions-tacos-hd.jpg",
     customizable: true,
   },
@@ -440,16 +586,18 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     id: "tacos-halloumi",
     name: "Halloumi Tacos",
     category: "tacos",
-    categoryName: "Tacos (2 Tacos)",
+    categoryName: "Tacos (2 pcs)",
     price: 8.99,
     description: "2 tacos with grilled halloumi cheese, crisp salad and smooth sour cream.",
     toppingsInfo: "Sour cream.",
-    servedWith: "All taco options are served as 2 tacos.",
+    servedWith: "All taco orders are served as 2 tacos.",
     image: "/images/food/real/main-attractions-tacos-hd.jpg",
     customizable: true,
   },
 
-  // --- D. QUESADILLAS ---
+  // ==========================================
+  // 1. MAINS: D. QUESADILLAS
+  // ==========================================
   {
     id: "quesadilla-bbq-chicken",
     name: "BBQ Chicken Quesadilla",
@@ -529,12 +677,28 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     customizable: true,
   },
 
-  // --- G. CHICKEN & BITES (Size-based: 3 / 5 / 7 Pieces) ---
+  // ==========================================
+  // 3. EL CRUNCHITO (Combo Add-on: Add fries / tots & any can of drink for £3.49)
+  // ==========================================
+  {
+    id: "chicken-strips",
+    name: "Chicken Strips",
+    category: "el-crunchito",
+    categoryName: "El Crunchito",
+    price: 4.49,
+    description: "Golden breaded tender chicken breast strips with a crunchy coating. Combo add-on: add fries / tots & any can of drink for £3.49.",
+    image: "/images/food/real/bites-chicken-strips-hd.jpg",
+    options: [
+      { name: "3 Pieces", price: 4.49 },
+      { name: "5 Pieces", price: 6.49 },
+      { name: "7 Pieces", price: 8.49 },
+    ],
+  },
   {
     id: "chicken-wings",
     name: "Chicken Wings",
-    category: "chicken-bites",
-    categoryName: "Chicken & Bites",
+    category: "el-crunchito",
+    categoryName: "El Crunchito",
     price: 4.49,
     description: "Crispy fried chicken wings tossed in Mexican spices. Available in 3, 5, or 7 pieces.",
     image: "/images/food/real/bites-chicken-wings-hd.jpg",
@@ -546,24 +710,10 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     ],
   },
   {
-    id: "chicken-strips",
-    name: "Chicken Strips",
-    category: "chicken-bites",
-    categoryName: "Chicken & Bites",
-    price: 4.49,
-    description: "Golden breaded tender chicken breast strips with a crunchy coating.",
-    image: "/images/food/real/bites-chicken-strips-hd.jpg",
-    options: [
-      { name: "3 Pieces", price: 4.49 },
-      { name: "5 Pieces", price: 6.49 },
-      { name: "7 Pieces", price: 8.49 },
-    ],
-  },
-  {
     id: "jalapeno-poppers",
     name: "Jalapeño Poppers",
-    category: "chicken-bites",
-    categoryName: "Chicken & Bites",
+    category: "el-crunchito",
+    categoryName: "El Crunchito",
     price: 4.49,
     description: "Crispy breaded spicy jalapeños stuffed with molten cream cheese.",
     image: "/images/food/real/cheesy-bites-jalapeno-poppers-hd.jpg",
@@ -577,8 +727,8 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
   {
     id: "mac-cheese-bites",
     name: "Mac & Cheese Bites",
-    category: "chicken-bites",
-    categoryName: "Chicken & Bites",
+    category: "el-crunchito",
+    categoryName: "El Crunchito",
     price: 4.49,
     description: "Creamy macaroni and cheddar cheese encased in a crispy golden batter.",
     image: "/images/food/real/bites-mac-n-cheese-bites-hd.jpg",
@@ -591,8 +741,8 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
   {
     id: "halloumi-fries",
     name: "Halloumi Fries",
-    category: "chicken-bites",
-    categoryName: "Chicken & Bites",
+    category: "el-crunchito",
+    categoryName: "El Crunchito",
     price: 4.49,
     description: "Chunky strips of salty halloumi fried to golden perfection with a squeaky soft center.",
     image: "/images/food/real/cheesy-bites-cheesy-bites-regular-jpg.jpg",
@@ -604,7 +754,9 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     ],
   },
 
-  // --- H. SIDES & FRIES ---
+  // ==========================================
+  // 4. SIDES & FRIES
+  // ==========================================
   {
     id: "side-fries",
     name: "Skin-on Fries",
@@ -633,7 +785,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
   },
   {
     id: "side-nachos",
-    name: "Tortilla Nachos",
+    name: "Tortilla (Nachos)",
     category: "sides-fries",
     categoryName: "Sides & Fries",
     price: 3.49,
@@ -645,6 +797,16 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     ],
   },
   {
+    id: "guacamole-chips-dip",
+    name: "Guacamole, Chips & Dip",
+    category: "sides-fries",
+    categoryName: "Sides & Fries",
+    price: 5.75,
+    description: "Crisp seasoned tortilla chips served with fresh homemade guacamole and your choice of dip.",
+    image: "/images/food/real/dips-guacamole-png.png",
+    popular: true,
+  },
+  {
     id: "mini-cheese-quesadilla",
     name: "Mini Cheese Quesadilla",
     category: "sides-fries",
@@ -654,77 +816,84 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     image: "/images/food/real/bites-mini-cheese-quesadilla-jpg.jpg",
   },
   {
-    id: "mexican-elote",
-    name: "Mexican Elote",
+    id: "mexican-style-esquites",
+    name: "Mexican Style Esquites",
     category: "sides-fries",
     categoryName: "Sides & Fries",
     price: 4.99,
-    description: "Sweetcorn, cheese and sour cream.",
+    description: "Sweetcorn in a cup, cheese, sour cream, and Mexican spices.",
     image: "/images/food/real/bites-mexican-rice-png.png",
     popular: true,
   },
+
+  // ==========================================
+  // 5. MACHO LOADED
+  // ==========================================
   {
     id: "loaded-fries",
     name: "Loaded Fries",
-    category: "sides-fries",
-    categoryName: "Sides & Fries",
+    category: "macho-loaded",
+    categoryName: "Macho Loaded",
     price: 4.99,
-    description: "Crispy fries smothered in melted cheese and house toppings. (Add beef or chicken for £3.49 each).",
+    description: "Crispy fries smothered in melted cheese and house toppings. Add a choice of topping for £3.49 each (Beef, BBQ Chicken, Chicken Tinga, Chilli, Fajita, Halloumi).",
     image: "/images/food/real/bites-loaded-fries-png.png",
     popular: true,
   },
   {
     id: "loaded-tots",
     name: "Loaded Tots",
-    category: "sides-fries",
-    categoryName: "Sides & Fries",
+    category: "macho-loaded",
+    categoryName: "Macho Loaded",
     price: 4.99,
-    description: "Crispy tater tots topped with melted cheese and garnishes. (Add beef or chicken for £3.49 each).",
+    description: "Crispy tater tots topped with melted cheese and house toppings. Add a choice of topping for £3.49 each.",
     image: "/images/food/real/bites-loaded-tots-2-png.png",
   },
   {
     id: "loaded-nachos",
     name: "Loaded Nachos",
-    category: "sides-fries",
-    categoryName: "Sides & Fries",
+    category: "macho-loaded",
+    categoryName: "Macho Loaded",
     price: 4.99,
-    description: "Warm tortilla chips smothered in melted cheese sauce and jalapeños. (Add beef or chicken for £3.49 each).",
+    description: "Warm tortilla chips smothered in melted cheese sauce and sliced jalapeños. Add a choice of topping for £3.49 each.",
     image: "/images/food/real/bites-loaded-nachos-jpg.jpg",
   },
   {
-    id: "cheese-nachos",
-    name: "Cheese Nachos",
-    category: "sides-fries",
-    categoryName: "Sides & Fries",
+    id: "cheesy-nachos",
+    name: "Cheesy Nachos",
+    category: "macho-loaded",
+    categoryName: "Macho Loaded",
     price: 5.99,
     description: "Topped with nacho cheese, crispy onions, sour cream and jalapeños.",
     image: "/images/food/real/bites-cheesy-nachos-jpg.jpg",
     popular: true,
   },
 
-  // --- J. KIDS & SHARING ---
+  // ==========================================
+  // 6. KIDS
+  // ==========================================
   {
     id: "kids-mini-luchadores",
     name: "Mini Luchadores (Kids Meal)",
-    category: "kids-sharing",
-    categoryName: "Kids & Sharing",
+    category: "kids",
+    categoryName: "Kids",
     price: 5.99,
-    description: "Complete children's meal bundle for £5.99: 1 Main Choice (3 Chicken Strips OR 1 Cheese Mini Quesadilla), 1 Side Choice (Mexican Rice OR Fries OR Potato Tots), and 1 Drink Choice (Fruit Shoot OR Water).",
+    description: "3x Chicken Strips OR 1x Mini Cheesy Quesadilla + Mexican Rice OR Fries OR Tots + Fruit Shoot + Dip.",
     image: "/images/food/real/los-ninos-kids-3pcs-chicken-stripc-meal-png.png",
     includedItems: [
-      "Main: 3 Chicken Strips OR 1 Cheese Mini Quesadilla",
-      "Side: Mexican Rice OR Fries OR Potato Tots",
-      "Drink: Fruit Shoot OR Water",
+      "Main: 3x Chicken Strips OR 1x Mini Cheesy Quesadilla",
+      "Side: Mexican Rice OR Fries OR Tots",
+      "Drink: Fruit Shoot",
+      "Dip: Included",
     ],
     selectionChoices: [
       {
         title: "Main Choice",
-        options: ["3 Chicken Strips", "1 Cheese Mini Quesadilla"],
+        options: ["3x Chicken Strips", "1x Mini Cheesy Quesadilla"],
         requiredCount: 1,
       },
       {
         title: "Side Choice",
-        options: ["Mexican Rice", "Fries", "Potato Tots"],
+        options: ["Mexican Rice", "Fries", "Tots"],
         requiredCount: 1,
       },
       {
@@ -732,36 +901,49 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
         options: ["Fruit Shoot", "Water"],
         requiredCount: 1,
       },
+      {
+        title: "Dip Choice",
+        options: ["Sour Cream", "Salsa Roja", "Garlic Mayo", "BBQ"],
+        requiredCount: 1,
+      },
     ],
   },
+
+  // ==========================================
+  // 7. SHARING TRAYS
+  // ==========================================
   {
     id: "todo-trays",
-    name: "TODO Trays (Sharing Feast)",
-    category: "kids-sharing",
-    categoryName: "Kids & Sharing",
+    name: "Todo Tray",
+    category: "sharing-trays",
+    categoryName: "Sharing Trays",
     price: 33.49,
-    description: "The ultimate Mexican sharing tray packed with tacos, wings, loaded sides, poppers and drinks.",
+    description: "2x Tacos, 1x Cheesy Loaded Nachos, 1x Loaded Fries, 5x Jalapeño Poppers, 5x Chicken Wings, 2x Dip (Salsa Roja / Verde, Sour Cream), 2x Jarritos. (Choose any one topping: BBQ Chicken / Tinga / Fajita / Chilli / Halloumi).",
     image: "/images/food/real/cartel-trays-meaty-cartel-tray-jpg.jpg",
     popular: true,
     includedItems: [
-      "2 × Tacos",
-      "1 × Loaded Fries",
-      "5 × Chicken Wings",
-      "1 × Sour Cream OR Cilantro Lime Sour Cream",
-      "2 × Jarritos Drinks",
-      "1 × Cheesy Nachos",
-      "5 × Jalapeño Poppers",
-      "1 × Salsa",
+      "2x Tacos",
+      "1x Cheesy Loaded Nachos",
+      "1x Loaded Fries",
+      "5x Jalapeño Poppers",
+      "5x Chicken Wings",
+      "2x Dip (Salsa Roja / Verde, Sour Cream)",
+      "2x Jarritos",
     ],
     selectionChoices: [
       {
-        title: "Choose One Taco Topping",
-        options: ["BBQ Chicken", "Chicken Tinga", "Chilli", "Fajita Vegetables", "Halloumi"],
+        title: "Choose One Topping",
+        options: ["BBQ Chicken", "Chicken Tinga", "Fajita Vegetables", "Chilli", "Halloumi"],
         requiredCount: 1,
       },
       {
-        title: "Sour Cream Choice",
-        options: ["Sour Cream", "Cilantro Lime Sour Cream"],
+        title: "First Dip Choice",
+        options: ["Salsa Roja", "Salsa Verde", "Sour Cream"],
+        requiredCount: 1,
+      },
+      {
+        title: "Second Dip Choice",
+        options: ["Salsa Roja", "Salsa Verde", "Sour Cream"],
         requiredCount: 1,
       },
       {
@@ -773,27 +955,31 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
   },
   {
     id: "birria-todo-trays",
-    name: "Birria TODO Trays",
-    category: "kids-sharing",
-    categoryName: "Kids & Sharing",
+    name: "Birria Todo Tray",
+    category: "sharing-trays",
+    categoryName: "Sharing Trays",
     price: 36.99,
-    description: "The massive TODO Tray upgrade loaded with slow-cooked Birria pulled beef tacos and all feast accompaniments.",
+    description: "Same tray with Pulled Beef (Birria). 2x Birria Tacos, 1x Cheesy Loaded Nachos, 1x Loaded Fries, 5x Jalapeño Poppers, 5x Chicken Wings, 2x Dip, 2x Jarritos.",
     image: "/images/food/real/cartel-trays-veggie-cartel-tray-jpg.jpg",
     popular: true,
     includedItems: [
-      "2 × Birria Pulled Beef Tacos",
-      "1 × Loaded Fries",
-      "5 × Chicken Wings",
-      "1 × Sour Cream OR Cilantro Lime Sour Cream",
-      "2 × Jarritos Drinks",
-      "1 × Cheesy Nachos",
-      "5 × Jalapeño Poppers",
-      "1 × Salsa",
+      "2x Birria Pulled Beef Tacos",
+      "1x Cheesy Loaded Nachos",
+      "1x Loaded Fries",
+      "5x Jalapeño Poppers",
+      "5x Chicken Wings",
+      "2x Dip (Salsa Roja / Verde, Sour Cream)",
+      "2x Jarritos",
     ],
     selectionChoices: [
       {
-        title: "Sour Cream Choice",
-        options: ["Sour Cream", "Cilantro Lime Sour Cream"],
+        title: "First Dip Choice",
+        options: ["Salsa Roja", "Salsa Verde", "Sour Cream"],
+        requiredCount: 1,
+      },
+      {
+        title: "Second Dip Choice",
+        options: ["Salsa Roja", "Salsa Verde", "Sour Cream"],
         requiredCount: 1,
       },
       {
@@ -805,27 +991,38 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
   },
   {
     id: "el-grande-12-tacos",
-    name: "EL GRANDE – 12 Tacos",
-    category: "kids-sharing",
-    categoryName: "Kids & Sharing",
+    name: "El Grande – 12 Tacos",
+    category: "sharing-trays",
+    categoryName: "Sharing Trays",
     price: 33.49,
-    description: "A showstopping platter of 12 street tacos! Choose up to 3 flavour fillings for your group feast.",
+    description: "A showstopping platter of 12 street tacos! Choice of 4 flavour fillings (Chicken Tinga / BBQ Chicken / Chilli / Fajita Vegetables / Halloumi / Beef Birria).",
     image: "/images/food/real/muchos-tacos-muchos-tacos-jpg.jpg",
     popular: true,
     options: [
-      { name: "3 Flavour Fillings Mix", price: 33.49 },
+      { name: "4 Flavour Fillings Mix", price: 33.49 },
       { name: "All 12 Beef Birria", price: 39.99 },
     ],
     selectionChoices: [
       {
-        title: "Choose 3 Flavour Fillings (For Standard Platter)",
+        title: "Choose 4 Flavour Fillings (For Standard Platter)",
         options: ["Chicken Tinga", "BBQ Chicken", "Chilli", "Fajita Vegetables", "Halloumi", "Beef Birria"],
-        requiredCount: 3,
+        requiredCount: 4,
       },
     ],
   },
+  {
+    id: "all-12-tacos-beef-birria",
+    name: "All 12 Tacos Beef Birria",
+    category: "sharing-trays",
+    categoryName: "Sharing Trays",
+    price: 39.99,
+    description: "12 tacos all loaded with slow-cooked Birria pulled beef, onions, fresh cilantro and spicy jalapeños.",
+    image: "/images/food/real/muchos-tacos-muchos-tacos-jpg.jpg",
+  },
 
-  // --- K. CHURROS ---
+  // ==========================================
+  // 8. CHURROS
+  // ==========================================
   {
     id: "cinnamon-churros",
     name: "Cinnamon Churros",
@@ -843,7 +1040,7 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
   },
   {
     id: "loaded-churros-biscoff",
-    name: "Loaded Biscoff Churros (7 Pieces)",
+    name: "Loaded Biscoff Churros (7 pcs)",
     category: "churros",
     categoryName: "Churros",
     price: 6.49,
@@ -853,18 +1050,20 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
   },
   {
     id: "loaded-churros-oreo",
-    name: "Loaded Oreo Churros (7 Pieces)",
+    name: "Loaded Oreo Churros (7 pcs)",
     category: "churros",
     categoryName: "Churros",
     price: 6.49,
-    description: "7 crispy churros loaded with chocolate sauce and crushed Oreo cookies.",
+    description: "7 crispy churros loaded with rich chocolate sauce and crushed Oreo cookies.",
     image: "/images/food/real/churros-sweet-dips-loaded-oreo-churros-jpg.jpg",
   },
 
-  // --- I. DRINKS ---
+  // ==========================================
+  // 9. DRINKS & DIPS: DRINKS
+  // ==========================================
   {
     id: "jarritos",
-    name: "Jarritos Mexican Soda",
+    name: "Jarritos",
     category: "drinks",
     categoryName: "Drinks",
     price: 2.99,
@@ -882,30 +1081,36 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     ],
   },
   {
-    id: "can-drinks",
-    name: "Can Drinks",
-    category: "drinks",
-    categoryName: "Drinks",
-    price: 1.99,
-    description: "Chilled 330ml soda cans.",
-    image: "/images/food/real/soft-drinks-cacto-jpg.jpg",
-    options: [
-      { name: "Coke", price: 1.99 },
-      { name: "Diet Coke", price: 1.99 },
-      { name: "Tang Orange", price: 1.99 },
-      { name: "Irn-Bru", price: 1.99 },
-      { name: "7-Up", price: 1.99 },
-      { name: "Rio", price: 1.99 },
-    ],
-  },
-  {
     id: "cano-water",
-    name: "Cano Water",
+    name: "Cano Water Still | Sparkling",
     category: "drinks",
     categoryName: "Drinks",
     price: 1.49,
-    description: "Pure still water in an infinitely recyclable resealable can.",
+    description: "Pure water in an infinitely recyclable resealable can. Choose Still or Sparkling.",
     image: "/images/food/real/soft-drinks-mexi-water-jpg.jpg",
+    options: [
+      { name: "Still", price: 1.49 },
+      { name: "Sparkling", price: 1.49 },
+    ],
+  },
+  {
+    id: "can-drinks",
+    name: "Cans (330ml)",
+    category: "drinks",
+    categoryName: "Drinks",
+    price: 1.99,
+    description: "Chilled 330ml soda cans (£1.99 each).",
+    image: "/images/food/real/soft-drinks-cacto-jpg.jpg",
+    options: [
+      { name: "Pepsi", price: 1.99 },
+      { name: "Diet Pepsi", price: 1.99 },
+      { name: "Pepsi Cherry", price: 1.99 },
+      { name: "Tango Orange", price: 1.99 },
+      { name: "Tango Apple", price: 1.99 },
+      { name: "Irn-Bru", price: 1.99 },
+      { name: "Trio", price: 1.99 },
+      { name: "7UP", price: 1.99 },
+    ],
   },
   {
     id: "fruit-shoot",
@@ -917,10 +1122,22 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     image: "/images/food/real/soft-drinks-capri-sun-zero-jpg.jpg",
   },
 
-  // --- L. DIPS ---
+  // ==========================================
+  // 9. DRINKS & DIPS: DIPS
+  // ==========================================
+  {
+    id: "dip-guacamole",
+    name: "Guacamole",
+    category: "dips",
+    categoryName: "Dips",
+    price: 2.49,
+    description: "Ripe avocados mashed fresh with lime, chopped coriander and seasoning.",
+    image: "/images/food/real/dips-guacamole-png.png",
+    popular: true,
+  },
   {
     id: "dip-sour-cream",
-    name: "Sour Cream Dip",
+    name: "Sour Cream",
     category: "dips",
     categoryName: "Dips",
     price: 1.49,
@@ -937,36 +1154,36 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     image: "/images/food/real/dips-chipotle-sour-cream-png.png",
   },
   {
-    id: "dip-bbq",
-    name: "BBQ Dip",
+    id: "dip-honey-jalapeno",
+    name: "Honey Jalapeños",
     category: "dips",
     categoryName: "Dips",
     price: 1.49,
-    description: "Sweet, rich and smoky barbecue sauce.",
+    description: "Sweet golden honey infused with sliced pickled jalapeños.",
     image: "/images/food/real/dips-chipotle-bbq-png.png",
   },
   {
-    id: "dip-chipotle-sour-cream",
-    name: "Chipotle Sour Cream",
+    id: "dip-bbq-chipotle",
+    name: "BBQ Chipotle",
     category: "dips",
     categoryName: "Dips",
     price: 1.49,
-    description: "Smoky chipotle chillies infused into rich sour cream with a mild kick.",
-    image: "/images/food/real/dips-chipotle-sour-cream-png.png",
+    description: "Sweet, rich and smoky chipotle barbecue dipping sauce.",
+    image: "/images/food/real/dips-chipotle-bbq-png.png",
   },
   {
-    id: "dip-guacamole",
-    name: "House Guacamole",
+    id: "dip-queso",
+    name: "Queso (Nacho Cheese)",
     category: "dips",
     categoryName: "Dips",
-    price: 2.49,
-    description: "Ripe avocados mashed with fresh lime, chopped coriander and seasoning.",
-    image: "/images/food/real/dips-guacamole-png.png",
+    price: 1.49,
+    description: "Warm, creamy, velvety melted cheese dip.",
+    image: "/images/food/real/dips-cheese-sauce-png.png",
     popular: true,
   },
   {
-    id: "dip-salsa",
-    name: "Classic Salsa",
+    id: "dip-salsa-roja",
+    name: "Salsa Roja",
     category: "dips",
     categoryName: "Dips",
     price: 1.49,
@@ -981,15 +1198,5 @@ export const ALL_MENU_ITEMS: MenuItem[] = [
     price: 1.49,
     description: "Tangy and bright tomatillo salsa with jalapeños and herbs.",
     image: "/images/food/real/dips-pico-png.png",
-  },
-  {
-    id: "dip-nacho-cheese",
-    name: "Nacho Cheese Dip",
-    category: "dips",
-    categoryName: "Dips",
-    price: 1.49,
-    description: "Warm, creamy, velvety melted cheese dip.",
-    image: "/images/food/real/dips-cheese-sauce-png.png",
-    popular: true,
   },
 ];

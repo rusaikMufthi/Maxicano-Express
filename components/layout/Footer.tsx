@@ -140,7 +140,7 @@ export function Footer() {
               Menu Highlights
             </h3>
             <ul className="space-y-2.5 text-sm">
-              {MENU_CATEGORIES.slice(0, 6).map((cat) => (
+              {MENU_CATEGORIES.slice(0, 7).map((cat) => (
                 <li key={cat.id}>
                   <Link
                     href={`/menu#${cat.id}`}
@@ -151,13 +151,13 @@ export function Footer() {
                 </li>
               ))}
               <li>
-                <Link href="/menu#kids-sharing" className="hover:text-[#08D8E5] transition-colors">
-                  TODO Trays & Sharing
+                <Link href="/menu#sharing-trays" className="hover:text-[#08D8E5] transition-colors">
+                  Sharing Trays &amp; Feasts
                 </Link>
               </li>
               <li>
                 <Link href="/menu#churros" className="hover:text-[#08D8E5] transition-colors">
-                  Churros & Desserts
+                  Churros &amp; Desserts
                 </Link>
               </li>
             </ul>
@@ -201,6 +201,20 @@ export function Footer() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Food Allergies / Intolerances Notice */}
+        <div className="my-8 p-4 sm:p-5 rounded-2xl bg-[#141414] border border-[#262626] flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <div className="flex items-center gap-3">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#08D8E5] shrink-0" />
+            <p className="text-xs sm:text-sm text-gray-300 font-medium leading-relaxed">
+              <strong className="text-white">Allergen Notice: </strong>
+              Food allergies or intolerances? Please speak to a member of our team before ordering.
+            </p>
+          </div>
+          <span className="text-[11px] font-bold uppercase tracking-wider text-[#08D8E5] bg-[#08D8E5]/10 border border-[#08D8E5]/30 px-3 py-1 rounded-full shrink-0">
+            Ask Our Team
+          </span>
         </div>
 
         {/* Bottom Bar with Policies & Copyright */}

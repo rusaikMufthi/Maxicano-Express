@@ -233,7 +233,7 @@ export default function MealDealsPage() {
 
               <div className="space-y-2 text-xs text-gray-700 bg-[#F7FCFD] p-4 rounded-2xl border border-[#D2EEF1]">
                 <div className="flex justify-between items-center text-[#171717] font-bold">
-                  <span>Standard 12 Tacos (Choose 3 Flavour Fillings):</span>
+                  <span>Standard 12 Tacos (Choose 4 Flavour Fillings):</span>
                   <span className="text-[#058A92] text-base">£33.49</span>
                 </div>
                 <div className="flex justify-between items-center text-[#171717] font-bold border-t border-[#D2EEF1] pt-2">

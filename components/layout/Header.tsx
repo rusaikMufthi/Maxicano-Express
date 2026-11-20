@@ -59,7 +59,7 @@ export function Header() {
       >
         {/* Tier 1: Main Header Bar with Centered Logo */}
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-[1fr_auto_1fr] items-center py-2.5 sm:py-3 lg:py-3.5 gap-2">
+          <div className="grid grid-cols-[1fr_auto_1fr] items-center py-2 sm:py-2.5 lg:py-3 gap-2">
             {/* Left Column: Hamburger on Mobile/Tablet, Click & Collect on Desktop */}
             <div className="flex items-center justify-start">
               {/* Mobile/Tablet Hamburger Trigger */}
@@ -85,50 +85,21 @@ export function Header() {
               </Link>
             </div>
 
-            {/* Center Column: Perfectly Centered Wordmark with Candidate Badges on Left & Right */}
+            {/* Center Column: Perfectly Centered Logo */}
             <div className="flex items-center justify-center">
               <Link
                 href="/"
-                className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#08D8E5] rounded-lg"
+                className="flex items-center justify-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#08D8E5] rounded-lg"
                 aria-label="Mexi Cano Express Home"
               >
-                {/* Left Candidate Logo: Taco & Burrito Mascot (Circular) */}
-                <div
-                  className="relative w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-13 lg:h-13 rounded-full overflow-hidden border-2 border-[#08D8E5]/70 shadow-md shrink-0 hover:scale-110 transition-transform"
-                  title="Candidate 1: Taco & Burrito Mascot"
-                >
-                  <Image
-                    src="/images/logo-candidate-taco.png"
-                    alt="Taco & Burrito Mascot Logo"
-                    fill
-                    sizes="(max-width: 640px) 40px, (max-width: 768px) 44px, 52px"
-                    className="object-cover rounded-full"
-                  />
-                </div>
-
-                {/* Center: Brand Wordmark */}
-                <div className="relative w-32 h-11 sm:w-40 sm:h-13 md:w-48 md:h-15 lg:w-52 lg:h-16 shrink-0">
+                <div className="relative w-32 h-12 sm:w-40 sm:h-13 md:w-48 md:h-14 lg:w-56 lg:h-16">
                   <Image
                     src="/images/logo.png"
                     alt="Mexi Cano Express Logo"
                     fill
                     priority
-                    sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 208px"
+                    sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 224px"
                     className="object-contain object-center group-hover:opacity-95 transition-opacity"
-                  />
-                </div>
-
-                {/* Right Candidate Logo: 3D Sombrero Clay Mascot (Circular) */}
-                <div
-                  className="relative w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-13 lg:h-13 rounded-full overflow-hidden border-2 border-[#08D8E5]/70 shadow-md shrink-0 hover:scale-110 transition-transform"
-                  title="Candidate 2: 3D Sombrero Clay Mascot"
-                >
-                  <Image
-                    src="/images/logo-candidate-clay.png"
-                    alt="3D Sombrero Clay Mascot Logo"
-                    fill
-                    sizes="(max-width: 640px) 40px, (max-width: 768px) 44px, 52px"
-                    className="object-cover rounded-full"
                   />
                 </div>
               </Link>
@@ -213,35 +184,15 @@ export function Header() {
           {/* Drawer Sheet */}
           <div className="relative ml-auto w-full max-w-sm bg-[#0c0c0c] border-l border-[#222222] h-full shadow-2xl flex flex-col z-10 animate-slide-left">
             {/* Drawer Header */}
-            <div className="p-4 border-b border-[#222222] flex items-center justify-between">
-              <div className="flex items-center gap-2.5">
-                <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-[#08D8E5]/70 shadow-md shrink-0">
-                  <Image
-                    src="/images/logo-candidate-taco.png"
-                    alt="Taco Logo"
-                    fill
-                    sizes="40px"
-                    className="object-cover rounded-full"
-                  />
-                </div>
-                <div className="relative w-32 h-11">
-                  <Image
-                    src="/images/logo.png"
-                    alt="Mexi Cano Express"
-                    fill
-                    sizes="128px"
-                    className="object-contain object-center"
-                  />
-                </div>
-                <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-[#08D8E5]/70 shadow-md shrink-0">
-                  <Image
-                    src="/images/logo-candidate-clay.png"
-                    alt="Clay Logo"
-                    fill
-                    sizes="40px"
-                    className="object-cover rounded-full"
-                  />
-                </div>
+            <div className="p-5 border-b border-[#222222] flex items-center justify-between">
+              <div className="relative w-36 h-12">
+                <Image
+                  src="/images/logo.png"
+                  alt="Mexi Cano Express"
+                  fill
+                  sizes="144px"
+                  className="object-contain object-left"
+                />
               </div>
               <button
                 onClick={() => setMobileMenuOpen(false)}
