@@ -267,23 +267,14 @@ export default function MenuPage() {
 
                         {/* Quesadilla Price */}
                         <td className="py-3.5 px-3 text-center align-middle">
-                          {row.quesadillaPrice !== null && row.quesadillaId ? (
-                            <button
-                              type="button"
-                              onClick={() => handleOpenItemById(row.quesadillaId!)}
-                              className="inline-flex items-center justify-center font-extrabold text-xs sm:text-sm text-[#058A92] hover:text-black bg-[#E6F8F9] hover:bg-[#08D8E5] px-3.5 py-1.5 rounded-full transition-all shadow-sm w-full max-w-[96px]"
-                              title={`Customize ${row.filling} Quesadilla`}
-                            >
-                              {formatPrice(row.quesadillaPrice)}
-                            </button>
-                          ) : (
-                            <span
-                              className="text-gray-400 font-bold text-sm tracking-widest inline-block"
-                              title="Not available for Quesadilla"
-                            >
-                              —
-                            </span>
-                          )}
+                          <button
+                            type="button"
+                            onClick={() => handleOpenItemById(row.quesadillaId)}
+                            className="inline-flex items-center justify-center font-extrabold text-xs sm:text-sm text-[#058A92] hover:text-black bg-[#E6F8F9] hover:bg-[#08D8E5] px-3.5 py-1.5 rounded-full transition-all shadow-sm w-full max-w-[96px]"
+                            title={`Customize ${row.filling} Quesadilla`}
+                          >
+                            {formatPrice(row.quesadillaPrice)}
+                          </button>
                         </td>
                       </tr>
                     ))}
